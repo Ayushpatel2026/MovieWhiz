@@ -1,6 +1,7 @@
 import express, {Request, Response} from 'express';
 import cors from 'cors';
 import "dotenv/config";
+const identifyRouter = require('./routes/identify');
 
 const app = express();
 
@@ -13,9 +14,12 @@ app.use(express.urlencoded({extended: true}));
 // Enable CORS - which allows us to specify who can access our API
 app.use(cors());
 
-app.get("/api/test", async (req : Request, res : Response) => {
-  res.json({message: "Hello World"});
-});
+// Routes
+app.use('/api/identify', identifyRouter);
+
+// app.get("/api/test", async (req : Request, res : Response) => {
+//   res.json({message: "Hello World"});
+// });
 
 app.listen(7000, () => {
   console.log('Server is running on port 7000');
