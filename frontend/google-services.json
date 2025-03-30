@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "626842236267",
+    "project_id": "moviewhiz-se3a04",
+    "storage_bucket": "moviewhiz-se3a04.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626842236267:android:531bbc7cab5c187953882e",
+        "android_client_info": {
+          "package_name": "com.se3a04.moviewhiz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5UI-S2CSQ-kKgWsayBCgqwHJxJoqqFo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
