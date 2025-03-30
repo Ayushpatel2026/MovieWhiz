@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "MovieWhiz",
-    "slug": "MovieWhiz",
+    "name": "frontend",
+    "slug": "frontend",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/favicon.png",
+    "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -12,10 +12,8 @@
       "supportsTablet": true
     },
     "android": {
-      "googleServicesFile": "./google-services.json",
-      "package": "com.se3a04.moviewhiz",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/favicon.png",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
@@ -26,7 +24,6 @@
     },
     "plugins": [
       "expo-router",
-      "@react-native-firebase/app",
       [
         "expo-splash-screen",
         {
