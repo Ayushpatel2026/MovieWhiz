@@ -25,7 +25,7 @@ export default function Index() {
     setLoading(true);
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      alert("Check your email for verification");
+      alert("Registration successful");
     } catch (e: any) {
       const err = e as FirebaseError;
       alert("Registration failed: " + err.message);
@@ -38,7 +38,7 @@ export default function Index() {
     setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Check your email for verification");
+      alert("Sign in successful");
     } catch (e: any) {
       const err = e as FirebaseError;
       alert("Sign in failed: " + err.message);
