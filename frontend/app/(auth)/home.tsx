@@ -11,6 +11,7 @@ const Page = () => {
       <Text>Hello {user?.email}</Text>
       <TouchableOpacity style={styles.button} onPress={() => signOut(auth)}>
         <Text>Sign Out</Text>
+        <Text>Hello</Text>
       </TouchableOpacity>
     </View>
   );
