@@ -1,5 +1,6 @@
 import { MovieIDBlackboard } from '../blackboard/MovieIDBlackboard';
-import { Expert, ExpertResponse, Input } from './Expert';
+import { Expert, ExpertResponse } from './Expert';
+import { FormInput } from '../types/types';
 
 export class DatabaseExpert extends Expert {
 
@@ -10,7 +11,7 @@ export class DatabaseExpert extends Expert {
     this.apiEndpoint = process.env.IMBD_API_ENDPOINT || '';
   }
 
-  async analyze(input: Input): Promise<ExpertResponse> {
+  async analyze(input: FormInput): Promise<ExpertResponse> {
     if (input.type !== "form") {
       throw new Error("Unsupported input type");
     }
@@ -27,7 +28,7 @@ export class DatabaseExpert extends Expert {
     };
   }
 
-  private buildQuery(data: Input["data"]): Record<string, any> {
+  private buildQuery(data: FormInput["data"]): Record<string, any> {
     if (typeof data !== "object" || data === null) {
       throw new Error("Invalid data format for form input");
     }

@@ -1,4 +1,5 @@
-import { Expert, ExpertResponse, Input } from '../experts/Expert';
+import { Expert, ExpertResponse } from '../experts/Expert';
+import { Input } from '../types/types';
 
 export class MovieIDBlackboard {
 

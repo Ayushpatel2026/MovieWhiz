@@ -1,4 +1,5 @@
-import { ExpertResponse, Input } from "../experts/Expert";
+import { ExpertResponse } from "../experts/Expert";
+import { Input } from "../types/types";
 
 export type ForumResponse = {
 	responseId: string;

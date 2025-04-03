@@ -1,5 +1,6 @@
 import { MovieIDBlackboard } from '../blackboard/MovieIDBlackboard';
-import { Expert, ExpertResponse, Input } from './Expert';
+import { Expert, ExpertResponse } from './Expert';
+import { AudioInput } from '../types/types';
 
 interface AudioFeatures {
   fingerprint: string;
@@ -17,7 +18,7 @@ export class SoundtrackExpert extends Expert {
     this.databaseAPIEndpoint = process.env.IMBD_API_ENDPOINT || '';
   }
 
-  async analyze(audioInput: Input): Promise<ExpertResponse> {
+  async analyze(audioInput: AudioInput): Promise<ExpertResponse> {
 
     try {
       if (typeof audioInput.data !== 'string') {

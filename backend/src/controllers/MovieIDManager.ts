@@ -1,5 +1,5 @@
 import { BlackboardController } from "./BlackboardController";
-import { Input } from "../experts/Expert";
+import { Input } from "../types/types";
 import { ForumResponse, RequestMoreInformation } from "../blackboard/Forum";
 
 export class MovieIDManager {

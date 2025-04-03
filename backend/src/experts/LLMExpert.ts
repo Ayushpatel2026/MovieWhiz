@@ -1,5 +1,6 @@
 import { MovieIDBlackboard } from '../blackboard/MovieIDBlackboard';
-import { Expert, ExpertResponse, Input } from './Expert';
+import { Expert, ExpertResponse } from './Expert';
+import { TextInput } from '../types/types';
 
 export class LLMExpert extends Expert {
   private readonly apiEndpoint: string;
@@ -9,13 +10,13 @@ export class LLMExpert extends Expert {
     this.apiEndpoint = process.env.LLM_API_ENDPOINT || '';
   }
 
-  async analyze(input: Input): Promise<ExpertResponse> {
+  async analyze(input: TextInput): Promise<ExpertResponse> {
     const prompt = this.createPrompt(input);
     const llmResponse = await this.queryLLM(prompt);
     return this.parseResponse(llmResponse);
   }
 
-  private createPrompt(input: Input): string {
+  private createPrompt(input: TextInput): string {
     return `Identify the movie based on the following text: ${input.data}`;
   }
 
@@ -46,7 +47,7 @@ export class LLMExpert extends Expert {
     return {
       expertName: this.name,
       movies,
-      confidence: this.calculateConfidence(llmText, movies),
+      confidence: this.calculateConfidence(movies, llmText),
       timestamp: Date.now(),
       details: llmText
     };
@@ -56,7 +57,7 @@ export class LLMExpert extends Expert {
    * TODO - implement a more sophisticated confidence calculation
    * based on the LLM response
   */
-  public calculateConfidence(llmText: string, matches: string[]): number {
+  public calculateConfidence(matches: string[], llmText: string): number {
     const detailScore = llmText.split('\n').length / 10;
     return Math.min(0 + detailScore, 0.95);
   }
