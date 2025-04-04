@@ -1,3 +1,10 @@
+
+// This file contains all the types used in the backend of the application.
+
+//------------------------------------------------------------------------
+// INPUT TYPES
+//------------------------------------------------------------------------
+
 export type Input = FormInput | TextInput | AudioInput;
 
 export type FormInput = {
@@ -23,6 +30,10 @@ export type AudioInput = {
 	data: string;
 }
 
+//------------------------------------------------------------------------
+// RESPONSE TYPES
+//------------------------------------------------------------------------
+
 export type StoredResponse = {
 	userId: string;
 	forumResponse : ForumResponse;
@@ -41,10 +52,24 @@ export type RequestMoreInformation = {
 	details: string;
 }
 
-export interface ExpertResponse {
+export type ExpertResponse =  {
   expertName: string;
   movies: string[];
   confidence: number;
   timestamp?: number;
   details?: String;
+}
+
+//------------------------------------------------------------------------
+// STREAMING LINK TYPES
+//------------------------------------------------------------------------
+
+export type StreamingLink = {
+	platform: string; // e.g., "Netflix", "Amazon Prime Video", "Hulu", "Apple TV+"
+	link: string;     // The actual URL to the movie on the platform
+}
+  
+export type MovieStreamingInfo = {
+	movieName: string; 
+	links: StreamingLink[];
 }
