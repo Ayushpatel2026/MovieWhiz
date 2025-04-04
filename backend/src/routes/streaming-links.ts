@@ -4,7 +4,31 @@ import { StreamingLinksService } from '../services/StreamingLinkService';
 const router = express.Router();
 const streamingLinksService = new StreamingLinksService();
 
-// POST /api/streaming-links - Add or update streaming links for a movie
+/*
+  POST endpoint to add movie streaming info to the database
+  THIS ENDPOINT IS NOT FOR THE FRONTEND TO USE, IT IS FOR US EASILY ADD NEW MOVIES TO DATABASE USING POSTMAN
+
+  Example URL: http://{baseURL}/api/streaming-links/add
+  Example Req Body:
+  {
+    "movieName": "The Matrix",
+    "links": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/watch/60012345"
+      },
+      {
+        "service": "Amazon Prime",
+        "url": "https://www.amazon.com/dp/B000123456"
+      }
+    ]
+  }
+
+  Returns a 200 status code if the streaming links are added/updated successfully.
+  Returns a 400 status code if the request body is missing required fields.
+  Returns a 500 status code if there is an error while adding/updating streaming links.
+
+*/
 router.post('/add', async (req: Request, res: Response) => {
   try {
     const { movieName, links } = req.body;
@@ -19,7 +43,27 @@ router.post('/add', async (req: Request, res: Response) => {
   }
 });
 
-// GET /api/streaming-links/:movieName - Get streaming links for a specific movie
+/*
+  GET endpoint to retrieve streaming links for a specific movie.
+
+  Example URL: http://{baseURL}/api/streaming-links/the-matrix
+  Example Response:
+  {
+    "movieName": "The Matrix",
+    "links": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/watch/60012345"
+      },
+      {
+        "service": "Amazon Prime",
+        "url": "https://www.amazon.com/dp/B000123456"
+      }
+    ]
+  }
+  Returns a movie streaming info object if found.
+  Returns a 404 status code if the movie is not found.
+*/
 router.get('/:movieName', async (req: Request, res: Response) => {
   try {
     const movieName = req.params.movieName;
