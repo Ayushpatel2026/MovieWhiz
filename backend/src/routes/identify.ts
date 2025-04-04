@@ -1,12 +1,33 @@
 import express, { Request, Response } from 'express';
 import { MovieIDManager } from '../controllers/MovieIDManager';
-import { Input } from '../experts/Expert';
+import { Input } from '../types/types';
 import { ForumResponse, RequestMoreInformation } from '../blackboard/Forum';
 
 const router = express.Router();
 const movieIDManager = new MovieIDManager();
 
-router.post('/identify', async (req: Request, res: Response) => {
+// TODO - HOW THIS THING HANDLES AUDIO INPUT IN THE POST REQUEST NEEDS TO BE FIGURED OUT
+
+/*
+  Endpoint to handle identification requests.
+  Endpoint URL: http://{baseURL}}/api/identify/movie
+  Method: POST
+
+  Example Request Body:
+  {
+    "text": "A movie about a young wizard who goes to a magical school.",
+    "form": {
+      "genre": ["fantasy", "adventure"],
+      "director": "Chris Columbus",
+      "year": 2001,
+      "actors": ["Daniel Radcliffe", "Emma Watson"],
+      "characters": ["Harry Potter", "Hermione Granger"],
+      "setting": ["Hogwarts"]
+    },
+    "audio": "base64-audio-string"
+  }
+*/
+router.post('/movie', async (req: Request, res: Response) => {
   try {
     const { text, form, audio } = req.body;
     
@@ -42,7 +63,7 @@ router.post('/identify', async (req: Request, res: Response) => {
       res.status(206).json({
         status: 'partial',
         message: 'More information required',
-        suggestions: result.details
+        suggestions: requestMoreInfo.details
       });
     }
 
@@ -55,4 +76,4 @@ router.post('/identify', async (req: Request, res: Response) => {
   }
 });
 
-export default router;
+module.exports = router;

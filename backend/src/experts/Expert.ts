@@ -1,4 +1,5 @@
- import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
+import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
+import { Input } from "../types/types";
 
 export interface ExpertResponse {
   expertName: string;
@@ -19,10 +20,5 @@ export abstract class Expert {
   }
 
   public abstract analyze(input: Input): Promise<ExpertResponse>;
-  public abstract calculateConfidence(input: unknown, match: unknown): number;
+  public abstract calculateConfidence(matches: any, query: any): number;
 }
-  
-export type Input = {
-  type: string;
-  data: unknown;
-};
