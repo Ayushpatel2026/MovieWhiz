@@ -15,26 +15,28 @@ export class MovieIDBlackboard {
 	}
 
 	async notifyExperts(inputs: Input[]) : Promise<ExpertResponse[]> {
-		inputs.forEach(async input => {
-			if (input.type === 'text'){
-				const response = await this.experts.find(expert => expert.name === 'LLM Expert')!.analyze(input);
-
-				this.expertResponses.push(response);
+		const promises: Promise<ExpertResponse>[] = inputs.map(async input => {
+			if (input.type === 'text') {
+			  const expert = this.experts.find(exp => exp.name === 'LLM Expert');
+			  return expert ? await expert.analyze(input) : Promise.resolve({ expertName: 'LLM Expert', movies: [], confidence: 0 });
 			}
-
-			if (input.type === 'audio'){
-				const response = await this.experts.find(expert => expert.name === 'Soundtrack Expert')!.analyze(input);
-
-				this.expertResponses.push(response);
+		
+			if (input.type === 'audio') {
+			  const expert = this.experts.find(exp => exp.name === 'Soundtrack Expert');
+			  return expert ? await expert.analyze(input) : Promise.resolve({ expertName: 'Soundtrack Expert', movies: [], confidence: 0 });
 			}
-
-			if (input.type === 'form'){
-				const response = await this.experts.find(expert => expert.name === 'Database Expert')!.analyze(input);
-
-				this.expertResponses.push(response);
+		
+			if (input.type === 'form') {
+			  const expert = this.experts.find(exp => exp.name === 'Database Expert');
+			  const response = expert ? await expert.analyze(input) : { expertName: 'Database Expert', movies: [], confidence: 0 };
+			  console.log("Response from Database Expert:", response);
+			  return response;
 			}
-		});
-
-		return this.expertResponses;
+		
+			return Promise.resolve({ expertName: 'Unknown Expert', movies: [], confidence: 0 }); // Handle unknown input types
+		  });
+		
+		  this.expertResponses = await Promise.all(promises);
+		  return this.expertResponses;
 	}
 }

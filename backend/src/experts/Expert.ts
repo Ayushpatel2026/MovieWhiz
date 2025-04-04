@@ -20,5 +20,5 @@ export abstract class Expert {
   }
 
   public abstract analyze(input: Input): Promise<ExpertResponse>;
-  public abstract calculateConfidence(matches: string[], query: any): number;
+  public abstract calculateConfidence(matches: any, query: any): number;
 }

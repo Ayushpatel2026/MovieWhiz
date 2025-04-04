@@ -10,7 +10,7 @@ const movieIDManager = new MovieIDManager();
 
 /*
   Endpoint to handle identification requests.
-  Endpoint URL: http://{baseURL}}/api/identify
+  Endpoint URL: http://{baseURL}}/api/identify/movie
   Method: POST
 
   Example Request Body:
@@ -27,7 +27,7 @@ const movieIDManager = new MovieIDManager();
     "audio": "base64-audio-string"
   }
 */
-router.post('/identify', async (req: Request, res: Response) => {
+router.post('/movie', async (req: Request, res: Response) => {
   try {
     const { text, form, audio } = req.body;
     
@@ -76,4 +76,4 @@ router.post('/identify', async (req: Request, res: Response) => {
   }
 });
 
-export default router;
+module.exports = router;

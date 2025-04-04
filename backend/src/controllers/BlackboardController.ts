@@ -25,8 +25,11 @@ export class BlackboardController {
 
   async identifyMovie(inputs: Input[]): Promise<ForumResponse | RequestMoreInformation> {
 
+    console.log("Inputs received for identification:", inputs);
     // Submit inputs to blackboard and get responses
     const responses = await this.blackboard.notifyExperts(inputs);
+
+    console.log("Responses from experts:", responses);
     
     // Get final decision from forum
     return this.forum.evaluateResponses(responses);
