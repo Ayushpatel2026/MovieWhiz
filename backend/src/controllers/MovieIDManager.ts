@@ -1,6 +1,5 @@
 import { BlackboardController } from "./BlackboardController";
-import { Input } from "../types/types";
-import { ForumResponse, RequestMoreInformation } from "../blackboard/Forum";
+import { Input, ForumResponse, RequestMoreInformation } from "../types/types";
 
 export class MovieIDManager {
   private controller: BlackboardController;

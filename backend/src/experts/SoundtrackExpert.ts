@@ -1,6 +1,6 @@
 import { MovieIDBlackboard } from '../blackboard/MovieIDBlackboard';
-import { Expert, ExpertResponse } from './Expert';
-import { AudioInput } from '../types/types';
+import { Expert } from './Expert';
+import { AudioInput, ExpertResponse } from '../types/types';
 
 interface AudioFeatures {
   fingerprint: string;

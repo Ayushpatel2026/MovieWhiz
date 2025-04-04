@@ -1,14 +1,6 @@
 import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
-import { Input } from "../types/types";
+import { Input, ExpertResponse } from "../types/types";
 
-export interface ExpertResponse {
-  expertName: string;
-  movies: string[];
-  confidence: number;
-  timestamp?: number;
-  details?: String;
-}
-  
 export abstract class Expert {
   public readonly name: string;
   public blackboard : any;
