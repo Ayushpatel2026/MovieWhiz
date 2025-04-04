@@ -1,6 +1,6 @@
 import { MovieIDBlackboard } from '../blackboard/MovieIDBlackboard';
-import { Expert, ExpertResponse } from './Expert';
-import { TextInput } from '../types/types';
+import { Expert } from './Expert';
+import { TextInput, ExpertResponse } from '../types/types';
 
 export class LLMExpert extends Expert {
   private readonly apiEndpoint: string;

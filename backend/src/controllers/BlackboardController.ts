@@ -1,9 +1,9 @@
 import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
-import { Forum, ForumResponse, RequestMoreInformation } from "../blackboard/Forum";
+import { Forum } from "../blackboard/Forum";
 import { LLMExpert } from "../experts/LLMExpert";
 import { SoundtrackExpert } from "../experts/SoundtrackExpert";
 import { DatabaseExpert } from "../experts/DatabaseExpert";
-import { Input } from "../types/types";
+import { Input, ForumResponse, RequestMoreInformation } from "../types/types";
 
 export class BlackboardController {
   private blackboard: MovieIDBlackboard;

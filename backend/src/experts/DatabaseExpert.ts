@@ -1,7 +1,7 @@
 import { MovieIDBlackboard } from '../blackboard/MovieIDBlackboard';
-import { Expert, ExpertResponse } from './Expert';
+import { Expert } from './Expert';
 import { db } from '../config/firebaseConfig';
-import { FormInput } from '../types/types';
+import { FormInput, ExpertResponse } from '../types/types';
 import { DocumentData } from 'firebase-admin/firestore';
 
 export class DatabaseExpert extends Expert {

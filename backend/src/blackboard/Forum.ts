@@ -1,19 +1,5 @@
-import { ExpertResponse } from "../experts/Expert";
-import { Input } from "../types/types";
+import { ForumResponse, RequestMoreInformation, ExpertResponse} from "../types/types";
 import { v4 as uuidv4 } from 'uuid';
-
-export type ForumResponse = {
-	responseId: string;
-	overallConfidence: number;
-	movieName: string;
-	timestamp: number;
-	inputsUsed: string[];
-}
-
-export type RequestMoreInformation = {
-	inputsUsed: string[];
-	details: string;
-}
 
 export class Forum {
 

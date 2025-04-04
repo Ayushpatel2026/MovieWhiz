@@ -2,6 +2,7 @@ import express, {Request, Response} from 'express';
 import cors from 'cors';
 import "dotenv/config";
 const identifyRouter = require('./routes/identify');
+const responseHistoryRouter = require('./routes/response-history');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(cors());
 
 // Routes
 app.use('/api/identify', identifyRouter);
+app.use('/api/response-history', responseHistoryRouter);
 
 // app.get("/api/test", async (req : Request, res : Response) => {
 //   res.json({message: "Hello World"});
