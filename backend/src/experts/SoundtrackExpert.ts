@@ -1,6 +1,10 @@
-import { MovieIDBlackboard } from '../blackboard/MovieIDBlackboard';
-import { Expert } from './Expert';
-import { AudioInput, ExpertResponse } from '../types/types';
+import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
+import { Expert } from "./Expert";
+import { AudioInput, ExpertResponse } from "../types/types";
+
+const fs = require("fs");
+const axios = require("axios");
+const FormData = require("form-data");
 
 interface AudioFeatures {
   fingerprint: string;
@@ -8,70 +12,72 @@ interface AudioFeatures {
   keyFeatures: number[];
 }
 
+export type SongData = {
+  name: string;
+  artist: string;
+};
+
 export class SoundtrackExpert extends Expert {
-	private readonly databaseAPIEndpoint: string;
-	private readonly audioAPIEndpoint: string
+  private readonly databaseAPIEndpoint: string;
+  private readonly audioAPIEndpoint: string;
 
   constructor(blackboard: MovieIDBlackboard) {
-    super('Soundtrack Expert', blackboard);
-		this.audioAPIEndpoint = process.env.AUDIO_API_ENDPOINT || '';
-    this.databaseAPIEndpoint = process.env.IMBD_API_ENDPOINT || '';
+    super("Soundtrack Expert", blackboard);
+    this.audioAPIEndpoint = process.env.AUDIO_API_ENDPOINT || "";
+    this.databaseAPIEndpoint = process.env.IMBD_API_ENDPOINT || "";
   }
 
   async analyze(audioInput: AudioInput): Promise<ExpertResponse> {
-
     try {
-      if (typeof audioInput.data !== 'string') {
-        throw new Error('Invalid audio input data type. Expected a string.');
-      }
-      const audioFeatures = await this.extractFeatures(audioInput.data);
-      const matches = await this.queryAudioAPI(audioFeatures);
-    
+      const song = await this.queryAudioAPI(audioInput.data);
 
-			const movieMatches = await this.queryDatabase(matches[0]);
+      const movieMatches = await this.queryDatabase(song);
 
       return {
         expertName: this.name,
+        details: song || "song not found",
         movies: movieMatches,
         confidence: this.calculateConfidence(),
         timestamp: Date.now(),
       };
     } catch (error) {
-      console.error('Audio processing failed:', error);
+      console.error("Audio processing failed:", error);
       return Promise.reject(error);
     }
   }
 
-	/*
-	 * TODO - Implement a method to extract features from audio data
-	 */
-  private async extractFeatures(audioData: string): Promise<AudioFeatures> {
-    return {
-      fingerprint: 'mock-fingerprint',
-      duration: 120,
-      keyFeatures: [0.1, 0.5, 0.3]
-    };
-  }
-
-	/*
-	 * TODO - Implement a this method to query a database
-	 */
+  /*
+   * TODO - Implement a this method to query a database
+   */
   private async queryDatabase(query: any): Promise<string[]> {
     // Mock database query
     return ["Movie 1", "Movie 2"];
   }
 
+  private async queryAudioAPI(
+    audioFile: Express.Multer.File
+  ): Promise<SongData | null> {
+    const form = new FormData();
+    form.append("api_token", "64a26ad4b233ce59ee3e1f88712001a1");
+    form.append("file", audioFile.buffer, audioFile.originalname);
 
-	/*
-	 * TODO - Implement a method to query an audio API
-	 */
-  private async queryAudioAPI(features: AudioFeatures): Promise<string[]> {
-    return [];
+    const response = await axios.post("https://api.audd.io/", form, {
+      headers: form.getHeaders,
+    });
+
+    if (response.data.status == "success") {
+      return {
+        name: response.data.result.title,
+        artist: response.data.result.artist,
+      };
+    }
+
+    return null;
   }
 
-	/*
-	 * TODO - Implement an algorithm to calculate the confidence score
-	 */
+  /*
+   * TODO - Implement an algorithm to calculate the confidence score
+   */
   public calculateConfidence(): number {
     return 0;
   }
