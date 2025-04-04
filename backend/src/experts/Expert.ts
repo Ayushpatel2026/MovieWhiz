@@ -11,7 +11,7 @@ export interface ExpertResponse {
   
 export abstract class Expert {
   public readonly name: string;
-  public blackboard : MovieIDBlackboard;
+  public blackboard : any;
 
   constructor(name: string, blackboard: MovieIDBlackboard) {
     this.blackboard = blackboard;
