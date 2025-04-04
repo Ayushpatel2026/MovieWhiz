@@ -2,15 +2,11 @@ import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
 import { Expert, ExpertResponse } from "./Expert";
 import { AudioInput } from "../types/types";
 
+const token = process.env.AUDD_API_TOKEN;
+
 const fs = require("fs");
 const axios = require("axios");
 const FormData = require("form-data");
-
-interface AudioFeatures {
-  fingerprint: string;
-  duration: number;
-  keyFeatures: number[];
-}
 
 export type SongData = {
   name: string;
@@ -58,7 +54,7 @@ export class SoundtrackExpert extends Expert {
     audioFile: Express.Multer.File
   ): Promise<SongData | null> {
     const form = new FormData();
-    form.append("api_token", "64a26ad4b233ce59ee3e1f88712001a1");
+    form.append("api_token", token);
     form.append("file", audioFile.buffer, audioFile.originalname);
 
     const response = await axios.post("https://api.audd.io/", form, {
