@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-import express, { Request, Response } from 'express';
-import { MovieIDManager } from '../controllers/MovieIDManager';
-import { Input, ForumResponse, RequestMoreInformation } from '../types/types';
-=======
 import express, { Request, Response } from "express";
 import { MovieIDManager } from "../controllers/MovieIDManager";
-import { Input } from "../types/types";
-import { ForumResponse, RequestMoreInformation } from "../blackboard/Forum";
->>>>>>> 24b38af (feat: recognize song from file on backend)
+import { Input, ForumResponse, RequestMoreInformation } from "../types/types";
 
 const router = express.Router();
 const movieIDManager = new MovieIDManager();

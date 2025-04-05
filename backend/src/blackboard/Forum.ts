@@ -1,26 +1,10 @@
-<<<<<<< HEAD
-import { ForumResponse, RequestMoreInformation, ExpertResponse} from "../types/types";
-import { v4 as uuidv4 } from 'uuid';
-
-=======
-import { ExpertResponse } from "../experts/Expert";
-import { Input } from "../types/types";
+import {
+  ForumResponse,
+  RequestMoreInformation,
+  ExpertResponse,
+} from "../types/types";
 import { v4 as uuidv4 } from "uuid";
 
-export type ForumResponse = {
-  responseId: string;
-  overallConfidence: number;
-  movieName: string;
-  timestamp: number;
-  inputsUsed: string[];
-};
-
-export type RequestMoreInformation = {
-  inputsUsed: string[];
-  details: string;
-};
-
->>>>>>> 24b38af (feat: recognize song from file on backend)
 export class Forum {
   /**
    * TODO - Implement a method to evaluate responses and return a final decision
