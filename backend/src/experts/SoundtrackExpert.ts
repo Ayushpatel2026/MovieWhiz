@@ -1,10 +1,10 @@
 import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
 import { Expert } from "./Expert";
-import { AudioInput, ExpertResponse, MovieConfidences } from "../types/types";
+import { db } from "../config/firebaseConfig";
+import { AudioInput, ExpertResponse, MovieData } from "../types/types";
 
 const token = process.env.AUDD_API_TOKEN;
 
-const fs = require("fs");
 const axios = require("axios");
 const FormData = require("form-data");
 
@@ -26,15 +26,20 @@ export class SoundtrackExpert extends Expert {
   async analyze(audioInput: AudioInput): Promise<ExpertResponse> {
     try {
       const song = await this.queryAudioAPI(audioInput.data);
-
-      const movieMatches = await this.queryDatabase(song);
+      const movieNames = await this.queryDatabase(song?.name || "");
+      const movieDatas: MovieData[] = movieNames.map((movie) => {
+        return {
+          movieName: movie,
+          confidence: this.calculateConfidence(movie),
+        };
+      });
 
       // TODO - figure out how to turn the movieMatches into a confidence score
       // and return it in the response
       return {
         expertName: this.name,
         details: song || "song not found",
-        movieConfidences: [],
+        movies: movieDatas,
         timestamp: Date.now(),
       };
     } catch (error) {
@@ -43,12 +48,19 @@ export class SoundtrackExpert extends Expert {
     }
   }
 
-  /*
-   * TODO - Implement a this method to query a database
-   */
-  private async queryDatabase(query: any): Promise<string[]> {
-    // Mock database query
-    return ["Movie 1", "Movie 2"];
+  private async queryDatabase(songName: string): Promise<string[]> {
+    const moviesRef = db.collection("movies");
+    const snapshot = await moviesRef
+      .where("songs", "array-contains", songName)
+      .get();
+    if (snapshot.empty) {
+      return [];
+    }
+
+    const test = snapshot.docs.map((doc) => doc.data().title);
+    console.log(test);
+    return test;
+    // return ["Movie 1", "Movie 2"];
   }
 
   private async queryAudioAPI(
