@@ -52,7 +52,7 @@ export type RequestMoreInformation = {
 	details: string;
 }
 
-export type ExpertResponse =  {
+export type ExpertResponse = {
   expertName: string;
   movies: string[];
   confidence: number;
