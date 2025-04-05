@@ -41,7 +41,7 @@ export type RequestMoreInformation = {
 	details: string;
 }
 
-export interface ExpertResponse {
+export type ExpertResponse = {
   expertName: string;
   movies: string[];
   confidence: number;
