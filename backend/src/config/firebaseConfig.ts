@@ -22,17 +22,16 @@ export const db = getFirestore(admin.app());
 
 // (async () => {
 //   for (const movie of movies) {
-//     const existing = await db.collection("movies")
-//       .where("title", "==", movie.title)
-//       .get();
+//     await db.collection("movies").doc(movie.title.toLowerCase().replace(/\s+/g, '-')).set(movie, { merge: true });
+//   }
+// })();
 
-//     if (!existing.empty) {
-//       const docId = existing.docs[0].id;
-//       await db.collection("movies").doc(docId).update(movie);
-//       console.log(`🔁 Updated existing movie: ${movie.title}`);
-//     } else {
-//       await db.collection("movies").add(movie);
-//       console.log(`✅ Added new movie: ${movie.title}`);
-//     }
+// const movieStreamingInfo = JSON.parse(fs.readFileSync("src/data/movieStreamingInfo.json", "utf-8"));
+// const movieStreamingInfo_counter = movieStreamingInfo.length;
+// console.log(`Seeding ${movieStreamingInfo_counter} movies with streaming info...`);
+
+// (async () => {
+//   for (const movie of movieStreamingInfo) {
+//     await db.collection("movieStreamingInfo").doc(movie.movieName.toLowerCase().replace(/\s+/g, '-')).set(movie, { merge: true });
 //   }
 // })();

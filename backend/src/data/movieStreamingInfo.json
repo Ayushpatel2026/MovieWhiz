@@ -1,0 +1,299 @@
+[
+	{
+		"movieName": "Forrest Gump",
+		"links": [
+			{
+				"link": "https://www.primevideo.com/detail/Forrest-Gump/0RMLEUTKD0LKNDHSS10OQNYHF0",
+				"platform": "Amazon Prime Video"
+			}
+		]
+	},
+	{
+		"movieName": "Mamma Mia",
+		"links": [
+			{
+				"link": "https://www.netflix.com/ca/title/70097579",
+				"platform": "Netflix"
+			}
+		]
+	},
+	{
+		"movieName": "The Matrix",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/the-matrix",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "The Terminator",
+		"links": [
+			{
+				"link": "https://www.primevideo.com/detail/The-Terminator/0L8IKW4SVSHPR66WSIZOEEAFYX",
+				"platform": "Amazon Prime Video"
+			}
+		]
+	},
+	{
+		"movieName": "Unhinged",
+		"links": [
+			{
+				"link": "https://www.netflix.com/ca/title/81242567?source=35",
+				"platform": "Netflix"
+			}
+		]
+	},
+	{
+		"movieName": "1917",
+		"links": [
+			{
+				"link": "https://www.netflix.com/ca/title/81140931",
+				"platform": "Netflix"
+			}
+		]
+	},
+	{
+		"movieName": "Home Alone",
+		"links": [
+			{
+				"link": "https://www.disneyplus.com/browse/entity-45e4a68f-d9df-45f7-8e81-01b4ca5524e9",
+				"platform": "Disney Plus"
+			}
+		]
+	},
+	{
+		"movieName": "Home Alone 2: Lost in New York",
+		"links": [
+			{
+				"link": "https://www.disneyplus.com/en-ca/browse/entity-86cd0f62-cec4-4426-9e35-9f8263a550a6",
+				"platform": "Disney Plus"
+			}
+		]
+	},
+	{
+		"movieName": "Inside Out",
+		"links": [
+			{
+				"link": "https://www.disneyplus.com/en-ca/browse/entity-d4b87168-7d0b-49bc-b138-457ab7723feb",
+				"platform": "Disney Plus"
+			}
+		]
+	},
+	{
+		"movieName": "Iron Man",
+		"links": [
+			{
+				"link": "https://www.disneyplus.com/en-ca/browse/entity-3ac839c4-864b-41ed-ad98-043d6b4ac564",
+				"platform": "Disney Plus"
+			}
+		]
+	},
+	{
+		"movieName": "Harry Potter and the Sorcerer's Stone",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/harry-potter-and-the-philosophers-stone",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Harry Potter and the Chamber of Secrets",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/harry-potter-and-the-chamber-of-secrets",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Harry Potter and the Prisoner of Azkaban",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/harry-potter-and-the-prisoner-of-azkaban",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Harry Potter and the Goblet of Fire",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/harry-potter-and-the-goblet-of-fire",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Harry Potter and the Order of the Phoenix",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/harry-potter-and-the-order-of-the-phoenix",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Harry Potter and the Half-Blood Prince",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/harry-potter-and-the-half-blood-prince",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Harry Potter and the Deathly Hallows: Part 1",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/harry-potter-and-the-deathly-hallows-part-1",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Harry Potter and the Deathly Hallows: Part 2",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/harry-potter-and-the-deathly-hallows-part-2",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "The Amazing Spider-Man",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/the-amazing-spider-man",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "The Amazing Spider-Man-2",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/the-amazing-spider-man-2",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "The Avengers",
+		"links": [
+			{
+				"link": "https://www.disneyplus.com/en-ca/browse/entity-3a5596d6-5133-4a8e-8d21-00e1531a4e0f",
+				"platform": "Disney Plus"
+			}
+		]
+	},
+	{
+		"movieName": "Toy Story",
+		"links": [
+			{
+				"link": "https://www.disneyplus.com/en-ca/browse/entity-f6174ebf-cb92-453c-a52b-62bb3576e402",
+				"platform": "Disney Plus"
+			}
+		]
+	},
+	{
+		"movieName": "The Wolf of Wall Street",
+		"links": [
+			{
+				"link": "https://www.netflix.com/ca/title/70266676",
+				"platform": "Netflix"
+			}
+		]
+	},
+	{
+		"movieName": "Oppenheimer",
+		"links": [
+			{
+				"link": "https://www.primevideo.com/dp/amzn1.dv.gti.f60cf07a-7363-411e-9f4a-b93b568ef3d3?autoplay=0&ref_=atv_cf_strg_wb",
+				"platform": "Amazon Prime Video"
+			}
+		]
+	},
+	{
+		"movieName": "Saving Private Ryan",
+		"links": [
+			{
+				"link": "https://www.netflix.com/ca/title/21878564",
+				"platform": "Netflix"
+			}
+		]
+	},
+	{
+		"movieName": "Jurassic Park",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/jurassic-park",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "The Incredibles",
+		"links": [
+			{
+				"link": "https://www.disneyplus.com/en-ca/browse/entity-850b6e92-07ea-4211-b3c3-cbbf1de045fa",
+				"platform": "Disney Plus"
+			}
+		]
+	},
+	{
+		"movieName": "Rocky",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/rocky",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Rocky II",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/rocky-ii",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Rocky III",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/rocky-iii",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Rocky IV",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/rocky-iv",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Rocky V",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/rocky-v",
+				"platform": "Crave TV"
+			}
+		]
+	},
+	{
+		"movieName": "Rocky Balboa",
+		"links": [
+			{
+				"link": "https://www.crave.ca/en/movies/rocky-balboa",
+				"platform": "Crave TV"
+			}
+		]
+	}
+]

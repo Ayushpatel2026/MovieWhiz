@@ -1698,5 +1698,65 @@
     "genre": ["Animation", "Family"],
     "setting": ["Peanuts Gang's Christmas Tree"],
     "soundtracks": ["Christmas Time Is Here"]
+  },
+  {
+    "title": "Rocky",
+    "year": 1976,
+    "actors": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Carl Weathers", "Burgess Meredith"],
+    "characters": ["Rocky Balboa", "Adrian", "Paulie", "Apollo Creed", "Mickey Goldmill"],
+    "director": "John G. Avildsen",
+    "genre": ["Drama", "Sport"],
+    "setting": ["Philadelphia"],
+    "soundtracks": ["Gonna Fly Now"]
+  },
+  {
+    "title": "Rocky II",
+    "year": 1979,
+    "actors": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Carl Weathers", "Burgess Meredith"],
+    "characters": ["Rocky Balboa", "Adrian", "Paulie", "Apollo Creed", "Mickey Goldmill"],
+    "director": "Sylvester Stallone",
+    "genre": ["Drama", "Sport"],
+    "setting": ["Philadelphia"],
+    "soundtracks": ["Redemption"]
+  },
+  {
+    "title": "Rocky III",
+    "year": 1982,
+    "actors": ["Sylvester Stallone", "Mr. T", "Talia Shire", "Carl Weathers", "Burgess Meredith"],
+    "characters": ["Rocky Balboa", "Clubber Lang", "Adrian", "Apollo Creed", "Mickey Goldmill"],
+    "director": "Sylvester Stallone",
+    "genre": ["Drama", "Sport"],
+    "setting": ["Philadelphia", "Los Angeles"],
+    "soundtracks": ["Eye of the Tiger"]
+  },
+  {
+    "title": "Rocky IV",
+    "year": 1985,
+    "actors": ["Sylvester Stallone", "Talia Shire", "Dolph Lundgren", "Carl Weathers", "Burt Young"],
+    "characters": ["Rocky Balboa", "Adrian", "Ivan Drago", "Apollo Creed", "Paulie"],
+    "director": "Sylvester Stallone",
+    "genre": ["Drama", "Sport"],
+    "setting": ["Las Vegas", "Russia"],
+    "soundtracks": ["Hearts on Fire", "No Easy Way Out", "Training Montage"]
+  },
+  {
+    "title": "Rocky V",
+    "year": 1990,
+    "actors": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Tommy Morrison", "Sage Stallone"],
+    "characters": ["Rocky Balboa", "Adrian", "Paulie", "Tommy Gunn", "Robert Balboa Jr."],
+    "director": "John G. Avildsen",
+    "genre": ["Drama", "Sport"],
+    "setting": ["Philadelphia"],
+    "soundtracks": ["Go for It", "Can't Stop the Fire"]
+  },
+  {
+    "title": "Rocky Balboa",
+    "year": 2006,
+    "actors": ["Sylvester Stallone", "Burt Young", "Antonio Tarver", "Milo Ventimiglia"],
+    "characters": ["Rocky Balboa", "Paulie", "Mason 'The Line' Dixon", "Robert Balboa Jr."],
+    "director": "Sylvester Stallone",
+    "genre": ["Drama", "Sport"],
+    "setting": ["Philadelphia", "Las Vegas"],
+    "soundtracks": ["Gonna Fly Now", "Adrian"]
   }
 ]
