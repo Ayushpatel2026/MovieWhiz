@@ -41,11 +41,11 @@ export class DatabaseExpert extends Expert {
     console.log("Data received for query:", data);
     return {
       genre: data.genre ? this.sanitizeArray(data.genre) : undefined,
-      director: data.director ? data.director.trim().toLowerCase() : undefined,
+      director: data.director ? data.director : undefined,
       year: data.year !== undefined ? data.year : undefined,
       actors: data.actors ? this.sanitizeArray(data.actors) : undefined,
       characters: data.characters ? this.sanitizeArray(data.characters) : undefined,
-      setting: data.setting ? data.setting.trim().toLowerCase() : undefined
+      setting: data.setting ? data.setting : undefined
     };
   }
   
