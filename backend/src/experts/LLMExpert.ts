@@ -41,7 +41,7 @@ export class LLMExpert extends Expert {
   }
   
   This is the movie description:
-  "A movie that has animals and the main character is a bunny who is a police officer. ${input.data}"
+  ${input.data}"
   `;
   }
   
@@ -60,27 +60,21 @@ export class LLMExpert extends Expert {
         model: "gemini-2.0-flash",
       });
 
-      const generationConfig = {
-        temperature: 1,
-        topP: 0.95,
-        topK: 40,
-        maxOutputTokens: 8192,
-        responseModalities: [
-        ],
-        responseMimeType: "text/plain",
-      };
+      // const generationConfig = {
+      //   temperature: 1,
+      //   topP: 0.95,
+      //   topK: 40,
+      //   maxOutputTokens: 8192,
+      //   responseModalities: [],
+      //   responseMimeType: "text/plain",
+      // };
 
-      const chatSession = model.startChat({
-        generationConfig,
-        history: [
-        ],
-      });
-
-      result = await chatSession.sendMessage(prompt);
-    }
-    else {
+      result = await model.generateContent([prompt]);
+    } else {
       result = "There has been an error. Try again";
     }
+
+    console.log("LLM response:", result);
 
     return result.response.text();
   }
@@ -91,7 +85,9 @@ export class LLMExpert extends Expert {
   */
   private parseResponse(llmText: string): ExpertResponse {
     try {
-      // console.log('LLM raw response:', llmText);
+      if (process.env.DEBUG_LLM === "true") {
+        console.log("LLM raw response:", llmText);
+      }
 
       // Remove markdown code block formatting like ```json or ```
       const cleanedText = llmText
@@ -99,10 +95,15 @@ export class LLMExpert extends Expert {
       .replace(/```/g, '')          // remove ending ```
       .trim();                      // trim extra whitespace
       console.log('Cleaned LLM response:', cleanedText);
+
       // Attempt to parse the JSON text
       const jsonResponse = JSON.parse(cleanedText);
-  
-      if (!jsonResponse || !jsonResponse.movies || jsonResponse.movies.length === 0) {
+
+      if (
+        !jsonResponse ||
+        !jsonResponse.movies ||
+        jsonResponse.movies.length === 0
+      ) {
         return {
           expertName: this.name,
           movieConfidences: [],
