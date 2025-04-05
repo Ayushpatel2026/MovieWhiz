@@ -1,7 +1,7 @@
 import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
 import { Expert } from "./Expert";
 import { db } from "../config/firebaseConfig";
-import { AudioInput, ExpertResponse, MovieData } from "../types/types";
+import { AudioInput, ExpertResponse, MovieConfidences } from "../types/types";
 
 const token = process.env.AUDD_API_TOKEN;
 
@@ -13,33 +13,28 @@ export type SongData = {
   artist: string;
 };
 
-export class SoundtrackExpert extends Expert {
-  private readonly databaseAPIEndpoint: string;
-  private readonly audioAPIEndpoint: string;
+type MovieData = {
+  title: string;
+  year: number;
+};
 
+export class SoundtrackExpert extends Expert {
   constructor(blackboard: MovieIDBlackboard) {
     super("Soundtrack Expert", blackboard);
-    this.audioAPIEndpoint = process.env.AUDIO_API_ENDPOINT || "";
-    this.databaseAPIEndpoint = process.env.IMBD_API_ENDPOINT || "";
   }
 
   async analyze(audioInput: AudioInput): Promise<ExpertResponse> {
     try {
       const song = await this.queryAudioAPI(audioInput.data);
-      const movieNames = await this.queryDatabase(song?.name || "");
-      const movieDatas: MovieData[] = movieNames.map((movie) => {
-        return {
-          movieName: movie,
-          confidence: this.calculateConfidence(movie),
-        };
-      });
+      const movieData: MovieData[] = await this.queryDatabase(song?.name || "");
+      // console.log(movieData);
+      const movieDataWithScores = this.calculateConfidence(movieData);
+      // console.log(movieDataWithScores);
 
-      // TODO - figure out how to turn the movieMatches into a confidence score
-      // and return it in the response
       return {
         expertName: this.name,
         details: song || "song not found",
-        movies: movieDatas,
+        movieConfidences: movieDataWithScores,
         timestamp: Date.now(),
       };
     } catch (error) {
@@ -48,19 +43,22 @@ export class SoundtrackExpert extends Expert {
     }
   }
 
-  private async queryDatabase(songName: string): Promise<string[]> {
+  private async queryDatabase(songName: string) {
     const moviesRef = db.collection("movies");
     const snapshot = await moviesRef
-      .where("songs", "array-contains", songName)
+      .where("soundtracks", "array-contains", songName)
       .get();
     if (snapshot.empty) {
       return [];
     }
 
-    const test = snapshot.docs.map((doc) => doc.data().title);
-    console.log(test);
+    const test = snapshot.docs.map((doc) => {
+      return {
+        title: doc.data().title,
+        year: doc.data().year,
+      };
+    });
     return test;
-    // return ["Movie 1", "Movie 2"];
   }
 
   private async queryAudioAPI(
@@ -84,10 +82,15 @@ export class SoundtrackExpert extends Expert {
     return null;
   }
 
-  /*
-   * TODO - Implement an algorithm to calculate the confidence score
-   */
-  public calculateConfidence(): MovieConfidences[] {
-    return [];
+  public calculateConfidence(movies: MovieData[]): MovieConfidences[] {
+    const moviesByAscendingYear = movies.sort((a, b) => a.year - b.year);
+    const movieCount = movies.length;
+
+    return moviesByAscendingYear.map((movie, idx) => {
+      return {
+        movieName: movie.title,
+        confidence: 100 / (movieCount - idx),
+      };
+    });
   }
 }
