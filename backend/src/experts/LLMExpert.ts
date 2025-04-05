@@ -4,11 +4,9 @@ import { Expert } from './Expert';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export class LLMExpert extends Expert {
-  private readonly apiEndpoint: string;
 
   constructor(blackboard: MovieIDBlackboard) {
     super('LLM Expert', blackboard);
-    this.apiEndpoint = process.env.LLM_API_ENDPOINT || '';
   }
 
   async analyze(input: Input): Promise<ExpertResponse> {
@@ -53,6 +51,8 @@ export class LLMExpert extends Expert {
     let result: any = "";
 
     if (llm_provider === 'gemini') {
+      console.log("Api key:", process.env.GEMINI_API_KEY);
+      console.log("LLM provider:", llm_provider);
       const API_KEY = process.env.GEMINI_API_KEY || '';
       const genAI = new GoogleGenerativeAI(API_KEY);
 
@@ -91,12 +91,16 @@ export class LLMExpert extends Expert {
   */
   private parseResponse(llmText: string): ExpertResponse {
     try {
-      if (process.env.DEBUG_LLM === 'true') {
-        console.log('LLM raw response:', llmText);
-      }
-      
+      // console.log('LLM raw response:', llmText);
+
+      // Remove markdown code block formatting like ```json or ```
+      const cleanedText = llmText
+      .replace(/```json\s*/gi, '')  // remove starting ```json
+      .replace(/```/g, '')          // remove ending ```
+      .trim();                      // trim extra whitespace
+      console.log('Cleaned LLM response:', cleanedText);
       // Attempt to parse the JSON text
-      const jsonResponse = JSON.parse(llmText);
+      const jsonResponse = JSON.parse(cleanedText);
   
       if (!jsonResponse || !jsonResponse.movies || jsonResponse.movies.length === 0) {
         return {
