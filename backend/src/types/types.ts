@@ -54,10 +54,14 @@ export type RequestMoreInformation = {
 
 export type ExpertResponse = {
   expertName: string;
-  movies: string[];
-  confidence: number;
+  movies: MovieData[];
   timestamp?: number;
   details?: String | SongData;
+};
+
+export type MovieData = {
+  movieName: string;
+  confidence: number;
 };
 
 //------------------------------------------------------------------------
