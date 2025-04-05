@@ -74,7 +74,7 @@ export class LLMExpert extends Expert {
       result = "There has been an error. Try again";
     }
 
-    console.log("LLM response:", result);
+    // console.log("LLM response:", result);
 
     return result.response.text();
   }
@@ -111,20 +111,23 @@ export class LLMExpert extends Expert {
         };
       }
   
-      // Find the movie with the highest confidence score
-      let bestMovie = jsonResponse.movies[0];
-      for (let i = 1; i < jsonResponse.movies.length; i++) {
-        if (jsonResponse.movies[i].confidencescore > bestMovie.confidencescore) {
-          bestMovie = jsonResponse.movies[i];
-        }
-      }
+      // Convert movies to MovieConfidences[]
+      const movieConfidences: MovieConfidences[] = jsonResponse.movies.map((movie: any) => ({
+        movieName: movie.title ?? movie.name ?? "Unknown Movie",
+        confidence: movie.confidencescore ?? movie.confidence ?? 0,
+      }));
+
   
-      return {
+      const expertResponse: ExpertResponse = {
         expertName: this.name,
-        movieConfidences: [bestMovie],
+        movieConfidences: movieConfidences,
         timestamp: Date.now(), // Optional: Add a timestamp
         //details: "Optional details string", // Optional: Add details if needed.
-      };
+      }
+      
+      // console.log("Parsed ExpertResponse:", expertResponse);
+
+      return expertResponse;
   
     } catch (error) {
       console.error("Error parsing JSON:", error);
