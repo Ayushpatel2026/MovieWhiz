@@ -1,8 +1,10 @@
 import express, {Request, Response} from 'express';
 import cors from 'cors';
 import "dotenv/config";
+
 const identifyRouter = require('./routes/identify');
 const responseHistoryRouter = require('./routes/response-history');
+const streamingLinkRouter = require('./routes/streaming-links');
 
 const app = express();
 
@@ -18,6 +20,7 @@ app.use(cors());
 // Routes
 app.use('/api/identify', identifyRouter);
 app.use('/api/response-history', responseHistoryRouter);
+app.use('/api/streaming-links', streamingLinkRouter);
 
 // app.get("/api/test", async (req : Request, res : Response) => {
 //   res.json({message: "Hello World"});
