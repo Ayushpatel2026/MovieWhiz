@@ -1,5 +1,7 @@
 // This file contains all the types used in the backend of the application.
 
+import { SongData } from "../experts/SoundtrackExpert";
+
 //------------------------------------------------------------------------
 // INPUT TYPES
 //------------------------------------------------------------------------
@@ -55,7 +57,7 @@ export type ExpertResponse = {
   movies: string[];
   confidence: number;
   timestamp?: number;
-  details?: String;
+  details?: String | SongData;
 };
 
 //------------------------------------------------------------------------
