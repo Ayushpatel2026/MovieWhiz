@@ -3,7 +3,7 @@ import { Input, ExpertResponse } from "../types/types";
 
 export abstract class Expert {
   public readonly name: string;
-  public blackboard : any;
+  public blackboard: any;
 
   constructor(name: string, blackboard: MovieIDBlackboard) {
     this.blackboard = blackboard;
