@@ -295,5 +295,14 @@
 				"platform": "Crave TV"
 			}
 		]
+	},
+	{
+		"movieName": "Aladdin",
+		"links": [
+			{
+				"link": "https://www.disneyplus.com/en-ca/browse/entity-bfad6284-a0aa-4ae1-8469-dc1653121dbb",
+				"platform": "Disney Plus"
+			}
+		]
 	}
 ]

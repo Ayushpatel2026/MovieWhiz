@@ -73,15 +73,25 @@ export class SoundtrackExpert extends Expert {
     });
 
     if (response.data.status == "success") {
+      const fullTitle = response.data.result.title;
+      const artist = response.data.result.artist;
+
+      // Simple attempt to remove "(From ...)"
+      const cleanedTitle = fullTitle.replace(/\s\(From.*?\)/i, "");
+      console.log("Cleaned Song Name:", cleanedTitle);
       return {
-        name: response.data.result.title,
-        artist: response.data.result.artist,
+        name: cleanedTitle,
+        artist: artist,
       };
     }
 
     return null;
   }
 
+  /*
+    More recent movies will have a high confidence score
+    i.e. the most recent will have confidence of 100, the next 50, and then 33, etc.
+  */
   public calculateConfidence(movies: MovieData[]): MovieConfidences[] {
     const moviesByAscendingYear = movies.sort((a, b) => a.year - b.year);
     const movieCount = movies.length;

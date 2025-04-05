@@ -10,6 +10,16 @@
     "soundtracks": ["Iron Man (Black Sabbath)"]
   },
   {
+    "title": "Aladdin",
+    "year": 1992,
+    "actors": ["Scott Weinger", "Robin Williams", "Linda Larkin", "Jonathan Freeman"],
+    "characters": ["Aladdin", "Genie", "Princess Jasmine", "Jafar"],
+    "director": "Ron Clements & John Musker",
+    "genre": ["Animation", "Adventure", "Comedy", "Family", "Fantasy", "Musical", "Romance"],
+    "setting": "Agrabah (fictional Arabian city)",
+    "soundtracks": ["A Whole New World", "Friend Like Me", "One Jump Ahead", "Prince Ali"]
+  },
+  {
     "title": "The Avengers",
     "year": 2012,
     "actors": ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson", "Chris Hemsworth"],
