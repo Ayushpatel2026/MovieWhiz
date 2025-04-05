@@ -19,7 +19,7 @@ export class Forum {
       };
     }
 
-    const nonEmptyResponses = responses.filter((res) => res.movies.length > 0);
+    const nonEmptyResponses = responses.filter((res) => res.movieConfidences.length > 0);
 
     if (nonEmptyResponses.length === 0) {
       return {
@@ -31,9 +31,9 @@ export class Forum {
       return {
         responseId: uuidv4(),
         overallConfidence:
-          nonEmptyResponses.reduce((sum, res) => sum + res.confidence, 0) /
+          nonEmptyResponses.reduce((sum, res) => sum + res.movieConfidences[0].confidence, 0) /
           nonEmptyResponses.length,
-        movieName: nonEmptyResponses[0].movies[0], // Assuming the first movie is the most relevant
+        movieName: nonEmptyResponses[0].movieConfidences[0].movieName, // Assuming the first movie is the most relevant
         timestamp: Date.now(),
         inputsUsed: nonEmptyResponses.flatMap((res) => res.expertName),
       };

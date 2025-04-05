@@ -1,6 +1,6 @@
 import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
 import { Expert } from "./Expert";
-import { AudioInput, ExpertResponse } from "../types/types";
+import { AudioInput, ExpertResponse, MovieConfidences } from "../types/types";
 
 const token = process.env.AUDD_API_TOKEN;
 
@@ -29,11 +29,12 @@ export class SoundtrackExpert extends Expert {
 
       const movieMatches = await this.queryDatabase(song);
 
+      // TODO - figure out how to turn the movieMatches into a confidence score
+      // and return it in the response
       return {
         expertName: this.name,
         details: song || "song not found",
-        movies: movieMatches,
-        confidence: this.calculateConfidence(),
+        movieConfidences: [],
         timestamp: Date.now(),
       };
     } catch (error) {
@@ -74,7 +75,7 @@ export class SoundtrackExpert extends Expert {
   /*
    * TODO - Implement an algorithm to calculate the confidence score
    */
-  public calculateConfidence(): number {
-    return 0;
+  public calculateConfidence(): MovieConfidences[] {
+    return [];
   }
 }

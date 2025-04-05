@@ -1,14 +1,12 @@
-import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
-import { ExpertResponse, Input } from "../types/types";
-import { Expert } from "./Expert";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { MovieIDBlackboard } from '../blackboard/MovieIDBlackboard';
+import { ExpertResponse, Input, MovieConfidences } from '../types/types';
+import { Expert } from './Expert';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export class LLMExpert extends Expert {
-  private readonly apiEndpoint: string;
 
   constructor(blackboard: MovieIDBlackboard) {
-    super("LLM Expert", blackboard);
-    this.apiEndpoint = process.env.LLM_API_ENDPOINT || "";
+    super('LLM Expert', blackboard);
   }
 
   async analyze(input: Input): Promise<ExpertResponse> {
@@ -46,14 +44,16 @@ export class LLMExpert extends Expert {
   "A movie that has animals and the main character is a bunny who is a police officer. ${input.data}"
   `;
   }
-
+  
   private async queryLLM(prompt: string): Promise<string> {
-    const llm_provider = process.env.LLM_PROVIDER || "gemini";
+    const llm_provider = process.env.LLM_PROVIDER || 'gemini';
 
     let result: any = "";
 
-    if (llm_provider === "gemini") {
-      const API_KEY = process.env.GEMINI_API_KEY || "";
+    if (llm_provider === 'gemini') {
+      console.log("Api key:", process.env.GEMINI_API_KEY);
+      console.log("LLM provider:", llm_provider);
+      const API_KEY = process.env.GEMINI_API_KEY || '';
       const genAI = new GoogleGenerativeAI(API_KEY);
 
       const model = genAI.getGenerativeModel({
@@ -65,17 +65,20 @@ export class LLMExpert extends Expert {
         topP: 0.95,
         topK: 40,
         maxOutputTokens: 8192,
-        responseModalities: [],
+        responseModalities: [
+        ],
         responseMimeType: "text/plain",
       };
 
       const chatSession = model.startChat({
         generationConfig,
-        history: [],
+        history: [
+        ],
       });
 
       result = await chatSession.sendMessage(prompt);
-    } else {
+    }
+    else {
       result = "There has been an error. Try again";
     }
 
@@ -85,54 +88,50 @@ export class LLMExpert extends Expert {
   /*
    * TODO - Implement a method to parse the LLM response
    * and return an ExpertResponse object
-   */
+  */
   private parseResponse(llmText: string): ExpertResponse {
     try {
-      if (process.env.DEBUG_LLM === "true") {
-        console.log("LLM raw response:", llmText);
-      }
+      // console.log('LLM raw response:', llmText);
 
+      // Remove markdown code block formatting like ```json or ```
+      const cleanedText = llmText
+      .replace(/```json\s*/gi, '')  // remove starting ```json
+      .replace(/```/g, '')          // remove ending ```
+      .trim();                      // trim extra whitespace
+      console.log('Cleaned LLM response:', cleanedText);
       // Attempt to parse the JSON text
-      const jsonResponse = JSON.parse(llmText);
-
-      if (
-        !jsonResponse ||
-        !jsonResponse.movies ||
-        jsonResponse.movies.length === 0
-      ) {
+      const jsonResponse = JSON.parse(cleanedText);
+  
+      if (!jsonResponse || !jsonResponse.movies || jsonResponse.movies.length === 0) {
         return {
           expertName: this.name,
-          movies: [],
-          confidence: 0,
+          movieConfidences: [],
           timestamp: Date.now(), // Optional: Add a timestamp
         };
       }
-
+  
       // Find the movie with the highest confidence score
       let bestMovie = jsonResponse.movies[0];
       for (let i = 1; i < jsonResponse.movies.length; i++) {
-        if (
-          jsonResponse.movies[i].confidencescore > bestMovie.confidencescore
-        ) {
+        if (jsonResponse.movies[i].confidencescore > bestMovie.confidencescore) {
           bestMovie = jsonResponse.movies[i];
         }
       }
-
+  
       return {
         expertName: this.name,
-        movies: [bestMovie.title],
-        confidence: bestMovie.confidencescore,
+        movieConfidences: [bestMovie],
         timestamp: Date.now(), // Optional: Add a timestamp
         //details: "Optional details string", // Optional: Add details if needed.
       };
+  
     } catch (error) {
       console.error("Error parsing JSON:", error);
       // Handle JSON parsing errors gracefully.  Return a default ExpertResponse or throw an error.
       return {
         expertName: this.name,
-        movies: [],
-        confidence: 0,
-        details: "Error parsing JSON response.",
+        movieConfidences: [],
+        details: "Error parsing JSON response."
       };
     }
   }
@@ -140,9 +139,8 @@ export class LLMExpert extends Expert {
   /*
    * TODO - implement a more sophisticated confidence calculation
    * based on the LLM response
-   */
-  public calculateConfidence(llmText: string, matches: string[]): number {
-    const detailScore = llmText.split("\n").length / 10;
-    return Math.min(0 + detailScore, 0.95);
+  */
+  public calculateConfidence(llmText: string, matches: string[]): MovieConfidences[] {
+    return [];
   }
 }

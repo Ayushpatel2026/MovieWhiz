@@ -1,0 +1,1702 @@
+[
+  {
+    "title": "Iron Man",
+    "year": 2008,
+    "actors": ["Robert Downey Jr.", "Gwyneth Paltrow", "Jeff Bridges"],
+    "characters": ["Iron Man/Tony Stark", "Pepper Potts", "Obadiah Stane"],
+    "director": "Jon Favreau",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "Various (Stark Industries, Afghanistan, etc.)",
+    "soundtracks": ["Iron Man (Black Sabbath)"]
+  },
+  {
+    "title": "The Avengers",
+    "year": 2012,
+    "actors": ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson", "Chris Hemsworth"],
+    "characters": ["Iron Man", "Captain America", "Black Widow", "Thor", "Hulk", "Loki"],
+    "director": "Joss Whedon",
+    "genre": ["Action", "Sci-Fi", "Adventure"],
+    "setting": "New York City",
+    "soundtracks": []
+  },
+  {
+    "title": "Sholay",
+    "year": 1975,
+    "actors": ["Amitabh Bachchan", "Dharmendra", "Hema Malini", "Sanjeev Kumar"],
+    "characters": ["Jai", "Veeru", "Basanti", "Thakur Baldev Singh"],
+    "director": "Ramesh Sippy",
+    "genre": ["Action", "Adventure", "Drama"],
+    "setting": "Ramgarh, India",
+    "soundtracks": ["Yeh Dosti", "Mehbooba Mehbooba"]
+  },
+  {
+    "title": "Dilwale Dulhania Le Jayenge",
+    "year": 1995,
+    "actors": ["Shah Rukh Khan", "Kajol", "Amrish Puri", "Anupam Kher"],
+    "characters": ["Raj Malhotra", "Simran Singh", "Chaudhry Baldev Singh", "Dharamvir Malhotra"],
+    "director": "Aditya Chopra",
+    "genre": ["Drama", "Romance"],
+    "setting": "London, England and Punjab, India",
+    "soundtracks": ["Tujhe Dekha To", "Mere Khwabon Mein"]
+  },
+  {
+    "title": "Lagaan",
+    "year": 2001,
+    "actors": ["Aamir Khan", "Gracy Singh", "Rachel Shelley", "Paul Blackthorne"],
+    "characters": ["Bhuvan", "Gauri", "Elizabeth Russell", "Captain Andrew Russell"],
+    "director": "Ashutosh Gowariker",
+    "genre": ["Adventure", "Drama", "Musical"],
+    "setting": "Champaner, India, 1893",
+    "soundtracks": ["Mitwa", "Ghanan Ghanan"]
+  },
+  {
+    "title": "3 Idiots",
+    "year": 2009,
+    "actors": ["Aamir Khan", "R. Madhavan", "Sharman Joshi", "Kareena Kapoor"],
+    "characters": ["Rancho", "Farhan Qureshi", "Raju Rastogi", "Pia Sahastrabuddhe"],
+    "director": "Rajkumar Hirani",
+    "genre": ["Comedy", "Drama"],
+    "setting": "Delhi, India",
+    "soundtracks": ["All Is Well", "Give Me Some Sunshine"]
+  },
+  {
+    "title": "Parasite",
+    "year": 2019,
+    "actors": ["Song Kang-ho", "Lee Sun-kyun", "Cho Yeo-jeong", "Choi Woo-shik"],
+    "characters": ["Kim Ki-taek", "Park Dong-ik", "Choi Yeon-gyo", "Kim Ki-woo"],
+    "director": "Bong Joon-ho",
+    "genre": ["Comedy", "Drama", "Thriller"],
+    "setting": "Seoul, South Korea",
+    "soundtracks": ["Soju One Glass"]
+  },
+  {
+    "title": "Train to Busan",
+    "year": 2016,
+    "actors": ["Gong Yoo", "Jung Yu-mi", "Ma Dong-seok", "Kim Su-an"],
+    "characters": ["Seok-woo", "Seong-kyeong", "Sang-hwa", "Soo-an"],
+    "director": "Yeon Sang-ho",
+    "genre": ["Action", "Horror", "Thriller"],
+    "setting": "South Korea",
+    "soundtracks": ["Goodbye World"]
+  },
+  {
+    "title": "Oldboy",
+    "year": 2003,
+    "actors": ["Choi Min-sik", "Yoo Ji-tae", "Kang Hye-jung", "Kim Byeong-ok"],
+    "characters": ["Oh Dae-su", "Lee Woo-jin", "Mi-do", "Mr. Park"],
+    "director": "Park Chan-wook",
+    "genre": ["Action", "Drama", "Mystery"],
+    "setting": "Seoul, South Korea",
+    "soundtracks": ["The Last Waltz"]
+  },
+  {
+    "title": "Memories of Murder",
+    "year": 2003,
+    "actors": ["Song Kang-ho", "Kim Sang-kyung", "Kim Roe-ha", "Song Jae-ho"],
+    "characters": ["Detective Park Doo-man", "Detective Seo Tae-yoon", "Detective Cho Yong-koo", "Sergeant Shin Dong-chul"],
+    "director": "Bong Joon-ho",
+    "genre": ["Crime", "Drama", "Mystery"],
+    "setting": "Hwaseong, South Korea",
+    "soundtracks": ["Memories of Murder Theme"]
+  },
+  {
+    "title": "Seven Samurai",
+    "year": 1954,
+    "actors": ["Toshiro Mifune", "Takashi Shimura", "Yoshio Inaba", "Seiji Miyaguchi"],
+    "characters": ["Kikuchiyo", "Kambei Shimada", "Gorobei Katayama", "Kyuzo"],
+    "director": "Akira Kurosawa",
+    "genre": ["Action", "Drama"],
+    "setting": "Japan, 1586",
+    "soundtracks": ["Seven Samurai Theme"]
+  },
+  {
+    "title": "Spirited Away",
+    "year": 2001,
+    "actors": ["Rumi Hiiragi", "Miyu Irino", "Mari Natsuki", "Takashi Naito"],
+    "characters": ["Chihiro Ogino", "Haku", "Yubaba / Zeniba", "Akio Ogino"],
+    "director": "Hayao Miyazaki",
+    "genre": ["Animation", "Adventure", "Family"],
+    "setting": "Spirit World",
+    "soundtracks": ["One Summer's Day"]
+  },
+  {
+    "title": "Rashomon",
+    "year": 1950,
+    "actors": ["Toshiro Mifune", "Machiko Kyō", "Masayuki Mori", "Takashi Shimura"],
+    "characters": ["Tajōmaru", "Masako Kanazawa", "Takehiro Kanazawa", "Woodcutter"],
+    "director": "Akira Kurosawa",
+    "genre": ["Crime", "Drama", "Mystery"],
+    "setting": "Kyoto, Japan",
+    "soundtracks": ["Rashomon Theme"]
+  },
+  {
+    "title": "Guardians of the Galaxy",
+    "year": 2014,
+    "actors": ["Chris Pratt", "Zoe Saldana", "Dave Bautista", "Bradley Cooper", "Vin Diesel"],
+    "characters": ["Star-Lord/Peter Quill", "Gamora", "Drax", "Rocket", "Groot"],
+    "director": "James Gunn",
+    "genre": ["Action", "Adventure", "Comedy"],
+    "setting": "Outer Space",
+    "soundtracks": ["Hooked on a Feeling", "Come and Get Your Love", "Ain't No Mountain High Enough"]
+  },
+  {
+    "title": "Black Panther",
+    "year": 2018,
+    "actors": ["Chadwick Boseman", "Michael B. Jordan", "Lupita Nyong'o"],
+    "characters": ["Black Panther/T'Challa", "Erik Killmonger", "Nakia", "Shuri"],
+    "director": "Ryan Coogler",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "Wakanda",
+    "soundtracks": ["All the Stars", "Pray For Me"]
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "year": 2001,
+    "actors": ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"],
+    "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Albus Dumbledore", "Severus Snape"],
+    "director": "Chris Columbus",
+    "genre": ["Adventure", "Family", "Fantasy"],
+    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "soundtracks": ["Hedwig's Theme", "Nimbus 2000", "Harry's Wondrous World"]
+  },
+  {
+    "title": "Harry Potter and the Chamber of Secrets",
+    "year": 2002,
+    "actors": ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"],
+    "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Albus Dumbledore", "Severus Snape"],
+    "director": "Chris Columbus",
+    "genre": ["Adventure", "Family", "Fantasy"],
+    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "soundtracks": ["Fawkes the Phoenix", "The Chamber of Secrets"]
+  },
+  {
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "year": 2004,
+    "actors": ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"],
+    "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Sirius Black", "Remus Lupin"],
+    "director": "Alfonso Cuarón",
+    "genre": ["Adventure", "Family", "Fantasy"],
+    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "soundtracks": ["Buckbeak's Flight", "The Dementors Arrive"]
+  },
+  {
+    "title": "Harry Potter and the Goblet of Fire",
+    "year": 2005,
+    "actors": ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"],
+    "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Lord Voldemort", "Cedric Diggory"],
+    "director": "Mike Newell",
+    "genre": ["Adventure", "Family", "Fantasy"],
+    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "soundtracks": ["Hogwarts' March", "Potter Waltz"]
+  },
+  {
+    "title": "Harry Potter and the Order of the Phoenix",
+    "year": 2007,
+    "actors": ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"],
+    "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Dolores Umbridge", "Sirius Black"],
+    "director": "David Yates",
+    "genre": ["Adventure", "Family", "Fantasy"],
+    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "soundtracks": ["Another Story", "Dumbledore's Army"]
+  },
+  {
+    "title": "Harry Potter and the Half-Blood Prince",
+    "year": 2009,
+    "actors": ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"],
+    "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Albus Dumbledore", "Severus Snape"],
+    "director": "David Yates",
+    "genre": ["Adventure", "Family", "Fantasy"],
+    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "soundtracks": ["Leaving Hogwarts", "When Ginny Kissed Harry"]
+  },
+  {
+    "title": "Harry Potter and the Deathly Hallows – Part 1",
+    "year": 2010,
+    "actors": ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"],
+    "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Lord Voldemort"],
+    "director": "David Yates",
+    "genre": ["Adventure", "Family", "Fantasy"],
+    "setting": "Various locations",
+    "soundtracks": ["Obliviate", "The Tale of the Three Brothers"]
+  },
+  {
+    "title": "Harry Potter and the Deathly Hallows – Part 2",
+    "year": 2011,
+    "actors": ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"],
+    "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Lord Voldemort", "Severus Snape"],
+    "director": "David Yates",
+    "genre": ["Adventure", "Family", "Fantasy"],
+    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "soundtracks": ["Lily's Theme", "Battle of Hogwarts"]
+  },
+  {
+    "title": "Snow White and the Seven Dwarfs",
+    "year": 1937,
+    "actors": ["Adriana Caselotti", "Lucille La Verne"],
+    "characters": ["Snow White", "The Evil Queen", "Dopey"],
+    "director": "David Hand",
+    "genre": ["Animation", "Family", "Fantasy"],
+    "setting": "Enchanted forest",
+    "soundtracks": ["Someday My Prince Will Come", "Heigh-Ho"]
+  },
+  {
+    "title": "Pinocchio",
+    "year": 1940,
+    "actors": ["Dickie Jones", "Cliff Edwards"],
+    "characters": ["Pinocchio", "Jiminy Cricket", "Geppetto"],
+    "director": "Ben Sharpsteen",
+    "genre": ["Animation", "Family", "Fantasy"],
+    "setting": "Italian village, Pleasure Island",
+    "soundtracks": ["When You Wish Upon a Star"]
+  },
+  {
+    "title": "Cinderella",
+    "year": 1950,
+    "actors": ["Ilene Woods", "Eleanor Audley"],
+    "characters": ["Cinderella", "Fairy Godmother", "Stepmother"],
+    "director": "Clyde Geronimi",
+    "genre": ["Animation", "Family", "Fantasy"],
+    "setting": "Kingdom",
+    "soundtracks": ["A Dream Is a Wish Your Heart Makes", "Bibbidi-Bobbidi-Boo"]
+  },
+  {
+    "title": "Sleeping Beauty",
+    "year": 1959,
+    "actors": ["Mary Costa", "Eleanor Audley"],
+    "characters": ["Aurora", "Maleficent", "Prince Phillip"],
+    "director": "Clyde Geronimi",
+    "genre": ["Animation", "Family", "Fantasy"],
+    "setting": "Kingdom",
+    "soundtracks": ["Once Upon a Dream"]
+  },
+  {
+    "title": "Mary Poppins",
+    "year": 1964,
+    "actors": ["Julie Andrews", "Dick Van Dyke"],
+    "characters": ["Mary Poppins", "Bert", "Jane Banks", "Michael Banks"],
+    "director": "Robert Stevenson",
+    "genre": ["Family", "Fantasy", "Musical"],
+    "setting": "London",
+    "soundtracks": ["Supercalifragilisticexpialidocious", "A Spoonful of Sugar"]
+  },
+  {
+    "title": "The Jungle Book",
+    "year": 1967,
+    "actors": ["Phil Harris", "Sebastian Cabot", "Louis Prima"],
+    "characters": ["Mowgli", "Baloo", "Bagheera", "Shere Khan"],
+    "director": "Wolfgang Reitherman",
+    "genre": ["Animation", "Family", "Adventure"],
+    "setting": "Indian jungle",
+    "soundtracks": ["The Bare Necessities", "I Wan'na Be Like You"]
+  },
+  {
+    "title": "The Aristocats",
+    "year": 1970,
+    "actors": ["Eva Gabor", "Phil Harris"],
+    "characters": ["Duchess", "O'Malley", "Marie", "Berlioz", "Toulouse"],
+    "director": "Wolfgang Reitherman",
+    "genre": ["Animation", "Family", "Comedy"],
+    "setting": "Paris",
+    "soundtracks": ["Ev'rybody Wants to Be a Cat"]
+  },
+  {
+    "title": "Toy Story",
+    "year": 1995,
+    "actors": ["Tom Hanks", "Tim Allen"],
+    "characters": ["Woody", "Buzz Lightyear", "Mr. Potato Head"],
+    "director": "John Lasseter",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "setting": "Andy's Room",
+    "soundtracks": ["You've Got a Friend in Me"]
+  },
+  {
+    "title": "The Little Mermaid",
+    "year": 1989,
+    "actors": ["Jodi Benson", "Samuel E. Wright"],
+    "characters": ["Ariel", "Sebastian", "Ursula"],
+    "director": "Ron Clements",
+    "genre": ["Animation", "Fantasy", "Musical"],
+    "setting": "Under the sea",
+    "soundtracks": ["Part of Your World", "Under the Sea"]
+  },
+  {
+    "title": "Beauty and the Beast",
+    "year": 1991,
+    "actors": ["Paige O'Hara", "Robby Benson"],
+    "characters": ["Belle", "Beast", "Gaston", "Lumière"],
+    "director": "Gary Trousdale",
+    "genre": ["Animation", "Fantasy", "Musical"],
+    "setting": "Enchanted castle",
+    "soundtracks": ["Beauty and the Beast", "Be Our Guest"]
+  },
+  {
+    "title": "Aladdin",
+    "year": 1992,
+    "actors": ["Scott Weinger", "Robin Williams"],
+    "characters": ["Aladdin", "Genie", "Jasmine", "Jafar"],
+    "director": "Ron Clements",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "setting": "Agrabah",
+    "soundtracks": ["A Whole New World", "Friend Like Me"]
+  },
+  {
+    "title": "The Lion King",
+    "year": 1994,
+    "actors": ["Matthew Broderick", "James Earl Jones", "Jeremy Irons"],
+    "characters": ["Simba", "Mufasa", "Scar", "Timon", "Pumbaa"],
+    "director": "Roger Allers",
+    "genre": ["Animation", "Adventure", "Drama"],
+    "setting": "Pride Lands",
+    "soundtracks": ["Circle of Life", "Hakuna Matata"]
+  },
+  {
+    "title": "Frozen",
+    "year": 2013,
+    "actors": ["Kristen Bell", "Idina Menzel", "Josh Gad"],
+    "characters": ["Anna", "Elsa", "Olaf"],
+    "director": "Chris Buck",
+    "genre": ["Animation", "Adventure", "Fantasy"],
+    "setting": "Arendelle",
+    "soundtracks": ["Let It Go", "Do You Want to Build a Snowman?"]
+  },
+  {
+    "title": "Finding Nemo",
+    "year": 2003,
+    "actors": ["Albert Brooks", "Ellen DeGeneres"],
+    "characters": ["Marlin", "Dory", "Nemo"],
+    "director": "Andrew Stanton",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "setting": "Great Barrier Reef",
+    "soundtracks": []
+  },
+  {
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "actors": ["John Travolta", "Uma Thurman", "Samuel L. Jackson"],
+    "characters": ["Vincent Vega", "Mia Wallace", "Jules Winnfield"],
+    "director": "Quentin Tarantino",
+    "genre": ["Crime", "Drama", "Thriller"],
+    "setting": "Los Angeles",
+    "soundtracks": ["Misirlou", "You Never Can Tell"]
+  },
+  {
+    "title": "Fight Club",
+    "year": 1999,
+    "actors": ["Brad Pitt", "Edward Norton", "Helena Bonham Carter"],
+    "characters": ["Tyler Durden", "Narrator", "Marla Singer"],
+    "director": "David Fincher",
+    "genre": ["Drama"],
+    "setting": "Various US cities",
+    "soundtracks": ["Where Is My Mind?"]
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "actors": ["Tim Robbins", "Morgan Freeman"],
+    "characters": ["Andy Dufresne", "Ellis 'Red' Redding"],
+    "director": "Frank Darabont",
+    "genre": ["Drama"],
+    "setting": "Shawshank Penitentiary",
+    "soundtracks": []
+  },
+  {
+    "title": "The Dark Knight",
+    "year": 2008,
+    "actors": ["Christian Bale", "Heath Ledger", "Gary Oldman"],
+    "characters": ["Batman", "The Joker", "James Gordon"],
+    "director": "Christopher Nolan",
+    "genre": ["Action", "Crime", "Drama"],
+    "setting": "Gotham City",
+    "soundtracks": []
+  },
+  {
+    "title": "Star Wars: Episode IV - A New Hope",
+    "year": 1977,
+    "actors": ["Mark Hamill", "Harrison Ford", "Carrie Fisher"],
+    "characters": ["Luke Skywalker", "Han Solo", "Princess Leia", "Darth Vader"],
+    "director": "George Lucas",
+    "genre": ["Sci-Fi", "Adventure", "Fantasy"],
+    "setting": "Various planets, space",
+    "soundtracks": ["Main Theme"]
+  },
+  {
+    "title": "E.T. the Extra-Terrestrial",
+    "year": 1982,
+    "actors": ["Henry Thomas", "Drew Barrymore"],
+    "characters": ["Elliott", "Gertie", "E.T."],
+    "director": "Steven Spielberg",
+    "genre": ["Sci-Fi", "Family", "Adventure"],
+    "setting": "Suburban California",
+    "soundtracks": []
+  },
+  {
+    "title": "Jurassic Park",
+    "year": 1993,
+    "actors": ["Sam Neill", "Laura Dern", "Jeff Goldblum"],
+    "characters": ["Dr. Alan Grant", "Dr. Ellie Sattler", "Dr. Ian Malcolm"],
+    "director": "Steven Spielberg",
+    "genre": ["Sci-Fi", "Adventure", "Thriller"],
+    "setting": "Isla Nublar",
+    "soundtracks": ["Jurassic Park Theme"]
+  },
+  {
+    "title": "The Breakfast Club",
+    "year": 1985,
+    "actors": ["Emilio Estevez", "Molly Ringwald", "Judd Nelson"],
+    "characters": ["Andrew", "Claire", "John", "Brian", "Allison"],
+    "director": "John Hughes",
+    "genre": ["Comedy", "Drama"],
+    "setting": "Shermer High School",
+    "soundtracks": ["Don't You (Forget About Me)"]
+  },
+  {
+    "title": "Ghostbusters",
+    "year": 1984,
+    "actors": ["Bill Murray", "Dan Aykroyd", "Sigourney Weaver"],
+    "characters": ["Peter Venkman", "Ray Stantz", "Dana Barrett"],
+    "director": "Ivan Reitman",
+    "genre": ["Comedy", "Fantasy"],
+    "setting": "New York City",
+    "soundtracks": ["Ghostbusters"]
+  },
+  {
+    "title": "Indiana Jones and the Raiders of the Lost Ark",
+    "year": 1981,
+    "actors": ["Harrison Ford", "Karen Allen"],
+    "characters": ["Indiana Jones", "Marion Ravenwood"],
+    "director": "Steven Spielberg",
+    "genre": ["Action", "Adventure"],
+    "setting": "Various locations",
+    "soundtracks": ["Raiders March"]
+  },
+  {
+    "title": "Pretty Woman",
+    "year": 1990,
+    "actors": ["Julia Roberts", "Richard Gere"],
+    "characters": ["Vivian Ward", "Edward Lewis"],
+    "director": "Garry Marshall",
+    "genre": ["Romance", "Comedy"],
+    "setting": "Los Angeles",
+    "soundtracks": ["Oh, Pretty Woman"]
+  },
+  {
+    "title": "Home Alone",
+    "year": 1990,
+    "actors": ["Macaulay Culkin", "Joe Pesci", "Daniel Stern"],
+    "characters": ["Kevin McCallister", "Harry", "Marv"],
+    "director": "Chris Columbus",
+    "genre": ["Comedy", "Family"],
+    "setting": "Suburban Chicago",
+    "soundtracks": []
+  },
+  {
+    "title": "Dirty Dancing",
+    "year": 1987,
+    "actors": ["Patrick Swayze", "Jennifer Grey"],
+    "characters": ["Johnny Castle", "Frances 'Baby' Houseman"],
+    "director": "Emile Ardolino",
+    "genre": ["Romance", "Drama", "Music"],
+    "setting": "Kellerman's resort",
+    "soundtracks": ["(I've Had) The Time of My Life", "Hungry Eyes"]
+  },
+  {
+    "title": "Pocahontas",
+    "year": 1995,
+    "actors": ["Irene Bedard", "Mel Gibson"],
+    "characters": ["Pocahontas", "John Smith"],
+    "director": "Mike Gabriel",
+    "genre": ["Animation", "Adventure", "Romance"],
+    "setting": "Colonial Virginia",
+    "soundtracks": ["Colors of the Wind", "Just Around the Riverbend"]
+  },
+  {
+    "title": "Aladdin",
+    "year": 1992,
+    "actors": ["Scott Weinger", "Robin Williams", "Linda Larkin"],
+    "characters": ["Aladdin", "Genie", "Jasmine", "Jafar"],
+    "director": "Ron Clements",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "setting": "Agrabah",
+    "soundtracks": ["A Whole New World", "Friend Like Me"]
+  },
+  {
+    "title": "Beauty and the Beast",
+    "year": 1991,
+    "actors": ["Paige O'Hara", "Robby Benson"],
+    "characters": ["Belle", "Beast", "Gaston", "Lumière", "Cogsworth"],
+    "director": "Gary Trousdale",
+    "genre": ["Animation", "Fantasy", "Musical"],
+    "setting": "Enchanted castle",
+    "soundtracks": ["Beauty and the Beast", "Be Our Guest"]
+  },
+  {
+    "title": "The Little Mermaid",
+    "year": 1989,
+    "actors": ["Jodi Benson", "Samuel E. Wright"],
+    "characters": ["Ariel", "Sebastian", "Ursula", "Prince Eric"],
+    "director": "Ron Clements",
+    "genre": ["Animation", "Fantasy", "Musical"],
+    "setting": "Under the sea",
+    "soundtracks": ["Part of Your World", "Under the Sea", "Kiss the Girl"]
+  },
+  {
+    "title": "Finding Nemo",
+    "year": 2003,
+    "actors": ["Albert Brooks", "Ellen DeGeneres"],
+    "characters": ["Marlin", "Dory", "Nemo"],
+    "director": "Andrew Stanton",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "setting": "Great Barrier Reef, Pacific Ocean",
+    "soundtracks": []
+  },
+  {
+    "title": "The Incredibles",
+    "year": 2004,
+    "actors": ["Craig T. Nelson", "Holly Hunter", "Samuel L. Jackson"],
+    "characters": ["Mr. Incredible", "Elastigirl", "Frozone"],
+    "director": "Brad Bird",
+    "genre": ["Animation", "Action", "Adventure"],
+    "setting": "Metroville, Nomanisan Island",
+    "soundtracks": []
+  },
+  {
+    "title": "Ratatouille",
+    "year": 2007,
+    "actors": ["Patton Oswalt", "Lou Romano"],
+    "characters": ["Remy", "Linguini"],
+    "director": "Brad Bird",
+    "genre": ["Animation", "Comedy", "Family"],
+    "setting": "Paris",
+    "soundtracks": []
+  },
+  {
+    "title": "Up",
+    "year": 2009,
+    "actors": ["Edward Asner", "Jordan Nagai"],
+    "characters": ["Carl Fredricksen", "Russell"],
+    "director": "Pete Docter",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "setting": "Paradise Falls",
+    "soundtracks": []
+  },
+  {
+    "title": "WALL-E",
+    "year": 2008,
+    "actors": ["Ben Burtt", "Elissa Knight"],
+    "characters": ["WALL-E", "EVE"],
+    "director": "Andrew Stanton",
+    "genre": ["Animation", "Sci-Fi", "Romance"],
+    "setting": "Earth, Axiom spaceship",
+    "soundtracks": ["Put On Your Sunday Clothes"]
+  },
+  {
+    "title": "Avatar",
+    "year": 2009,
+    "actors": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
+    "characters": ["Jake Sully", "Neytiri", "Dr. Grace Augustine"],
+    "director": "James Cameron",
+    "genre": ["Sci-Fi", "Action", "Adventure"],
+    "setting": "Pandora",
+    "soundtracks": []
+  },
+  {
+    "title": "Gladiator",
+    "year": 2000,
+    "actors": ["Russell Crowe", "Joaquin Phoenix"],
+    "characters": ["Maximus Decimus Meridius", "Commodus"],
+    "director": "Ridley Scott",
+    "genre": ["Action", "Drama", "History"],
+    "setting": "Roman Empire",
+    "soundtracks": []
+  },
+  {
+    "title": "Saving Private Ryan",
+    "year": 1998,
+    "actors": ["Tom Hanks", "Matt Damon"],
+    "characters": ["Captain John H. Miller", "Private James Ryan"],
+    "director": "Steven Spielberg",
+    "genre": ["War", "Drama", "History"],
+    "setting": "World War II Europe",
+    "soundtracks": []
+  },
+  {
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "actors": ["John Travolta", "Uma Thurman", "Samuel L. Jackson"],
+    "characters": ["Vincent Vega", "Mia Wallace", "Jules Winnfield"],
+    "director": "Quentin Tarantino",
+    "genre": ["Crime", "Drama", "Thriller"],
+    "setting": "Los Angeles",
+    "soundtracks": ["Misirlou", "You Never Can Tell"]
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "year": 1991,
+    "actors": ["Jodie Foster", "Anthony Hopkins"],
+    "characters": ["Clarice Starling", "Hannibal Lecter"],
+    "director": "Jonathan Demme",
+    "genre": ["Thriller", "Crime", "Drama"],
+    "setting": "Various US locations",
+    "soundtracks": []
+  },
+  {
+    "title": "Good Will Hunting",
+    "year": 1997,
+    "actors": ["Matt Damon", "Robin Williams", "Ben Affleck"],
+    "characters": ["Will Hunting", "Sean Maguire", "Chuckie Sullivan"],
+    "director": "Gus Van Sant",
+    "genre": ["Drama"],
+    "setting": "Boston",
+    "soundtracks": ["Miss Misery"]
+  },
+  {
+    "title": "Fight Club",
+    "year": 1999,
+    "actors": ["Brad Pitt", "Edward Norton", "Helena Bonham Carter"],
+    "characters": ["Tyler Durden", "Narrator", "Marla Singer"],
+    "director": "David Fincher",
+    "genre": ["Drama"],
+    "setting": "Various US cities",
+    "soundtracks": ["Where Is My Mind?"]
+  },
+  {
+    "title": "Spider-Man",
+    "year": 2002,
+    "actors": ["Tobey Maguire", "Willem Dafoe", "Kirsten Dunst", "James Franco"],
+    "characters": ["Spider-Man/Peter Parker", "Green Goblin/Norman Osborn", "Mary Jane Watson", "Harry Osborn"],
+    "director": "Sam Raimi",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "New York City",
+    "soundtracks": ["Hero (Chad Kroeger)", "What We're All About (Sum 41)"]
+  },
+  {
+    "title": "Spider-Man 2",
+    "year": 2004,
+    "actors": ["Tobey Maguire", "Alfred Molina", "Kirsten Dunst", "James Franco"],
+    "characters": ["Spider-Man/Peter Parker", "Doctor Octopus/Otto Octavius", "Mary Jane Watson", "Harry Osborn"],
+    "director": "Sam Raimi",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "New York City",
+    "soundtracks": ["Vindicated (Dashboard Confessional)", "Ordinary (Train)"]
+  },
+  {
+    "title": "Spider-Man 3",
+    "year": 2007,
+    "actors": ["Tobey Maguire", "Thomas Haden Church", "Topher Grace", "Kirsten Dunst", "James Franco"],
+    "characters": ["Spider-Man/Peter Parker", "Sandman/Flint Marko", "Venom/Eddie Brock", "Mary Jane Watson", "Harry Osborn"],
+    "director": "Sam Raimi",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "New York City",
+    "soundtracks": ["Signal Fire (Snow Patrol)", "Falling or Flying (Jennifer Hanson)"]
+  },
+  {
+    "title": "The Amazing Spider-Man",
+    "year": 2012,
+    "actors": ["Andrew Garfield", "Emma Stone", "Rhys Ifans", "Denis Leary"],
+    "characters": ["Spider-Man/Peter Parker", "Gwen Stacy", "The Lizard/Dr. Curt Connors", "Captain George Stacy"],
+    "director": "Marc Webb",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "New York City",
+    "soundtracks": ["Til I Collapse (Eminem)", "No Way Out (Powerman 5000)"]
+  },
+  {
+    "title": "The Amazing Spider-Man 2",
+    "year": 2014,
+    "actors": ["Andrew Garfield", "Emma Stone", "Jamie Foxx", "Dane DeHaan"],
+    "characters": ["Spider-Man/Peter Parker", "Gwen Stacy", "Electro/Max Dillon", "Green Goblin/Harry Osborn"],
+    "director": "Marc Webb",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "New York City",
+    "soundtracks": ["It's On Again (Alicia Keys feat. Kendrick Lamar)", "The Edge of Glory (Lady Gaga)"]
+  },
+  {
+    "title": "Spider-Man: Homecoming",
+    "year": 2017,
+    "actors": ["Tom Holland", "Michael Keaton", "Robert Downey Jr.", "Marisa Tomei"],
+    "characters": ["Spider-Man/Peter Parker", "Vulture/Adrian Toomes", "Iron Man/Tony Stark", "Aunt May"],
+    "director": "Jon Watts",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "New York City",
+    "soundtracks": ["Blitzkrieg Bop (Ramones)", "Can't Turn You Loose (Otis Redding)"]
+  },
+  {
+    "title": "Spider-Man: Into the Spider-Verse",
+    "year": 2018,
+    "actors": ["Shameik Moore", "Jake Johnson", "Hailee Steinfeld", "Mahershala Ali"],
+    "characters": ["Miles Morales/Spider-Man", "Peter B. Parker/Spider-Man", "Spider-Gwen/Gwen Stacy", "The Prowler/Aaron Davis"],
+    "director": ["Bob Persichetti", "Peter Ramsey", "Rodney Rothman"],
+    "genre": ["Animation", "Action", "Adventure"],
+    "setting": "New York City",
+    "soundtracks": ["Sunflower (Post Malone, Swae Lee)", "What's Up Danger (Blackway & Black Caviar)"]
+  },
+  {
+    "title": "Spider-Man: Far From Home",
+    "year": 2019,
+    "actors": ["Tom Holland", "Samuel L. Jackson", "Jake Gyllenhaal", "Marisa Tomei"],
+    "characters": ["Spider-Man/Peter Parker", "Nick Fury", "Mysterio/Quentin Beck", "Aunt May"],
+    "director": "Jon Watts",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "Europe",
+    "soundtracks": ["I Wanna Be Your Boyfriend (Ramones)", "Vacation (The Go-Go's)"]
+  },
+  {
+    "title": "Spider-Man: No Way Home",
+    "year": 2021,
+    "actors": ["Tom Holland", "Zendaya", "Benedict Cumberbatch", "Jacob Batalon"],
+    "characters": ["Spider-Man/Peter Parker", "MJ", "Doctor Strange", "Ned Leeds"],
+    "director": "Jon Watts",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "setting": "New York City",
+    "soundtracks": []
+  },
+  {
+    "title": "Batman",
+    "year": 1989,
+    "actors": ["Michael Keaton", "Jack Nicholson", "Kim Basinger", "Robert Wuhl"],
+    "characters": ["Batman/Bruce Wayne", "The Joker/Jack Napier", "Vicki Vale", "Alexander Knox"],
+    "director": "Tim Burton",
+    "genre": ["Action", "Crime", "Fantasy"],
+    "setting": "Gotham City",
+    "soundtracks": ["Batdance (Prince)", "Partyman (Prince)"]
+  },
+  {
+    "title": "Batman Returns",
+    "year": 1992,
+    "actors": ["Michael Keaton", "Danny DeVito", "Michelle Pfeiffer", "Christopher Walken"],
+    "characters": ["Batman/Bruce Wayne", "Penguin/Oswald Cobblepot", "Catwoman/Selina Kyle", "Max Shreck"],
+    "director": "Tim Burton",
+    "genre": ["Action", "Crime", "Fantasy"],
+    "setting": "Gotham City",
+    "soundtracks": ["Face to Face (Siouxsie and the Banshees)", "7 (Prince)"]
+  },
+  {
+    "title": "Batman Forever",
+    "year": 1995,
+    "actors": ["Val Kilmer", "Tommy Lee Jones", "Jim Carrey", "Nicole Kidman"],
+    "characters": ["Batman/Bruce Wayne", "Two-Face/Harvey Dent", "The Riddler/Edward Nygma", "Dr. Chase Meridian"],
+    "director": "Joel Schumacher",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "setting": "Gotham City",
+    "soundtracks": ["Kiss from a Rose (Seal)", "Hold Me, Thrill Me, Kiss Me, Kill Me (U2)"]
+  },
+  {
+    "title": "Batman & Robin",
+    "year": 1997,
+    "actors": ["George Clooney", "Arnold Schwarzenegger", "Chris O'Donnell", "Uma Thurman"],
+    "characters": ["Batman/Bruce Wayne", "Mr. Freeze/Dr. Victor Fries", "Robin/Dick Grayson", "Poison Ivy/Pamela Isley"],
+    "director": "Joel Schumacher",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "setting": "Gotham City",
+    "soundtracks": ["Look Into My Eyes (Bone Thugs-N-Harmony)", "Gotham City (R. Kelly)"]
+  },
+  {
+    "title": "Batman Begins",
+    "year": 2005,
+    "actors": ["Christian Bale", "Michael Caine", "Liam Neeson", "Gary Oldman"],
+    "characters": ["Batman/Bruce Wayne", "Alfred Pennyworth", "Ra's al Ghul", "James Gordon"],
+    "director": "Christopher Nolan",
+    "genre": ["Action", "Crime", "Drama"],
+    "setting": "Gotham City",
+    "soundtracks": []
+  },
+  {
+    "title": "The Dark Knight",
+    "year": 2008,
+    "actors": ["Christian Bale", "Heath Ledger", "Gary Oldman", "Aaron Eckhart"],
+    "characters": ["Batman/Bruce Wayne", "The Joker", "James Gordon", "Harvey Dent/Two-Face"],
+    "director": "Christopher Nolan",
+    "genre": ["Action", "Crime", "Drama"],
+    "setting": "Gotham City",
+    "soundtracks": []
+  },
+  {
+    "title": "The Dark Knight Rises",
+    "year": 2012,
+    "actors": ["Christian Bale", "Tom Hardy", "Anne Hathaway", "Gary Oldman"],
+    "characters": ["Batman/Bruce Wayne", "Bane", "Catwoman/Selina Kyle", "James Gordon"],
+    "director": "Christopher Nolan",
+    "genre": ["Action", "Crime", "Drama"],
+    "setting": "Gotham City",
+    "soundtracks": []
+  },
+  {
+    "title": "Batman v Superman: Dawn of Justice",
+    "year": 2016,
+    "actors": ["Ben Affleck", "Henry Cavill", "Amy Adams", "Jesse Eisenberg"],
+    "characters": ["Batman/Bruce Wayne", "Superman/Clark Kent", "Lois Lane", "Lex Luthor"],
+    "director": "Zack Snyder",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "Gotham City, Metropolis",
+    "soundtracks": []
+  },
+  {
+    "title": "Superman",
+    "year": 1978,
+    "actors": ["Christopher Reeve", "Marlon Brando", "Gene Hackman", "Margot Kidder"],
+    "characters": ["Superman/Clark Kent", "Jor-El", "Lex Luthor", "Lois Lane"],
+    "director": "Richard Donner",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "Metropolis, Smallville",
+    "soundtracks": ["Superman Theme"]
+  },
+  {
+    "title": "Superman II",
+    "year": 1980,
+    "actors": ["Christopher Reeve", "Gene Hackman", "Margot Kidder", "Terence Stamp"],
+    "characters": ["Superman/Clark Kent", "Lex Luthor", "Lois Lane", "General Zod"],
+    "director": "Richard Lester",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "Metropolis",
+    "soundtracks": []
+  },
+  {
+    "title": "Superman III",
+    "year": 1983,
+    "actors": ["Christopher Reeve", "Richard Pryor", "Annette O'Toole", "Robert Vaughn"],
+    "characters": ["Superman/Clark Kent", "Gus Gorman", "Lana Lang", "Ross Webster"],
+    "director": "Richard Lester",
+    "genre": ["Action", "Adventure", "Comedy"],
+    "setting": "Smallville, Metropolis",
+    "soundtracks": []
+  },
+  {
+    "title": "Superman IV: The Quest for Peace",
+    "year": 1987,
+    "actors": ["Christopher Reeve", "Gene Hackman", "Margot Kidder", "Jon Cryer"],
+    "characters": ["Superman/Clark Kent", "Lex Luthor", "Lois Lane", "Lenny Luthor"],
+    "director": "Sidney J. Furie",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "Metropolis",
+    "soundtracks": []
+  },
+  {
+    "title": "Superman Returns",
+    "year": 2006,
+    "actors": ["Brandon Routh", "Kevin Spacey", "Kate Bosworth", "James Marsden"],
+    "characters": ["Superman/Clark Kent", "Lex Luthor", "Lois Lane", "Richard White"],
+    "director": "Bryan Singer",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "Metropolis",
+    "soundtracks": []
+  },
+  {
+    "title": "Man of Steel",
+    "year": 2013,
+    "actors": ["Henry Cavill", "Amy Adams", "Michael Shannon", "Kevin Costner"],
+    "characters": ["Superman/Clark Kent", "Lois Lane", "General Zod", "Jonathan Kent"],
+    "director": "Zack Snyder",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "setting": "Smallville, Metropolis",
+    "soundtracks": ["What Are You Going to Do When You Are Not Saving the World?"]
+  },
+  {
+    "title": "Star Wars: Episode IV - A New Hope",
+    "year": 1977,
+    "actors": ["Mark Hamill", "Harrison Ford", "Carrie Fisher", "Alec Guinness"],
+    "characters": ["Luke Skywalker", "Han Solo", "Princess Leia Organa", "Obi-Wan Kenobi", "Darth Vader"],
+    "director": "George Lucas",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "setting": "Various planets in a galaxy far, far away",
+    "soundtracks": ["Main Theme", "Cantina Band", "The Throne Room"]
+  },
+  {
+    "title": "Star Wars: Episode V - The Empire Strikes Back",
+    "year": 1980,
+    "actors": ["Mark Hamill", "Harrison Ford", "Carrie Fisher", "Frank Oz"],
+    "characters": ["Luke Skywalker", "Han Solo", "Princess Leia Organa", "Yoda", "Darth Vader"],
+    "director": "Irvin Kershner",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "setting": "Various planets in a galaxy far, far away",
+    "soundtracks": ["The Imperial March (Darth Vader's Theme)", "Yoda's Theme"]
+  },
+  {
+    "title": "Star Wars: Episode VI - Return of the Jedi",
+    "year": 1983,
+    "actors": ["Mark Hamill", "Harrison Ford", "Carrie Fisher", "Ian McDiarmid"],
+    "characters": ["Luke Skywalker", "Han Solo", "Princess Leia Organa", "Emperor Palpatine", "Darth Vader"],
+    "director": "Richard Marquand",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "setting": "Various planets in a galaxy far, far away",
+    "soundtracks": ["Ewok Celebration", "Luke and Leia"]
+  },
+  {
+    "title": "Star Wars: Episode I - The Phantom Menace",
+    "year": 1999,
+    "actors": ["Liam Neeson", "Ewan McGregor", "Natalie Portman", "Jake Lloyd"],
+    "characters": ["Qui-Gon Jinn", "Obi-Wan Kenobi", "Padmé Amidala", "Anakin Skywalker", "Darth Maul"],
+    "director": "George Lucas",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "setting": "Various planets in a galaxy far, far away",
+    "soundtracks": ["Duel of the Fates", "Anakin's Theme"]
+  },
+  {
+    "title": "Star Wars: Episode II - Attack of the Clones",
+    "year": 2002,
+    "actors": ["Ewan McGregor", "Natalie Portman", "Hayden Christensen", "Christopher Lee"],
+    "characters": ["Obi-Wan Kenobi", "Padmé Amidala", "Anakin Skywalker", "Count Dooku", "Yoda"],
+    "director": "George Lucas",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "setting": "Various planets in a galaxy far, far away",
+    "soundtracks": ["Across the Stars (Anakin and Padmé's Theme)"]
+  },
+  {
+    "title": "Star Wars: Episode III - Revenge of the Sith",
+    "year": 2005,
+    "actors": ["Ewan McGregor", "Natalie Portman", "Hayden Christensen", "Ian McDiarmid"],
+    "characters": ["Obi-Wan Kenobi", "Padmé Amidala", "Anakin Skywalker/Darth Vader", "Emperor Palpatine", "Yoda"],
+    "director": "George Lucas",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "setting": "Various planets in a galaxy far, far away",
+    "soundtracks": ["Battle of the Heroes", "Anakin's Dark Deeds"]
+  },
+  {
+    "title": "When Harry Met Sally...",
+    "year": 1989,
+    "actors": ["Billy Crystal", "Meg Ryan", "Carrie Fisher", "Bruno Kirby"],
+    "characters": ["Harry Burns", "Sally Albright", "Marie Fisher", "Jess"],
+    "director": "Rob Reiner",
+    "genre": ["Comedy", "Drama", "Romance"],
+    "setting": "New York City",
+    "soundtracks": ["It Had to Be You (Harry Connick Jr.)", "Let's Call the Whole Thing Off (Louis Armstrong & Ella Fitzgerald)"]
+  },
+  {
+    "title": "Pretty Woman",
+    "year": 1990,
+    "actors": ["Julia Roberts", "Richard Gere", "Hector Elizondo", "Ralph Bellamy"],
+    "characters": ["Vivian Ward", "Edward Lewis", "Barney Thompson", "James Morse"],
+    "director": "Garry Marshall",
+    "genre": ["Comedy", "Romance"],
+    "setting": "Los Angeles",
+    "soundtracks": ["Oh, Pretty Woman (Roy Orbison)", "It Must Have Been Love (Roxette)"]
+  },
+  {
+    "title": "Sleepless in Seattle",
+    "year": 1993,
+    "actors": ["Tom Hanks", "Meg Ryan", "Ross Malinger", "Rob Reiner"],
+    "characters": ["Sam Baldwin", "Annie Reed", "Jonah Baldwin", "Jay"],
+    "director": "Nora Ephron",
+    "genre": ["Comedy", "Drama", "Romance"],
+    "setting": "Seattle, Chicago, New York City",
+    "soundtracks": ["A Kiss to Build a Dream On (Louis Armstrong)", "As Time Goes By (Jimmy Durante)"]
+  },
+  {
+    "title": "Forrest Gump",
+    "year": 1994,
+    "actors": ["Tom Hanks", "Robin Wright", "Gary Sinise", "Sally Field"],
+    "characters": ["Forrest Gump", "Jenny Curran", "Lieutenant Dan Taylor", "Mrs. Gump"],
+    "director": "Robert Zemeckis",
+    "genre": ["Drama", "Romance"],
+    "setting": "Various locations across the United States",
+    "soundtracks": ["Hound Dog (Elvis Presley)", "Sweet Home Alabama (Lynyrd Skynyrd)", "Fortunate Son (Creedence Clearwater Revival)"]
+  },
+  {
+    "title": "The Wedding Singer",
+    "year": 1998,
+    "actors": ["Adam Sandler", "Drew Barrymore", "Christine Taylor", "Allen Covert"],
+    "characters": ["Robbie Hart", "Julia Sullivan", "Holly Sullivan", "Sammy"],
+    "director": "Frank Coraci",
+    "genre": ["Comedy", "Romance"],
+    "setting": "New Jersey, 1985",
+    "soundtracks": ["Video Killed the Radio Star (The Buggles)", "You Spin Me Round (Like a Record) (Dead or Alive)"]
+  },
+  {
+    "title": "50 First Dates",
+    "year": 2004,
+    "actors": ["Adam Sandler", "Drew Barrymore", "Rob Schneider", "Sean Astin"],
+    "characters": ["Henry Roth", "Lucy Whitmore", "Ula", "Doug Whitmore"],
+    "director": "Peter Segal",
+    "genre": ["Comedy", "Romance"],
+    "setting": "Hawaii",
+    "soundtracks": ["Wouldn't It Be Nice (The Beach Boys)", "Hold Me Now (Wayne Wonder)"]
+  },
+  {
+    "title": "The 40-Year-Old Virgin",
+    "year": 2005,
+    "actors": ["Steve Carell", "Catherine Keener", "Paul Rudd", "Romany Malco"],
+    "characters": ["Andy Stitzer", "Trish Piedmont", "David", "Romany"],
+    "director": "Judd Apatow",
+    "genre": ["Comedy", "Romance"],
+    "setting": "Los Angeles",
+    "soundtracks": ["Let's Get It Started (The Black Eyed Peas)", "Reelin' in the Years (Steely Dan)"]
+  },
+  {
+    "title": "Knocked Up",
+    "year": 2007,
+    "actors": ["Seth Rogen", "Katherine Heigl", "Paul Rudd", "Leslie Mann"],
+    "characters": ["Ben Stone", "Alison Scott", "Pete", "Debbie"],
+    "director": "Judd Apatow",
+    "genre": ["Comedy", "Romance"],
+    "setting": "Los Angeles",
+    "soundtracks": ["Fortunate Son (Creedence Clearwater Revival)", "Rock You Like a Hurricane (Scorpions)"]
+  },
+  {
+    "title": "Grown Ups",
+    "year": 2010,
+    "actors": ["Adam Sandler", "Kevin James", "Chris Rock", "David Spade", "Rob Schneider"],
+    "characters": ["Lenny Feder", "Eric Lamonsoff", "Kurt McKenzie", "Marcus Higgins", "Rob Hilliard"],
+    "director": "Dennis Dugan",
+    "genre": ["Comedy"],
+    "setting": "New England",
+    "soundtracks": ["Good Times (Chic)", "American Girl (Tom Petty and the Heartbreakers)"]
+  },
+  {
+    "title": "Bridesmaids",
+    "year": 2011,
+    "actors": ["Kristen Wiig", "Maya Rudolph", "Rose Byrne", "Melissa McCarthy"],
+    "characters": ["Annie Walker", "Lillian Donovan", "Helen Harris III", "Megan Price"],
+    "director": "Paul Feig",
+    "genre": ["Comedy"],
+    "setting": "Milwaukee",
+    "soundtracks": ["Rip Tide (Sick Puppies)", "Hold On (Wilson Phillips)"]
+  },
+  {
+    "title": "Crazy Rich Asians",
+    "year": 2018,
+    "actors": ["Constance Wu", "Henry Golding", "Michelle Yeoh", "Awkwafina"],
+    "characters": ["Rachel Chu", "Nick Young", "Eleanor Young", "Peik Lin Goh"],
+    "director": "Jon M. Chu",
+    "genre": ["Comedy", "Romance"],
+    "setting": "New York City, Singapore",
+    "soundtracks": ["Yellow (Chinese Version) (Katherine Ho)", "Money (Awa)"]
+  },
+  {
+    "title": "Casablanca",
+    "year": 1942,
+    "actors": ["Humphrey Bogart", "Ingrid Bergman", "Paul Henreid", "Claude Rains"],
+    "characters": ["Rick Blaine", "Ilsa Lund", "Victor Laszlo", "Captain Louis Renault"],
+    "director": "Michael Curtiz",
+    "genre": ["Drama", "Romance", "War"],
+    "setting": "Casablanca, Morocco",
+    "soundtracks": ["As Time Goes By (Dooley Wilson)"]
+  },
+  {
+    "title": "Schindler's List",
+    "year": 1993,
+    "actors": ["Liam Neeson", "Ben Kingsley", "Ralph Fiennes", "Caroline Goodall"],
+    "characters": ["Oskar Schindler", "Itzhak Stern", "Amon Göth", "Emilie Schindler"],
+    "director": "Steven Spielberg",
+    "genre": ["Biography", "Drama", "History"],
+    "setting": "Kraków, Poland",
+    "soundtracks": ["Schindler's List Theme"]
+  },
+  {
+    "title": "WALL-E",
+    "year": 2008,
+    "actors": ["Ben Burtt", "Elissa Knight", "Jeff Garlin", "Fred Willard"],
+    "characters": ["WALL-E", "EVE", "Captain B. McCrea", "Shelby Forthright"],
+    "director": "Andrew Stanton",
+    "genre": ["Animation", "Adventure", "Family"],
+    "setting": "Earth (abandoned), Space",
+    "soundtracks": ["Down to Earth (Peter Gabriel)", "La Vie en Rose (Louis Armstrong)"]
+  },
+  {
+    "title": "Joker",
+    "year": 2019,
+    "actors": ["Joaquin Phoenix", "Robert De Niro", "Zazie Beetz", "Frances Conroy"],
+    "characters": ["Arthur Fleck / Joker", "Murray Franklin", "Sophie Dumond", "Penny Fleck"],
+    "director": "Todd Phillips",
+    "genre": ["Crime", "Drama", "Thriller"],
+    "setting": "Gotham City",
+    "soundtracks": ["That's Life (Frank Sinatra)", "White Room (Cream)"]
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "actors": ["Elijah Wood", "Ian McKellen", "Viggo Mortensen", "Sean Astin"],
+    "characters": ["Frodo Baggins", "Gandalf", "Aragorn", "Samwise Gamgee"],
+    "director": "Peter Jackson",
+    "genre": ["Adventure", "Drama", "Fantasy"],
+    "setting": "Middle-earth",
+    "soundtracks": ["Concerning Hobbits", "The Fellowship"]
+  },
+  {
+    "title": "The Lord of the Rings: The Two Towers",
+    "year": 2002,
+    "actors": ["Elijah Wood", "Ian McKellen", "Viggo Mortensen", "Sean Astin"],
+    "characters": ["Frodo Baggins", "Gandalf", "Aragorn", "Samwise Gamgee", "Gollum"],
+    "director": "Peter Jackson",
+    "genre": ["Adventure", "Drama", "Fantasy"],
+    "setting": "Middle-earth",
+    "soundtracks": ["Gollum's Song", "Rohan"]
+  },
+  {
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "actors": ["Elijah Wood", "Ian McKellen", "Viggo Mortensen", "Sean Astin"],
+    "characters": ["Frodo Baggins", "Gandalf", "Aragorn", "Samwise Gamgee", "Gollum"],
+    "director": "Peter Jackson",
+    "genre": ["Adventure", "Drama", "Fantasy"],
+    "setting": "Middle-earth",
+    "soundtracks": ["Into the West", "The Steward of Gondor"]
+  },
+  {
+    "title": "Jaws",
+    "year": 1975,
+    "actors": ["Roy Scheider", "Richard Dreyfuss", "Robert Shaw"],
+    "characters": ["Martin Brody", "Matt Hooper", "Quint"],
+    "director": "Steven Spielberg",
+    "genre": ["Thriller", "Adventure", "Horror"],
+    "setting": "Amity Island",
+    "soundtracks": ["Main Title (Jaws Theme) (John Williams)"]
+  },
+  {
+    "title": "Alien",
+    "year": 1979,
+    "actors": ["Sigourney Weaver", "Tom Skerritt", "John Hurt"],
+    "characters": ["Ellen Ripley", "Dallas", "Kane"],
+    "director": "Ridley Scott",
+    "genre": ["Sci-Fi", "Horror"],
+    "setting": "Spaceship Nostromo",
+    "soundtracks": ["Main Theme (Jerry Goldsmith)"]
+  },
+  {
+    "title": "Psycho",
+    "year": 1960,
+    "actors": ["Anthony Perkins", "Janet Leigh", "Vera Miles"],
+    "characters": ["Norman Bates", "Marion Crane", "Lila Crane"],
+    "director": "Alfred Hitchcock",
+    "genre": ["Horror", "Thriller"],
+    "setting": "Bates Motel",
+    "soundtracks": ["The Murder (Bernard Herrmann)"]
+  },
+  {
+    "title": "Get Out",
+    "year": 2017,
+    "actors": ["Daniel Kaluuya", "Allison Williams", "Lil Rel Howery"],
+    "characters": ["Chris Washington", "Rose Armitage", "Rod Williams"],
+    "director": "Jordan Peele",
+    "genre": ["Horror", "Thriller"],
+    "setting": "Upstate New York (Armitage estate)",
+    "soundtracks": ["Redbone (Childish Gambino)", "Sikiliza Kwa Wahenga (Michael Abels)"]
+  },
+  {
+    "title": "King Kong",
+    "year": 2005,
+    "actors": ["Naomi Watts", "Jack Black", "Adrien Brody", "Andy Serkis"],
+    "characters": ["Ann Darrow", "Carl Denham", "Jack Driscoll", "King Kong"],
+    "director": "Peter Jackson",
+    "genre": ["Action", "Adventure", "Drama"],
+    "setting": "Skull Island, New York City",
+    "soundtracks": ["King Kong Theme (James Newton Howard)"]
+  },
+  {
+    "title": "American Psycho",
+    "year": 2000,
+    "actors": ["Christian Bale", "Jared Leto", "Chloë Sevigny", "Willem Dafoe"],
+    "characters": ["Patrick Bateman", "Paul Allen", "Jean", "Detective Kimball"],
+    "director": "Mary Harron",
+    "genre": ["Drama", "Horror", "Satire"],
+    "setting": "New York City, 1980s",
+    "soundtracks": ["Hip to Be Square (Huey Lewis & The News)", "Walking on Sunshine (Katrina and the Waves)"]
+  },
+  {
+    "title": "Happy Gilmore",
+    "year": 1996,
+    "actors": ["Adam Sandler", "Christopher McDonald", "Julie Bowen", "Carl Weathers"],
+    "characters": ["Happy Gilmore", "Shooter McGavin", "Virginia Venit", "Chubbs Peterson"],
+    "director": "Dennis Dugan",
+    "genre": ["Comedy", "Sport"],
+    "setting": "Various golf courses",
+    "soundtracks": ["Tuesday's Gone (Lynyrd Skynyrd)", "Carry On Wayward Son (Kansas)"]
+  },
+  {
+    "title": "Just Go with It",
+    "year": 2011,
+    "actors": ["Adam Sandler", "Jennifer Aniston", "Brooklyn Decker", "Nick Swardson"],
+    "characters": ["Danny Maccabee", "Katherine Murphy", "Palmer", "Eddie"],
+    "director": "Dennis Dugan",
+    "genre": ["Comedy", "Romance"],
+    "setting": "Los Angeles, Hawaii",
+    "soundtracks": ["Every Breath You Take (The Police)", "Is This Love (Bob Marley & The Wailers)"]
+  },
+  {
+    "title": "Inception",
+    "year": 2010,
+    "genre": ["Sci-Fi", "Action"],
+    "characters": ["Dom Cobb", "Arthur", "Ariadne"],
+    "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"],
+    "setting": ["Dreamscapes", "Tokyo", "Paris"],
+    "soundtrack": ["Time"],
+    "director": "Christopher Nolan"
+  },
+  {
+    "title": "The Matrix",
+    "year": 1999,
+    "genre": ["Sci-Fi", "Action"],
+    "characters": ["Neo", "Trinity", "Morpheus", "Agent Smith"],
+    "actors": ["Keanu Reeves", "Carrie-Anne Moss", "Laurence Fishburne"],
+    "setting": ["The Matrix", "Zion", "Dystopian Future"],
+    "soundtrack": ["Spybreak!"],
+    "director": "The Wachowskis"
+  },
+  {
+    "title": "Interstellar",
+    "year": 2014,
+    "genre": ["Sci-Fi", "Drama"],
+    "characters": ["Cooper", "Brand", "Murph", "TARS"],
+    "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
+    "setting": ["Earth", "Space", "Gargantua", "Other Planets"],
+    "soundtrack": ["Cornfield Chase"],
+    "director": "Christopher Nolan"
+  },
+  {
+    "title": "The Social Network",
+    "year": 2010,
+    "genre": ["Biography", "Drama"],
+    "characters": ["Mark Zuckerberg", "Eduardo Saverin", "Sean Parker"],
+    "actors": ["Jesse Eisenberg", "Andrew Garfield", "Justin Timberlake"],
+    "setting": ["Harvard", "Palo Alto", "Facebook HQ"],
+    "soundtrack": ["Hand Covers Bruise"],
+    "director": "David Fincher"
+  },
+  {
+    "title": "La La Land",
+    "year": 2016,
+    "genre": ["Musical", "Drama", "Romance"],
+    "characters": ["Mia", "Sebastian"],
+    "actors": ["Emma Stone", "Ryan Gosling"],
+    "setting": ["Los Angeles"],
+    "soundtrack": ["City of Stars"],
+    "director": "Damien Chazelle"
+  },
+  {
+    "title": "Whiplash",
+    "year": 2014,
+    "genre": ["Drama", "Music"],
+    "characters": ["Andrew Neiman", "Terence Fletcher"],
+    "actors": ["Miles Teller", "J.K. Simmons"],
+    "setting": ["New York", "Music Conservatory"],
+    "soundtrack": ["Caravan"],
+    "director": "Damien Chazelle"
+  },
+  {
+    "title": "The Grand Budapest Hotel",
+    "year": 2014,
+    "genre": ["Comedy", "Drama"],
+    "characters": ["Gustave H", "Zero Moustafa"],
+    "actors": ["Ralph Fiennes", "Tony Revolori"],
+    "setting": ["Zubrowka", "Hotel"],
+    "soundtrack": ["Mr. Moustafa"],
+    "director": "Wes Anderson"
+  },
+  {
+    "title": "Her",
+    "year": 2013,
+    "genre": ["Romance", "Sci-Fi", "Drama"],
+    "characters": ["Theodore", "Samantha"],
+    "actors": ["Joaquin Phoenix", "Scarlett Johansson"],
+    "setting": ["Near Future LA"],
+    "soundtrack": ["The Moon Song"],
+    "director": "Spike Jonze"
+  },
+  {
+    "title": "The Wolf of Wall Street",
+    "year": 2013,
+    "genre": ["Biography", "Comedy", "Crime"],
+    "characters": ["Jordan Belfort", "Donnie Azoff"],
+    "actors": ["Leonardo DiCaprio", "Jonah Hill", "Margot Robbie"],
+    "setting": ["New York", "Wall Street"],
+    "soundtrack": ["Mrs. Robinson", "Jordan Belfort Theme"],
+    "director": "Martin Scorsese"
+  },
+  {
+    "title": "Coco",
+    "year": 2017,
+    "genre": ["Animation", "Adventure", "Family"],
+    "characters": ["Miguel", "Hector", "Mama Coco"],
+    "actors": ["Anthony Gonzalez", "Gael García Bernal"],
+    "setting": ["Santa Cecilia", "Land of the Dead"],
+    "soundtrack": ["Remember Me"],
+    "director": "Lee Unkrich"
+  },
+  {
+    "title": "The Revenant",
+    "year": 2015,
+    "genre": ["Adventure", "Drama", "Thriller"],
+    "characters": ["Hugh Glass", "John Fitzgerald"],
+    "actors": ["Leonardo DiCaprio", "Tom Hardy"],
+    "setting": ["American Wilderness", "Winter"],
+    "soundtrack": ["The Revenant Main Theme"],
+    "director": "Alejandro G. Iñárritu"
+  },
+  {
+    "title": "Shrek",
+    "year": 2001,
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "characters": ["Shrek", "Donkey", "Fiona", "Lord Farquaad"],
+    "actors": ["Mike Myers", "Eddie Murphy", "Cameron Diaz"],
+    "setting": ["Far Far Away", "Swamp"],
+    "soundtrack": ["All Star"],
+    "director": "Andrew Adamson"
+  },
+  {
+    "title": "Inside Out",
+    "year": 2015,
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "characters": ["Joy", "Sadness", "Riley"],
+    "actors": ["Amy Poehler", "Phyllis Smith"],
+    "setting": ["Riley's Mind", "San Francisco"],
+    "soundtrack": ["Bundle of Joy"],
+    "director": "Pete Docter"
+  },
+  {
+    "title": "The Pursuit of Happyness",
+    "year": 2006,
+    "genre": ["Biography", "Drama"],
+    "characters": ["Chris Gardner", "Christopher"],
+    "actors": ["Will Smith", "Jaden Smith"],
+    "setting": ["San Francisco"],
+    "soundtrack": ["A Father's Way"],
+    "director": "Gabriele Muccino"
+  },
+  {
+    "title": "Tenet",
+    "year": 2020,
+    "genre": ["Action", "Sci-Fi"],
+    "characters": ["The Protagonist", "Neil", "Kat"],
+    "actors": ["John David Washington", "Robert Pattinson", "Elizabeth Debicki"],
+    "setting": ["Various", "Time-Inverted Worlds"],
+    "soundtrack": ["Foils"],
+    "director": "Christopher Nolan"
+  },
+  {
+    "title": "Encanto",
+    "year": 2021,
+    "genre": ["Animation", "Family", "Fantasy"],
+    "characters": ["Mirabel", "Bruno", "Isabela"],
+    "actors": ["Stephanie Beatriz", "John Leguizamo"],
+    "setting": ["Magical Casita", "Colombia"],
+    "soundtrack": ["We Don't Talk About Bruno"],
+    "director": "Jared Bush"
+  },
+  {
+    "title": "Dune",
+    "year": 2021,
+    "genre": ["Adventure", "Drama", "Sci-Fi"],
+    "characters": ["Paul Atreides", "Lady Jessica", "Duke Leto"],
+    "actors": ["Timothée Chalamet", "Rebecca Ferguson", "Oscar Isaac"],
+    "setting": ["Arrakis"],
+    "soundtrack": ["Dream of Arrakis"],
+    "director": "Denis Villeneuve"
+  },
+  {
+    "title": "The Hunger Games",
+    "year": 2012,
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "characters": ["Katniss Everdeen", "Peeta Mellark"],
+    "actors": ["Jennifer Lawrence", "Josh Hutcherson"],
+    "setting": ["District 12", "Capitol", "The Arena"],
+    "soundtrack": ["Safe & Sound"],
+    "director": "Gary Ross"
+  },
+  {
+    "title": "Knives Out",
+    "year": 2019,
+    "genre": ["Mystery", "Comedy", "Crime"],
+    "characters": ["Benoit Blanc", "Marta Cabrera"],
+    "actors": ["Daniel Craig", "Ana de Armas", "Chris Evans"],
+    "setting": ["Thrombey Mansion"],
+    "soundtrack": ["Knives Out!"],
+    "director": "Rian Johnson"
+  },
+  {
+    "title": "Everything Everywhere All at Once",
+    "year": 2022,
+    "genre": ["Adventure", "Comedy", "Sci-Fi"],
+    "characters": ["Evelyn", "Waymond", "Joy"],
+    "actors": ["Michelle Yeoh", "Ke Huy Quan", "Stephanie Hsu"],
+    "setting": ["Multiverse", "IRS Office"],
+    "soundtrack": ["This is a Life"],
+    "director": "Daniel Kwan, Daniel Scheinert"
+  },
+  {
+    "title": "1917",
+    "year": 2019,
+    "genre": ["Drama", "War"],
+    "characters": ["Lance Corporal Schofield", "Lance Corporal Blake"],
+    "actors": ["George MacKay", "Dean-Charles Chapman"],
+    "setting": ["World War I", "France"],
+    "soundtrack": ["Sixteen Hundred Men"],
+    "director": "Sam Mendes"
+  },
+  {
+    "title": "Ford v Ferrari",
+    "year": 2019,
+    "genre": ["Action", "Biography", "Drama"],
+    "characters": ["Carroll Shelby", "Ken Miles"],
+    "actors": ["Matt Damon", "Christian Bale"],
+    "setting": ["Le Mans", "Detroit"],
+    "soundtrack": ["Polk Salad Annie"],
+    "director": "James Mangold"
+  },
+  {
+    "title": "Barbie",
+    "year": 2023,
+    "genre": ["Comedy", "Fantasy"],
+    "characters": ["Barbie", "Ken"],
+    "actors": ["Margot Robbie", "Ryan Gosling"],
+    "setting": ["Barbieland", "Real World"],
+    "soundtrack": ["I'm Just Ken"],
+    "director": "Greta Gerwig"
+  },
+  {
+    "title": "Oppenheimer",
+    "year": 2023,
+    "genre": ["Biography", "Drama", "History"],
+    "characters": ["J. Robert Oppenheimer", "Lewis Strauss"],
+    "actors": ["Cillian Murphy", "Robert Downey Jr."],
+    "setting": ["Los Alamos", "WWII Era America"],
+    "soundtrack": ["Can You Hear the Music"],
+    "director": "Christopher Nolan"
+  },
+  {
+    "title": "Coco Before Chanel",
+    "year": 2009,
+    "genre": ["Biography", "Drama"],
+    "characters": ["Gabrielle 'Coco' Chanel"],
+    "actors": ["Audrey Tautou"],
+    "setting": ["Paris", "Early 1900s"],
+    "soundtrack": ["Coco Avant Chanel"],
+    "director": "Anne Fontaine"
+  },
+  {
+    "title": "Deadpool",
+    "year": 2016,
+    "genre": ["Action", "Comedy"],
+    "characters": ["Wade Wilson", "Vanessa", "Colossus"],
+    "actors": ["Ryan Reynolds", "Morena Baccarin"],
+    "setting": ["New York", "Warehouse"],
+    "soundtrack": ["X Gon' Give It To Ya"],
+    "director": "Tim Miller"
+  },
+  {
+    "title": "Logan",
+    "year": 2017,
+    "genre": ["Action", "Drama", "Sci-Fi"],
+    "characters": ["Logan", "Charles Xavier", "Laura"],
+    "actors": ["Hugh Jackman", "Patrick Stewart", "Dafne Keen"],
+    "setting": ["Texas", "Mexico Border"],
+    "soundtrack": ["The Man Comes Around"],
+    "director": "James Mangold"
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "genre": ["Drama"],
+    "characters": ["Andy Dufresne", "Red"],
+    "actors": ["Tim Robbins", "Morgan Freeman"],
+    "setting": ["Shawshank Prison"],
+    "soundtrack": ["So Was Red"],
+    "director": "Frank Darabont"
+  },
+  {
+    "title": "The Godfather",
+    "year": 1972,
+    "genre": ["Crime", "Drama"],
+    "characters": ["Don Vito Corleone", "Michael Corleone"],
+    "actors": ["Marlon Brando", "Al Pacino"],
+    "setting": ["New York", "Sicily"],
+    "soundtrack": ["The Godfather Waltz"],
+    "director": "Francis Ford Coppola"
+  },
+  {
+    "title": "The Martian",
+    "year": 2015,
+    "genre": ["Adventure", "Drama", "Sci-Fi"],
+    "characters": ["Mark Watney"],
+    "actors": ["Matt Damon"],
+    "setting": ["Mars", "NASA"],
+    "soundtrack": ["Starman"],
+    "director": "Ridley Scott"
+  },
+  {
+    "title": "Monsters, Inc.",
+    "year": 2001,
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "characters": ["Sully", "Mike", "Boo"],
+    "actors": ["John Goodman", "Billy Crystal"],
+    "setting": ["Monstropolis"],
+    "soundtrack": ["If I Didn't Have You"],
+    "director": "Pete Docter"
+  },
+  {
+    "title": "No Country for Old Men",
+    "year": 2007,
+    "genre": ["Crime", "Drama", "Thriller"],
+    "characters": ["Anton Chigurh", "Llewelyn Moss", "Ed Tom Bell"],
+    "actors": ["Javier Bardem", "Josh Brolin", "Tommy Lee Jones"],
+    "setting": ["Texas"],
+    "soundtrack": [],
+    "director": "Joel and Ethan Coen"
+  },
+  {
+    "title": "Home Alone",
+    "year": 1990,
+    "actors": ["Macaulay Culkin", "Joe Pesci", "Daniel Stern", "Catherine O'Hara"],
+    "characters": ["Kevin McCallister", "Harry", "Marv", "Kate McCallister"],
+    "director": "Chris Columbus",
+    "genre": ["Comedy", "Family"],
+    "setting": "Chicago, Illinois",
+    "soundtracks": ["Somewhere in My Memory", "Carol of the Bells"]
+  },
+  {
+    "title": "Home Alone 2: Lost in New York",
+    "year": 1992,
+    "actors": ["Macaulay Culkin", "Joe Pesci", "Daniel Stern", "Tim Curry"],
+    "characters": ["Kevin McCallister", "Harry", "Marv", "Mr. Hector"],
+    "director": "Chris Columbus",
+    "genre": ["Adventure", "Comedy", "Crime"],
+    "setting": "New York City",
+    "soundtracks": ["Merry Christmas, Merry Christmas", "All Alone on Christmas"]
+  },
+  {
+    "title": "Home Alone 3",
+    "year": 1997,
+    "actors": ["Alex D. Linz", "Olek Krupa", "Rya Kihlstedt", "Scarlett Johansson"],
+    "characters": ["Alex Pruitt", "Peter Beaupre", "Alice Ribbons", "Molly Pruitt"],
+    "director": "Raja Gosnell",
+    "genre": ["Action", "Comedy", "Family"],
+    "setting": "Chicago, Illinois",
+    "soundtracks": ["Home Alone 3 Theme"]
+  },
+  {
+    "title": "Home Alone 4: Taking Back the House",
+    "year": 2002,
+    "actors": ["Mike Weinberg", "French Stewart", "Missi Pyle", "Jason Beghe"],
+    "characters": ["Kevin McCallister", "Marv", "Vera", "Peter McCallister"],
+    "director": "Rod Daniel",
+    "genre": ["Comedy", "Family"],
+    "setting": "Chicago, Illinois",
+    "soundtracks": ["Home Alone Theme (TV Movie Version)"]
+  },
+  {
+    "title": "Home Alone: The Holiday Heist",
+    "year": 2012,
+    "actors": ["Christian Martyn", "Malcolm McDowell", "Debi Mazar", "Eddie Steeples"],
+    "characters": ["Finn Baxter", "Sinclair", "Jessica", "Hughes"],
+    "director": "Peter Hewitt",
+    "genre": ["Comedy", "Family"],
+    "setting": "Maine, USA",
+    "soundtracks": ["Holiday Heist Theme"]
+  },
+  {
+    "title": "Elf",
+    "year": 2003,
+    "actors": ["Will Ferrell", "Zooey Deschanel", "James Caan", "Bob Newhart"],
+    "characters": ["Buddy", "Jovie", "Walter", "Papa Elf"],
+    "director": "Jon Favreau",
+    "genre": ["Comedy", "Family", "Fantasy"],
+    "setting": "New York City, North Pole",
+    "soundtracks": ["Baby, It's Cold Outside", "Santa Claus is Coming to Town"]
+  },
+  {
+    "title": "The Santa Clause",
+    "year": 1994,
+    "actors": ["Tim Allen", "Eric Lloyd", "Wendy Crewson", "David Krumholtz"],
+    "characters": ["Scott Calvin", "Charlie", "Laura", "Bernard"],
+    "director": "John Pasquin",
+    "genre": ["Comedy", "Drama", "Family"],
+    "setting": "USA, North Pole",
+    "soundtracks": ["The Bells of Christmas"]
+  },
+  {
+    "title": "The Polar Express",
+    "year": 2004,
+    "actors": ["Tom Hanks", "Nona Gaye", "Peter Scolari", "Eddie Deezen"],
+    "characters": ["Hero Boy", "Conductor", "Santa Claus", "Know-It-All"],
+    "director": "Robert Zemeckis",
+    "genre": ["Animation", "Adventure", "Family"],
+    "setting": "Train to the North Pole",
+    "soundtracks": ["Believe", "Hot Chocolate"]
+  },
+  {
+    "title": "How the Grinch Stole Christmas",
+    "year": 2000,
+    "actors": ["Jim Carrey", "Taylor Momsen", "Jeffrey Tambor", "Christine Baranski"],
+    "characters": ["Grinch", "Cindy Lou Who", "Mayor MayWho", "Martha May Whovier"],
+    "director": "Ron Howard",
+    "genre": ["Comedy", "Family", "Fantasy"],
+    "setting": "Whoville",
+    "soundtracks": ["Where Are You Christmas?", "You're a Mean One, Mr. Grinch"]
+  },
+  {
+    "title": "Love Actually",
+    "year": 2003,
+    "actors": ["Hugh Grant", "Liam Neeson", "Emma Thompson", "Keira Knightley"],
+    "characters": ["David", "Daniel", "Karen", "Juliet"],
+    "director": "Richard Curtis",
+    "genre": ["Comedy", "Drama", "Romance"],
+    "setting": "London, England",
+    "soundtracks": ["Christmas Is All Around", "All You Need Is Love"]
+  },
+  {
+    "title": "The Holiday",
+    "year": 2006,
+    "actors": ["Cameron Diaz", "Kate Winslet", "Jude Law", "Jack Black"],
+    "characters": ["Amanda", "Iris", "Graham", "Miles"],
+    "director": "Nancy Meyers",
+    "genre": ["Comedy", "Romance"],
+    "setting": "Los Angeles & Surrey, England",
+    "soundtracks": ["Maestro", "Christmas Surprise"]
+  },
+  {
+    "title": "A Christmas Carol",
+    "year": 2009,
+    "actors": ["Jim Carrey", "Gary Oldman", "Colin Firth", "Bob Hoskins"],
+    "characters": ["Ebenezer Scrooge", "Bob Cratchit", "Fred", "Fezziwig"],
+    "director": "Robert Zemeckis",
+    "genre": ["Animation", "Drama", "Family"],
+    "setting": "London, 19th century",
+    "soundtracks": ["God Bless Us Everyone"]
+  },
+  {
+    "title": "The Nightmare Before Christmas",
+    "year": 1993,
+    "actors": ["Chris Sarandon", "Catherine O'Hara", "Danny Elfman"],
+    "characters": ["Jack Skellington", "Sally", "Oogie Boogie"],
+    "director": "Henry Selick",
+    "genre": ["Animation", "Family", "Fantasy"],
+    "setting": "Halloween Town, Christmas Town",
+    "soundtracks": ["This is Halloween", "What's This?"]
+  },
+  {
+    "title": "Arthur Christmas",
+    "year": 2011,
+    "actors": ["James McAvoy", "Hugh Laurie", "Jim Broadbent", "Bill Nighy"],
+    "characters": ["Arthur", "Steve", "Santa", "Grandsanta"],
+    "director": "Sarah Smith",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "setting": "North Pole, England",
+    "soundtracks": ["Make Someone Happy"]
+  },
+  {
+    "title": "The Christmas Chronicles",
+    "year": 2018,
+    "actors": ["Kurt Russell", "Darby Camp", "Judah Lewis", "Kimberly Williams-Paisley"],
+    "characters": ["Santa Claus", "Kate Pierce", "Teddy Pierce", "Claire"],
+    "director": "Clay Kaytis",
+    "genre": ["Adventure", "Comedy", "Family"],
+    "setting": "Chicago and North Pole",
+    "soundtracks": ["The Spirit of Christmas"]
+  },
+  {
+    "title": "Jingle All the Way",
+    "year": 1996,
+    "actors": ["Arnold Schwarzenegger", "Sinbad", "Phil Hartman", "Rita Wilson"],
+    "characters": ["Howard Langston", "Myron", "Ted", "Liz"],
+    "director": "Brian Levant",
+    "genre": ["Comedy", "Family"],
+    "setting": "Minneapolis, Minnesota",
+    "soundtracks": ["Jingle Bells Rock"]
+  },
+  {
+    "title": "A Charlie Brown Christmas",
+    "year": 1965,
+    "actors": ["Peter Robbins", "Christopher Shea", "Tracy Stratford"],
+    "characters": ["Charlie Brown", "Linus", "Lucy"],
+    "director": "Bill Melendez",
+    "genre": ["Animation", "Family"],
+    "setting": ["Peanuts Gang's Christmas Tree"],
+    "soundtracks": ["Christmas Time Is Here"]
+  }
+]
