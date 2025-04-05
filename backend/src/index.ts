@@ -5,6 +5,7 @@ import "dotenv/config";
 const identifyRouter = require('./routes/identify');
 const responseHistoryRouter = require('./routes/response-history');
 const streamingLinkRouter = require('./routes/streaming-links');
+const movieRouter = require('./routes/movies');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(cors());
 app.use('/api/identify', identifyRouter);
 app.use('/api/response-history', responseHistoryRouter);
 app.use('/api/streaming-links', streamingLinkRouter);
+app.use('/api/movies', movieRouter);
 
 // app.get("/api/test", async (req : Request, res : Response) => {
 //   res.json({message: "Hello World"});

@@ -2,6 +2,17 @@
 
 import { SongData } from "../experts/SoundtrackExpert";
 
+export type Movie = {
+  title: string;
+  releaseYear: number;
+  genre: string[];
+  director: string;
+  actors: string[];
+  characters: string[];
+  setting: string;
+  soundtracks: string[]; 
+}
+
 //------------------------------------------------------------------------
 // INPUT TYPES
 //------------------------------------------------------------------------
