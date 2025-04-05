@@ -1,5 +1,5 @@
 import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
-import { Input, ExpertResponse } from "../types/types";
+import { Input, ExpertResponse, MovieConfidences } from "../types/types";
 
 export abstract class Expert {
   public readonly name: string;
@@ -12,5 +12,5 @@ export abstract class Expert {
   }
 
   public abstract analyze(input: Input): Promise<ExpertResponse>;
-  public abstract calculateConfidence(matches: any, query: any): number;
+  public abstract calculateConfidence(matches: any, query: any): MovieConfidences[];
 }
