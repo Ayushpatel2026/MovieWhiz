@@ -35,7 +35,7 @@ export class SoundtrackExpert extends Expert {
         expertName: this.name,
         details: song || "song not found",
         movieConfidences: movieDataWithScores,
-        timestamp: Date.now(),
+        timeStamp: Date.now(),
       };
     } catch (error) {
       console.error("Audio processing failed:", error);

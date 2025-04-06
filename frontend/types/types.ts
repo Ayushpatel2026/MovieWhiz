@@ -1,6 +1,4 @@
-// This file contains all the types used in the backend of the application.
-
-import { SongData } from "../experts/SoundtrackExpert";
+// This file is the the frontend version of the same types as the backend
 
 export type Movie = {
   title: string;
@@ -36,9 +34,10 @@ export type TextInput = {
   data: string;
 };
 
+// TODO - figure out how to handle audio files in the frontend
 export type AudioInput = {
   type: "audio";
-  data: Express.Multer.File;
+  //data: Express.Multer.File;
 };
 
 //------------------------------------------------------------------------
@@ -68,6 +67,11 @@ export type ExpertResponse = {
   movieConfidences: MovieConfidences[];
   timeStamp?: number;
   details?: String | SongData;
+};
+
+export type SongData = {
+	name: string;
+	artist: string;
 };
 
 export type MovieConfidences = {
