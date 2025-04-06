@@ -27,6 +27,10 @@ const Page = () => {
     });
   };
 
+  const navigateToIdentifyMovie = () => {
+    router.push('/identify-movie');
+  };
+
   return (
     <View style={styles.container}>
       <Text>MovieWhiz</Text>
@@ -39,6 +43,10 @@ const Page = () => {
 
       <TouchableOpacity style={styles.button} onPress={navigateToResponseHistory}>
         <Text>View Response History</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={navigateToIdentifyMovie}>
+        <Text>Identify a Movie</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={() => signOut(auth)}>

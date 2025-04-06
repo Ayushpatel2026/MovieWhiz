@@ -74,7 +74,7 @@ export class LLMExpert extends Expert {
       result = "There has been an error. Try again";
     }
 
-    console.log("LLM response:", result);
+    //console.log("LLM response:", result);
 
     return result.response.text();
   }
@@ -97,7 +97,7 @@ export class LLMExpert extends Expert {
 
       // Attempt to parse the JSON text
       const jsonResponse = JSON.parse(cleanedText);
-      console.log('Parsed JSON response:', jsonResponse);
+      //console.log('Parsed JSON response:', jsonResponse);
       if (
         !jsonResponse ||
         !jsonResponse.movies ||

@@ -1,5 +1,6 @@
-import { Movie, MovieStreamingInfo, StoredResponse } from "@/types/types";
+import { FormInput, Movie, MovieStreamingInfo, StoredResponse } from "@/types/types";
 import axios from "axios";
+import { DocumentPickerResponse } from "react-native-document-picker";
 
 const API_BASE_URL = process.env.BACKEND_BASE_URL || "http://192.168.2.34:7000/api";
 
@@ -11,6 +12,27 @@ const api = axios.create({
 		"Content-Type": "application/json",
 	},
 })
+
+/*
+  Post request to identify a movie based on the given text, form, and audio inputs
+*/
+export const identifyMovie = async (formData : FormData): Promise<any> => {
+  try {
+    console.log("Form data text:", formData.get("text"));
+    console.log("Form data form:", formData.get("form"));
+    console.log("Form data audio:", formData.get("file"));
+    const response = await axios.post(`${API_BASE_URL}/identify/movie`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    console.log("Response from server for movie identification:", response.data);
+    return response.data;
+  } catch (error: any) {
+    console.error('Error sending identification request', error.response?.data || error.message);
+    throw error;
+  }
+};
 
 /*
 	Post a new response to the server sending the userId and the response data

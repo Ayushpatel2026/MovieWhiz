@@ -38,8 +38,7 @@ const movieInformationService = new MovieInformationService();
 			]
 		}
   Returns a movie object if found.
-  Returns a 404 status code if the movie is not found.
-	Returns a 500 status code if there is an error retrieving the movie information.
+  Returns a 500 status code if there is an error retrieving the movie information.
 */
 router.get("/:title", async (req: Request, res: Response) => {
 	const title = req.params.title;
@@ -48,8 +47,6 @@ router.get("/:title", async (req: Request, res: Response) => {
 		const movie = await movieInformationService.getMovie(title);
 		if (movie){
 			return res.json(movie);
-		}else {
-			res.status(404).json({ message: `Streaming links not found for movie: ${title}`});
 		}
 		res.json(movie);
 	} catch (error) {
