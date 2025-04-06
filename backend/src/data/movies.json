@@ -6,7 +6,7 @@
     "characters": ["Iron Man/Tony Stark", "Pepper Potts", "Obadiah Stane"],
     "director": "Jon Favreau",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "Various (Stark Industries, Afghanistan, etc.)",
+    "setting": ["Stark Industries", "Afghanistan", "Malibu", "Los Angeles"],
     "soundtracks": ["Iron Man (Black Sabbath)"]
   },
   {
@@ -16,7 +16,7 @@
     "characters": ["Aladdin", "Genie", "Princess Jasmine", "Jafar"],
     "director": "Ron Clements & John Musker",
     "genre": ["Animation", "Adventure", "Comedy", "Family", "Fantasy", "Musical", "Romance"],
-    "setting": "Agrabah (fictional Arabian city)",
+    "setting": ["Agrabah", "Cave of Wonders", "Palace", "Marketplace"],
     "soundtracks": ["A Whole New World", "Friend Like Me", "One Jump Ahead", "Prince Ali"]
   },
   {
@@ -26,7 +26,7 @@
     "characters": ["Iron Man", "Captain America", "Black Widow", "Thor", "Hulk", "Loki"],
     "director": "Joss Whedon",
     "genre": ["Action", "Sci-Fi", "Adventure"],
-    "setting": "New York City",
+    "setting": ["New York City", "S.H.I.E.L.D. Helicarrier", "Stark Tower", "Stuttgart"],
     "soundtracks": []
   },
   {
@@ -36,7 +36,7 @@
     "characters": ["Jai", "Veeru", "Basanti", "Thakur Baldev Singh"],
     "director": "Ramesh Sippy",
     "genre": ["Action", "Adventure", "Drama"],
-    "setting": "Ramgarh, India",
+    "setting": ["Ramgarh", "Rural India"],
     "soundtracks": ["Yeh Dosti", "Mehbooba Mehbooba"]
   },
   {
@@ -46,7 +46,7 @@
     "characters": ["Raj Malhotra", "Simran Singh", "Chaudhry Baldev Singh", "Dharamvir Malhotra"],
     "director": "Aditya Chopra",
     "genre": ["Drama", "Romance"],
-    "setting": "London, England and Punjab, India",
+    "setting": ["London", "Switzerland", "Punjab", "Rural India"],
     "soundtracks": ["Tujhe Dekha To", "Mere Khwabon Mein"]
   },
   {
@@ -56,7 +56,7 @@
     "characters": ["Bhuvan", "Gauri", "Elizabeth Russell", "Captain Andrew Russell"],
     "director": "Ashutosh Gowariker",
     "genre": ["Adventure", "Drama", "Musical"],
-    "setting": "Champaner, India, 1893",
+    "setting": ["Champaner", "Colonial India", "Cricket Ground"],
     "soundtracks": ["Mitwa", "Ghanan Ghanan"]
   },
   {
@@ -66,7 +66,7 @@
     "characters": ["Rancho", "Farhan Qureshi", "Raju Rastogi", "Pia Sahastrabuddhe"],
     "director": "Rajkumar Hirani",
     "genre": ["Comedy", "Drama"],
-    "setting": "Delhi, India",
+    "setting": ["Delhi", "Imperial College of Engineering", "Shimla", "Ladakh"],
     "soundtracks": ["All Is Well", "Give Me Some Sunshine"]
   },
   {
@@ -76,7 +76,7 @@
     "characters": ["Kim Ki-taek", "Park Dong-ik", "Choi Yeon-gyo", "Kim Ki-woo"],
     "director": "Bong Joon-ho",
     "genre": ["Comedy", "Drama", "Thriller"],
-    "setting": "Seoul, South Korea",
+    "setting": ["Seoul", "Park Family House", "Kim Family Basement Apartment", "Bunker"],
     "soundtracks": ["Soju One Glass"]
   },
   {
@@ -86,7 +86,7 @@
     "characters": ["Seok-woo", "Seong-kyeong", "Sang-hwa", "Soo-an"],
     "director": "Yeon Sang-ho",
     "genre": ["Action", "Horror", "Thriller"],
-    "setting": "South Korea",
+    "setting": ["Seoul", "Busan", "KTX Train", "Daejeon Station"],
     "soundtracks": ["Goodbye World"]
   },
   {
@@ -96,7 +96,7 @@
     "characters": ["Oh Dae-su", "Lee Woo-jin", "Mi-do", "Mr. Park"],
     "director": "Park Chan-wook",
     "genre": ["Action", "Drama", "Mystery"],
-    "setting": "Seoul, South Korea",
+    "setting": ["Seoul", "Private Prison", "Hotel", "Woo-jin's Penthouse"],
     "soundtracks": ["The Last Waltz"]
   },
   {
@@ -106,7 +106,7 @@
     "characters": ["Detective Park Doo-man", "Detective Seo Tae-yoon", "Detective Cho Yong-koo", "Sergeant Shin Dong-chul"],
     "director": "Bong Joon-ho",
     "genre": ["Crime", "Drama", "Mystery"],
-    "setting": "Hwaseong, South Korea",
+    "setting": ["Hwaseong", "Rural South Korea", "Police Station", "Crime Scenes"],
     "soundtracks": ["Memories of Murder Theme"]
   },
   {
@@ -116,7 +116,7 @@
     "characters": ["Kikuchiyo", "Kambei Shimada", "Gorobei Katayama", "Kyuzo"],
     "director": "Akira Kurosawa",
     "genre": ["Action", "Drama"],
-    "setting": "Japan, 1586",
+    "setting": ["Rural Japan", "Farming Village", "Forests", "Battlefields"],
     "soundtracks": ["Seven Samurai Theme"]
   },
   {
@@ -126,7 +126,7 @@
     "characters": ["Chihiro Ogino", "Haku", "Yubaba / Zeniba", "Akio Ogino"],
     "director": "Hayao Miyazaki",
     "genre": ["Animation", "Adventure", "Family"],
-    "setting": "Spirit World",
+    "setting": ["Bathhouse", "Spirit World", "Abandoned Amusement Park", "Train Tracks"],
     "soundtracks": ["One Summer's Day"]
   },
   {
@@ -136,7 +136,7 @@
     "characters": ["Tajōmaru", "Masako Kanazawa", "Takehiro Kanazawa", "Woodcutter"],
     "director": "Akira Kurosawa",
     "genre": ["Crime", "Drama", "Mystery"],
-    "setting": "Kyoto, Japan",
+    "setting": ["Kyoto", "Rashomon Gate", "Forest", "Courthouse"],
     "soundtracks": ["Rashomon Theme"]
   },
   {
@@ -146,7 +146,7 @@
     "characters": ["Star-Lord/Peter Quill", "Gamora", "Drax", "Rocket", "Groot"],
     "director": "James Gunn",
     "genre": ["Action", "Adventure", "Comedy"],
-    "setting": "Outer Space",
+    "setting": ["Morag", "Xandar", "Knowhere", "The Kyln", "The Milano"],
     "soundtracks": ["Hooked on a Feeling", "Come and Get Your Love", "Ain't No Mountain High Enough"]
   },
   {
@@ -156,7 +156,7 @@
     "characters": ["Black Panther/T'Challa", "Erik Killmonger", "Nakia", "Shuri"],
     "director": "Ryan Coogler",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "Wakanda",
+    "setting": ["Wakanda", "Warrior Falls", "Vibranium Mine", "South Korea", "Oakland"],
     "soundtracks": ["All the Stars", "Pray For Me"]
   },
   {
@@ -166,7 +166,7 @@
     "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Albus Dumbledore", "Severus Snape"],
     "director": "Chris Columbus",
     "genre": ["Adventure", "Family", "Fantasy"],
-    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "setting": ["Hogwarts School", "Diagon Alley", "Privet Drive", "Forbidden Forest", "Gryffindor Tower"],
     "soundtracks": ["Hedwig's Theme", "Nimbus 2000", "Harry's Wondrous World"]
   },
   {
@@ -176,7 +176,7 @@
     "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Albus Dumbledore", "Severus Snape"],
     "director": "Chris Columbus",
     "genre": ["Adventure", "Family", "Fantasy"],
-    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "setting": ["Hogwarts School", "Chamber of Secrets", "The Burrow", "Whomping Willow", "Moaning Myrtle's Bathroom"],
     "soundtracks": ["Fawkes the Phoenix", "The Chamber of Secrets"]
   },
   {
@@ -186,7 +186,7 @@
     "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Sirius Black", "Remus Lupin"],
     "director": "Alfonso Cuarón",
     "genre": ["Adventure", "Family", "Fantasy"],
-    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "setting": ["Hogwarts School", "Hogsmeade", "Forbidden Forest", "Shrieking Shack", "Azkaban Prison"],
     "soundtracks": ["Buckbeak's Flight", "The Dementors Arrive"]
   },
   {
@@ -196,7 +196,7 @@
     "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Lord Voldemort", "Cedric Diggory"],
     "director": "Mike Newell",
     "genre": ["Adventure", "Family", "Fantasy"],
-    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "setting": ["Hogwarts School", "Quidditch World Cup", "Triwizard Tournament", "Prefects' Bathroom", "Graveyard"],
     "soundtracks": ["Hogwarts' March", "Potter Waltz"]
   },
   {
@@ -206,7 +206,7 @@
     "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Dolores Umbridge", "Sirius Black"],
     "director": "David Yates",
     "genre": ["Adventure", "Family", "Fantasy"],
-    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "setting": ["Hogwarts School", "Ministry of Magic", "Department of Mysteries", "12 Grimmauld Place", "Room of Requirement"],
     "soundtracks": ["Another Story", "Dumbledore's Army"]
   },
   {
@@ -216,7 +216,7 @@
     "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Albus Dumbledore", "Severus Snape"],
     "director": "David Yates",
     "genre": ["Adventure", "Family", "Fantasy"],
-    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "setting": ["Hogwarts School", "The Burrow", "Spinner's End", "Cave by the Sea", "Astronomy Tower"],
     "soundtracks": ["Leaving Hogwarts", "When Ginny Kissed Harry"]
   },
   {
@@ -226,7 +226,7 @@
     "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Lord Voldemort"],
     "director": "David Yates",
     "genre": ["Adventure", "Family", "Fantasy"],
-    "setting": "Various locations",
+    "setting": ["Malfoy Manor", "Forest of Dean", "Ministry of Magic", "Godric's Hollow", "Shell Cottage"],
     "soundtracks": ["Obliviate", "The Tale of the Three Brothers"]
   },
   {
@@ -236,7 +236,7 @@
     "characters": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Lord Voldemort", "Severus Snape"],
     "director": "David Yates",
     "genre": ["Adventure", "Family", "Fantasy"],
-    "setting": "Hogwarts School of Witchcraft and Wizardry",
+    "setting": ["Hogwarts School", "Gringotts Bank", "Room of Requirement", "Great Hall", "Forbidden Forest"],
     "soundtracks": ["Lily's Theme", "Battle of Hogwarts"]
   },
   {
@@ -246,7 +246,7 @@
     "characters": ["Snow White", "The Evil Queen", "Dopey"],
     "director": "David Hand",
     "genre": ["Animation", "Family", "Fantasy"],
-    "setting": "Enchanted forest",
+    "setting": ["Enchanted Forest", "Dwarfs' Cottage", "Castle", "Mine"],
     "soundtracks": ["Someday My Prince Will Come", "Heigh-Ho"]
   },
   {
@@ -256,7 +256,7 @@
     "characters": ["Pinocchio", "Jiminy Cricket", "Geppetto"],
     "director": "Ben Sharpsteen",
     "genre": ["Animation", "Family", "Fantasy"],
-    "setting": "Italian village, Pleasure Island",
+    "setting": ["Italian Village", "Geppetto's Workshop", "Pleasure Island", "Ocean Floor"],
     "soundtracks": ["When You Wish Upon a Star"]
   },
   {
@@ -266,7 +266,7 @@
     "characters": ["Cinderella", "Fairy Godmother", "Stepmother"],
     "director": "Clyde Geronimi",
     "genre": ["Animation", "Family", "Fantasy"],
-    "setting": "Kingdom",
+    "setting": ["Cinderella's House", "Royal Palace", "Royal Ballroom", "Garden"],
     "soundtracks": ["A Dream Is a Wish Your Heart Makes", "Bibbidi-Bobbidi-Boo"]
   },
   {
@@ -276,7 +276,7 @@
     "characters": ["Aurora", "Maleficent", "Prince Phillip"],
     "director": "Clyde Geronimi",
     "genre": ["Animation", "Family", "Fantasy"],
-    "setting": "Kingdom",
+    "setting": ["King Stefan's Castle", "Forest Cottage", "Forbidden Mountain", "Enchanted Forest"],
     "soundtracks": ["Once Upon a Dream"]
   },
   {
@@ -286,7 +286,7 @@
     "characters": ["Mary Poppins", "Bert", "Jane Banks", "Michael Banks"],
     "director": "Robert Stevenson",
     "genre": ["Family", "Fantasy", "Musical"],
-    "setting": "London",
+    "setting": ["London", "Banks Family Home", "Rooftops", "Chalk Drawing Park"],
     "soundtracks": ["Supercalifragilisticexpialidocious", "A Spoonful of Sugar"]
   },
   {
@@ -296,7 +296,7 @@
     "characters": ["Mowgli", "Baloo", "Bagheera", "Shere Khan"],
     "director": "Wolfgang Reitherman",
     "genre": ["Animation", "Family", "Adventure"],
-    "setting": "Indian jungle",
+    "setting": ["Indian Jungle", "Ancient Ruins", "Man Village", "Treetops"],
     "soundtracks": ["The Bare Necessities", "I Wan'na Be Like You"]
   },
   {
@@ -306,7 +306,7 @@
     "characters": ["Duchess", "O'Malley", "Marie", "Berlioz", "Toulouse"],
     "director": "Wolfgang Reitherman",
     "genre": ["Animation", "Family", "Comedy"],
-    "setting": "Paris",
+    "setting": ["Paris", "Countryside", "Madame's Mansion", "Alleyways"],
     "soundtracks": ["Ev'rybody Wants to Be a Cat"]
   },
   {
@@ -316,7 +316,7 @@
     "characters": ["Woody", "Buzz Lightyear", "Mr. Potato Head"],
     "director": "John Lasseter",
     "genre": ["Animation", "Adventure", "Comedy"],
-    "setting": "Andy's Room",
+    "setting": ["Andy's Room", "Sid's House", "Pizza Planet", "Moving Van"],
     "soundtracks": ["You've Got a Friend in Me"]
   },
   {
@@ -326,7 +326,7 @@
     "characters": ["Ariel", "Sebastian", "Ursula"],
     "director": "Ron Clements",
     "genre": ["Animation", "Fantasy", "Musical"],
-    "setting": "Under the sea",
+    "setting": ["Under the Sea", "Atlantica", "Prince Eric's Castle", "Ship"],
     "soundtracks": ["Part of Your World", "Under the Sea"]
   },
   {
@@ -336,7 +336,7 @@
     "characters": ["Belle", "Beast", "Gaston", "Lumière"],
     "director": "Gary Trousdale",
     "genre": ["Animation", "Fantasy", "Musical"],
-    "setting": "Enchanted castle",
+    "setting": ["Beast's Castle", "Belle's Village", "Woods", "Library"],
     "soundtracks": ["Beauty and the Beast", "Be Our Guest"]
   },
   {
@@ -346,7 +346,7 @@
     "characters": ["Aladdin", "Genie", "Jasmine", "Jafar"],
     "director": "Ron Clements",
     "genre": ["Animation", "Adventure", "Comedy"],
-    "setting": "Agrabah",
+    "setting": ["Agrabah", "Palace", "Cave of Wonders", "Desert"],
     "soundtracks": ["A Whole New World", "Friend Like Me"]
   },
   {
@@ -356,7 +356,7 @@
     "characters": ["Simba", "Mufasa", "Scar", "Timon", "Pumbaa"],
     "director": "Roger Allers",
     "genre": ["Animation", "Adventure", "Drama"],
-    "setting": "Pride Lands",
+    "setting": ["Pride Rock", "Pride Lands", "Elephant Graveyard", "Jungle", "Gorge"],
     "soundtracks": ["Circle of Life", "Hakuna Matata"]
   },
   {
@@ -366,7 +366,7 @@
     "characters": ["Anna", "Elsa", "Olaf"],
     "director": "Chris Buck",
     "genre": ["Animation", "Adventure", "Fantasy"],
-    "setting": "Arendelle",
+    "setting": ["Arendelle", "North Mountain", "Ice Palace", "Frozen Forest", "Trolls' Valley"],
     "soundtracks": ["Let It Go", "Do You Want to Build a Snowman?"]
   },
   {
@@ -376,7 +376,7 @@
     "characters": ["Marlin", "Dory", "Nemo"],
     "director": "Andrew Stanton",
     "genre": ["Animation", "Adventure", "Comedy"],
-    "setting": "Great Barrier Reef",
+    "setting": ["Great Barrier Reef", "Sydney Harbor", "Dentist's Office", "East Australian Current", "Whale's Mouth"],
     "soundtracks": []
   },
   {
@@ -386,7 +386,7 @@
     "characters": ["Vincent Vega", "Mia Wallace", "Jules Winnfield"],
     "director": "Quentin Tarantino",
     "genre": ["Crime", "Drama", "Thriller"],
-    "setting": "Los Angeles",
+    "setting": ["Los Angeles", "Jack Rabbit Slim's", "Marcellus Wallace's House", "Brett's Apartment", "Pawn Shop"],
     "soundtracks": ["Misirlou", "You Never Can Tell"]
   },
   {
@@ -396,7 +396,7 @@
     "characters": ["Tyler Durden", "Narrator", "Marla Singer"],
     "director": "David Fincher",
     "genre": ["Drama"],
-    "setting": "Various US cities",
+    "setting": ["Paper Street House", "Underground Bar", "Support Group Meetings", "Corporate Office", "Lou's"],
     "soundtracks": ["Where Is My Mind?"]
   },
   {
@@ -406,7 +406,7 @@
     "characters": ["Andy Dufresne", "Ellis 'Red' Redding"],
     "director": "Frank Darabont",
     "genre": ["Drama"],
-    "setting": "Shawshank Penitentiary",
+    "setting": ["Shawshank Prison", "Prison Yard", "Library", "Warden's Office", "Zihuatanejo"],
     "soundtracks": []
   },
   {
@@ -416,7 +416,7 @@
     "characters": ["Batman", "The Joker", "James Gordon"],
     "director": "Christopher Nolan",
     "genre": ["Action", "Crime", "Drama"],
-    "setting": "Gotham City",
+    "setting": ["Gotham City", "Wayne Tower", "Gotham General Hospital", "Police Department", "Bank"],
     "soundtracks": []
   },
   {
@@ -426,7 +426,7 @@
     "characters": ["Luke Skywalker", "Han Solo", "Princess Leia", "Darth Vader"],
     "director": "George Lucas",
     "genre": ["Sci-Fi", "Adventure", "Fantasy"],
-    "setting": "Various planets, space",
+    "setting": ["Tatooine", "Death Star", "Millennium Falcon", "Rebel Base", "Mos Eisley"],
     "soundtracks": ["Main Theme"]
   },
   {
@@ -436,7 +436,7 @@
     "characters": ["Elliott", "Gertie", "E.T."],
     "director": "Steven Spielberg",
     "genre": ["Sci-Fi", "Family", "Adventure"],
-    "setting": "Suburban California",
+    "setting": ["Suburban California", "Elliott's House", "Forest", "School", "Spaceship"],
     "soundtracks": []
   },
   {
@@ -446,7 +446,7 @@
     "characters": ["Dr. Alan Grant", "Dr. Ellie Sattler", "Dr. Ian Malcolm"],
     "director": "Steven Spielberg",
     "genre": ["Sci-Fi", "Adventure", "Thriller"],
-    "setting": "Isla Nublar",
+    "setting": ["Isla Nublar", "Visitor Center", "Raptor Pen", "Control Room", "T-Rex Paddock"],
     "soundtracks": ["Jurassic Park Theme"]
   },
   {
@@ -456,7 +456,7 @@
     "characters": ["Andrew", "Claire", "John", "Brian", "Allison"],
     "director": "John Hughes",
     "genre": ["Comedy", "Drama"],
-    "setting": "Shermer High School",
+    "setting": ["Shermer High School", "Library", "Hallways", "Storage Closet", "Principal's Office"],
     "soundtracks": ["Don't You (Forget About Me)"]
   },
   {
@@ -466,7 +466,7 @@
     "characters": ["Peter Venkman", "Ray Stantz", "Dana Barrett"],
     "director": "Ivan Reitman",
     "genre": ["Comedy", "Fantasy"],
-    "setting": "New York City",
+    "setting": ["New York City", "Firehouse Headquarters", "Dana's Apartment", "Public Library", "Rooftop"],
     "soundtracks": ["Ghostbusters"]
   },
   {
@@ -476,7 +476,7 @@
     "characters": ["Indiana Jones", "Marion Ravenwood"],
     "director": "Steven Spielberg",
     "genre": ["Action", "Adventure"],
-    "setting": "Various locations",
+    "setting": ["South American Temple", "Nepal", "Cairo", "Nazi Submarine Base", "Island"],
     "soundtracks": ["Raiders March"]
   },
   {
@@ -486,7 +486,7 @@
     "characters": ["Vivian Ward", "Edward Lewis"],
     "director": "Garry Marshall",
     "genre": ["Romance", "Comedy"],
-    "setting": "Los Angeles",
+    "setting": ["Los Angeles", "Beverly Hills", "Regent Beverly Wilshire Hotel", "Rodeo Drive", "Opera House"],
     "soundtracks": ["Oh, Pretty Woman"]
   },
   {
@@ -496,7 +496,7 @@
     "characters": ["Kevin McCallister", "Harry", "Marv"],
     "director": "Chris Columbus",
     "genre": ["Comedy", "Family"],
-    "setting": "Suburban Chicago",
+    "setting": ["McCallister House", "Suburban Chicago", "Neighbor's House", "Grocery Store", "Church"],
     "soundtracks": []
   },
   {
@@ -506,7 +506,7 @@
     "characters": ["Johnny Castle", "Frances 'Baby' Houseman"],
     "director": "Emile Ardolino",
     "genre": ["Romance", "Drama", "Music"],
-    "setting": "Kellerman's resort",
+    "setting": ["Kellerman's Resort", "Staff Quarters", "Dance Studio", "Lake", "Main Hall"],
     "soundtracks": ["(I've Had) The Time of My Life", "Hungry Eyes"]
   },
   {
@@ -516,18 +516,8 @@
     "characters": ["Pocahontas", "John Smith"],
     "director": "Mike Gabriel",
     "genre": ["Animation", "Adventure", "Romance"],
-    "setting": "Colonial Virginia",
+    "setting": ["Colonial Virginia", "Jamestown Settlement", "Native American Village", "Forest", "River"],
     "soundtracks": ["Colors of the Wind", "Just Around the Riverbend"]
-  },
-  {
-    "title": "Aladdin",
-    "year": 1992,
-    "actors": ["Scott Weinger", "Robin Williams", "Linda Larkin"],
-    "characters": ["Aladdin", "Genie", "Jasmine", "Jafar"],
-    "director": "Ron Clements",
-    "genre": ["Animation", "Adventure", "Comedy"],
-    "setting": "Agrabah",
-    "soundtracks": ["A Whole New World", "Friend Like Me"]
   },
   {
     "title": "Beauty and the Beast",
@@ -536,7 +526,7 @@
     "characters": ["Belle", "Beast", "Gaston", "Lumière", "Cogsworth"],
     "director": "Gary Trousdale",
     "genre": ["Animation", "Fantasy", "Musical"],
-    "setting": "Enchanted castle",
+    "setting": ["Enchanted castle", "French village"],
     "soundtracks": ["Beauty and the Beast", "Be Our Guest"]
   },
   {
@@ -546,7 +536,7 @@
     "characters": ["Ariel", "Sebastian", "Ursula", "Prince Eric"],
     "director": "Ron Clements",
     "genre": ["Animation", "Fantasy", "Musical"],
-    "setting": "Under the sea",
+    "setting": ["Under the sea", "Atlantica", "Prince Eric's kingdom"],
     "soundtracks": ["Part of Your World", "Under the Sea", "Kiss the Girl"]
   },
   {
@@ -556,7 +546,7 @@
     "characters": ["Marlin", "Dory", "Nemo"],
     "director": "Andrew Stanton",
     "genre": ["Animation", "Adventure", "Comedy"],
-    "setting": "Great Barrier Reef, Pacific Ocean",
+    "setting": ["Great Barrier Reef", "Sydney", "Pacific Ocean"],
     "soundtracks": []
   },
   {
@@ -566,7 +556,7 @@
     "characters": ["Mr. Incredible", "Elastigirl", "Frozone"],
     "director": "Brad Bird",
     "genre": ["Animation", "Action", "Adventure"],
-    "setting": "Metroville, Nomanisan Island",
+    "setting": ["Metroville", "Nomanisan Island"],
     "soundtracks": []
   },
   {
@@ -576,7 +566,7 @@
     "characters": ["Remy", "Linguini"],
     "director": "Brad Bird",
     "genre": ["Animation", "Comedy", "Family"],
-    "setting": "Paris",
+    "setting": ["Paris", "Gusteau's Restaurant"],
     "soundtracks": []
   },
   {
@@ -586,7 +576,7 @@
     "characters": ["Carl Fredricksen", "Russell"],
     "director": "Pete Docter",
     "genre": ["Animation", "Adventure", "Comedy"],
-    "setting": "Paradise Falls",
+    "setting": ["Paradise Falls", "Carl's house"],
     "soundtracks": []
   },
   {
@@ -596,7 +586,7 @@
     "characters": ["WALL-E", "EVE"],
     "director": "Andrew Stanton",
     "genre": ["Animation", "Sci-Fi", "Romance"],
-    "setting": "Earth, Axiom spaceship",
+    "setting": ["Earth", "Axiom spaceship"],
     "soundtracks": ["Put On Your Sunday Clothes"]
   },
   {
@@ -606,7 +596,7 @@
     "characters": ["Jake Sully", "Neytiri", "Dr. Grace Augustine"],
     "director": "James Cameron",
     "genre": ["Sci-Fi", "Action", "Adventure"],
-    "setting": "Pandora",
+    "setting": ["Pandora", "Hometree", "Hallelujah Mountains"],
     "soundtracks": []
   },
   {
@@ -616,7 +606,7 @@
     "characters": ["Maximus Decimus Meridius", "Commodus"],
     "director": "Ridley Scott",
     "genre": ["Action", "Drama", "History"],
-    "setting": "Roman Empire",
+    "setting": ["Rome", "Colosseum", "Germania", "Spain"],
     "soundtracks": []
   },
   {
@@ -626,7 +616,7 @@
     "characters": ["Captain John H. Miller", "Private James Ryan"],
     "director": "Steven Spielberg",
     "genre": ["War", "Drama", "History"],
-    "setting": "World War II Europe",
+    "setting": ["Normandy", "France", "World War II Europe"],
     "soundtracks": []
   },
   {
@@ -636,7 +626,7 @@
     "characters": ["Vincent Vega", "Mia Wallace", "Jules Winnfield"],
     "director": "Quentin Tarantino",
     "genre": ["Crime", "Drama", "Thriller"],
-    "setting": "Los Angeles",
+    "setting": ["Los Angeles", "Jack Rabbit Slim's"],
     "soundtracks": ["Misirlou", "You Never Can Tell"]
   },
   {
@@ -646,7 +636,7 @@
     "characters": ["Clarice Starling", "Hannibal Lecter"],
     "director": "Jonathan Demme",
     "genre": ["Thriller", "Crime", "Drama"],
-    "setting": "Various US locations",
+    "setting": ["FBI Academy", "Baltimore State Hospital", "Ohio"],
     "soundtracks": []
   },
   {
@@ -656,7 +646,7 @@
     "characters": ["Will Hunting", "Sean Maguire", "Chuckie Sullivan"],
     "director": "Gus Van Sant",
     "genre": ["Drama"],
-    "setting": "Boston",
+    "setting": ["Boston", "MIT", "Harvard University"],
     "soundtracks": ["Miss Misery"]
   },
   {
@@ -666,7 +656,7 @@
     "characters": ["Tyler Durden", "Narrator", "Marla Singer"],
     "director": "David Fincher",
     "genre": ["Drama"],
-    "setting": "Various US cities",
+    "setting": ["Unnamed city", "Paper Street house", "Underground fight venues"],
     "soundtracks": ["Where Is My Mind?"]
   },
   {
@@ -676,7 +666,7 @@
     "characters": ["Spider-Man/Peter Parker", "Green Goblin/Norman Osborn", "Mary Jane Watson", "Harry Osborn"],
     "director": "Sam Raimi",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "New York City",
+    "setting": ["New York City", "Midtown High School", "Daily Bugle"],
     "soundtracks": ["Hero (Chad Kroeger)", "What We're All About (Sum 41)"]
   },
   {
@@ -686,7 +676,7 @@
     "characters": ["Spider-Man/Peter Parker", "Doctor Octopus/Otto Octavius", "Mary Jane Watson", "Harry Osborn"],
     "director": "Sam Raimi",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "New York City",
+    "setting": ["New York City", "Columbia University", "Manhattan"],
     "soundtracks": ["Vindicated (Dashboard Confessional)", "Ordinary (Train)"]
   },
   {
@@ -696,7 +686,7 @@
     "characters": ["Spider-Man/Peter Parker", "Sandman/Flint Marko", "Venom/Eddie Brock", "Mary Jane Watson", "Harry Osborn"],
     "director": "Sam Raimi",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "New York City",
+    "setting": ["New York City", "Manhattan", "Daily Bugle"],
     "soundtracks": ["Signal Fire (Snow Patrol)", "Falling or Flying (Jennifer Hanson)"]
   },
   {
@@ -706,7 +696,7 @@
     "characters": ["Spider-Man/Peter Parker", "Gwen Stacy", "The Lizard/Dr. Curt Connors", "Captain George Stacy"],
     "director": "Marc Webb",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "New York City",
+    "setting": ["New York City", "Midtown Science High School", "Oscorp Tower"],
     "soundtracks": ["Til I Collapse (Eminem)", "No Way Out (Powerman 5000)"]
   },
   {
@@ -716,7 +706,7 @@
     "characters": ["Spider-Man/Peter Parker", "Gwen Stacy", "Electro/Max Dillon", "Green Goblin/Harry Osborn"],
     "director": "Marc Webb",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "New York City",
+    "setting": ["New York City", "Times Square", "Oscorp Tower", "Ravencroft Institute"],
     "soundtracks": ["It's On Again (Alicia Keys feat. Kendrick Lamar)", "The Edge of Glory (Lady Gaga)"]
   },
   {
@@ -726,7 +716,7 @@
     "characters": ["Spider-Man/Peter Parker", "Vulture/Adrian Toomes", "Iron Man/Tony Stark", "Aunt May"],
     "director": "Jon Watts",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "New York City",
+    "setting": ["New York City", "Queens", "Washington D.C.", "Midtown School of Science and Technology"],
     "soundtracks": ["Blitzkrieg Bop (Ramones)", "Can't Turn You Loose (Otis Redding)"]
   },
   {
@@ -736,7 +726,7 @@
     "characters": ["Miles Morales/Spider-Man", "Peter B. Parker/Spider-Man", "Spider-Gwen/Gwen Stacy", "The Prowler/Aaron Davis"],
     "director": ["Bob Persichetti", "Peter Ramsey", "Rodney Rothman"],
     "genre": ["Animation", "Action", "Adventure"],
-    "setting": "New York City",
+    "setting": ["New York City", "Brooklyn", "Alternate dimensions", "Kingpin's collider"],
     "soundtracks": ["Sunflower (Post Malone, Swae Lee)", "What's Up Danger (Blackway & Black Caviar)"]
   },
   {
@@ -746,7 +736,7 @@
     "characters": ["Spider-Man/Peter Parker", "Nick Fury", "Mysterio/Quentin Beck", "Aunt May"],
     "director": "Jon Watts",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "Europe",
+    "setting": ["Venice", "Prague", "London", "Berlin", "Netherlands"],
     "soundtracks": ["I Wanna Be Your Boyfriend (Ramones)", "Vacation (The Go-Go's)"]
   },
   {
@@ -756,7 +746,7 @@
     "characters": ["Spider-Man/Peter Parker", "MJ", "Doctor Strange", "Ned Leeds"],
     "director": "Jon Watts",
     "genre": ["Action", "Adventure", "Fantasy"],
-    "setting": "New York City",
+    "setting": ["New York City", "Sanctum Sanctorum", "Multiverse"],
     "soundtracks": []
   },
   {
@@ -766,7 +756,7 @@
     "characters": ["Batman/Bruce Wayne", "The Joker/Jack Napier", "Vicki Vale", "Alexander Knox"],
     "director": "Tim Burton",
     "genre": ["Action", "Crime", "Fantasy"],
-    "setting": "Gotham City",
+    "setting": ["Gotham City", "Axis Chemicals", "Wayne Manor"],
     "soundtracks": ["Batdance (Prince)", "Partyman (Prince)"]
   },
   {
@@ -776,7 +766,7 @@
     "characters": ["Batman/Bruce Wayne", "Penguin/Oswald Cobblepot", "Catwoman/Selina Kyle", "Max Shreck"],
     "director": "Tim Burton",
     "genre": ["Action", "Crime", "Fantasy"],
-    "setting": "Gotham City",
+    "setting": ["Gotham City", "Wayne Manor", "Penguin's lair", "Shreck Department Store"],
     "soundtracks": ["Face to Face (Siouxsie and the Banshees)", "7 (Prince)"]
   },
   {
@@ -786,7 +776,7 @@
     "characters": ["Batman/Bruce Wayne", "Two-Face/Harvey Dent", "The Riddler/Edward Nygma", "Dr. Chase Meridian"],
     "director": "Joel Schumacher",
     "genre": ["Action", "Adventure", "Fantasy"],
-    "setting": "Gotham City",
+    "setting": ["Gotham City", "Wayne Manor", "Batcave", "Riddler's island"],
     "soundtracks": ["Kiss from a Rose (Seal)", "Hold Me, Thrill Me, Kiss Me, Kill Me (U2)"]
   },
   {
@@ -796,7 +786,7 @@
     "characters": ["Batman/Bruce Wayne", "Mr. Freeze/Dr. Victor Fries", "Robin/Dick Grayson", "Poison Ivy/Pamela Isley"],
     "director": "Joel Schumacher",
     "genre": ["Action", "Adventure", "Fantasy"],
-    "setting": "Gotham City",
+    "setting": ["Gotham City", "Wayne Manor", "Freeze's hideout", "Gotham Observatory"],
     "soundtracks": ["Look Into My Eyes (Bone Thugs-N-Harmony)", "Gotham City (R. Kelly)"]
   },
   {
@@ -806,7 +796,7 @@
     "characters": ["Batman/Bruce Wayne", "Alfred Pennyworth", "Ra's al Ghul", "James Gordon"],
     "director": "Christopher Nolan",
     "genre": ["Action", "Crime", "Drama"],
-    "setting": "Gotham City",
+    "setting": ["Gotham City", "Wayne Manor", "League of Shadows monastery", "The Narrows"],
     "soundtracks": []
   },
   {
@@ -816,7 +806,7 @@
     "characters": ["Batman/Bruce Wayne", "The Joker", "James Gordon", "Harvey Dent/Two-Face"],
     "director": "Christopher Nolan",
     "genre": ["Action", "Crime", "Drama"],
-    "setting": "Gotham City",
+    "setting": ["Gotham City", "Wayne Enterprises", "Gotham General Hospital", "Prewitt Building"],
     "soundtracks": []
   },
   {
@@ -826,7 +816,7 @@
     "characters": ["Batman/Bruce Wayne", "Bane", "Catwoman/Selina Kyle", "James Gordon"],
     "director": "Christopher Nolan",
     "genre": ["Action", "Crime", "Drama"],
-    "setting": "Gotham City",
+    "setting": ["Gotham City", "The Pit", "Wayne Manor", "Stock Exchange"],
     "soundtracks": []
   },
   {
@@ -836,7 +826,7 @@
     "characters": ["Batman/Bruce Wayne", "Superman/Clark Kent", "Lois Lane", "Lex Luthor"],
     "director": "Zack Snyder",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "Gotham City, Metropolis",
+    "setting": ["Gotham City", "Metropolis", "LexCorp", "Batcave"],
     "soundtracks": []
   },
   {
@@ -846,7 +836,7 @@
     "characters": ["Superman/Clark Kent", "Jor-El", "Lex Luthor", "Lois Lane"],
     "director": "Richard Donner",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "Metropolis, Smallville",
+    "setting": ["Metropolis", "Smallville", "Krypton", "Daily Planet"],
     "soundtracks": ["Superman Theme"]
   },
   {
@@ -856,7 +846,7 @@
     "characters": ["Superman/Clark Kent", "Lex Luthor", "Lois Lane", "General Zod"],
     "director": "Richard Lester",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "Metropolis",
+    "setting": ["Metropolis", "Fortress of Solitude", "White House", "Daily Planet"],
     "soundtracks": []
   },
   {
@@ -866,7 +856,7 @@
     "characters": ["Superman/Clark Kent", "Gus Gorman", "Lana Lang", "Ross Webster"],
     "director": "Richard Lester",
     "genre": ["Action", "Adventure", "Comedy"],
-    "setting": "Smallville, Metropolis",
+    "setting": ["Smallville", "Metropolis", "Grand Canyon", "Webster's headquarters"],
     "soundtracks": []
   },
   {
@@ -876,7 +866,7 @@
     "characters": ["Superman/Clark Kent", "Lex Luthor", "Lois Lane", "Lenny Luthor"],
     "director": "Sidney J. Furie",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "Metropolis",
+    "setting": ["Metropolis", "United Nations", "Daily Planet", "Lex's lair"],
     "soundtracks": []
   },
   {
@@ -886,7 +876,7 @@
     "characters": ["Superman/Clark Kent", "Lex Luthor", "Lois Lane", "Richard White"],
     "director": "Bryan Singer",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "Metropolis",
+    "setting": ["Metropolis", "Daily Planet", "Fortress of Solitude", "Luthor's yacht"],
     "soundtracks": []
   },
   {
@@ -896,7 +886,7 @@
     "characters": ["Superman/Clark Kent", "Lois Lane", "General Zod", "Jonathan Kent"],
     "director": "Zack Snyder",
     "genre": ["Action", "Adventure", "Sci-Fi"],
-    "setting": "Smallville, Metropolis",
+    "setting": ["Smallville", "Metropolis", "Krypton", "Kent farm"],
     "soundtracks": ["What Are You Going to Do When You Are Not Saving the World?"]
   },
   {
@@ -906,7 +896,7 @@
     "characters": ["Luke Skywalker", "Han Solo", "Princess Leia Organa", "Obi-Wan Kenobi", "Darth Vader"],
     "director": "George Lucas",
     "genre": ["Action", "Adventure", "Fantasy"],
-    "setting": "Various planets in a galaxy far, far away",
+    "setting": ["Tatooine", "Death Star", "Yavin 4", "Millennium Falcon"],
     "soundtracks": ["Main Theme", "Cantina Band", "The Throne Room"]
   },
   {
@@ -916,7 +906,7 @@
     "characters": ["Luke Skywalker", "Han Solo", "Princess Leia Organa", "Yoda", "Darth Vader"],
     "director": "Irvin Kershner",
     "genre": ["Action", "Adventure", "Fantasy"],
-    "setting": "Various planets in a galaxy far, far away",
+    "setting": ["Hoth", "Dagobah", "Cloud City", "Star Destroyer"],
     "soundtracks": ["The Imperial March (Darth Vader's Theme)", "Yoda's Theme"]
   },
   {
@@ -926,7 +916,7 @@
     "characters": ["Luke Skywalker", "Han Solo", "Princess Leia Organa", "Emperor Palpatine", "Darth Vader"],
     "director": "Richard Marquand",
     "genre": ["Action", "Adventure", "Fantasy"],
-    "setting": "Various planets in a galaxy far, far away",
+    "setting": ["Tatooine", "Death Star II", "Endor", "Jabba's palace"],
     "soundtracks": ["Ewok Celebration", "Luke and Leia"]
   },
   {
@@ -936,7 +926,7 @@
     "characters": ["Qui-Gon Jinn", "Obi-Wan Kenobi", "Padmé Amidala", "Anakin Skywalker", "Darth Maul"],
     "director": "George Lucas",
     "genre": ["Action", "Adventure", "Fantasy"],
-    "setting": "Various planets in a galaxy far, far away",
+    "setting": ["Naboo", "Tatooine", "Coruscant", "Theed Palace"],
     "soundtracks": ["Duel of the Fates", "Anakin's Theme"]
   },
   {
@@ -946,7 +936,7 @@
     "characters": ["Obi-Wan Kenobi", "Padmé Amidala", "Anakin Skywalker", "Count Dooku", "Yoda"],
     "director": "George Lucas",
     "genre": ["Action", "Adventure", "Fantasy"],
-    "setting": "Various planets in a galaxy far, far away",
+    "setting": ["Coruscant", "Naboo", "Kamino", "Geonosis"],
     "soundtracks": ["Across the Stars (Anakin and Padmé's Theme)"]
   },
   {
@@ -956,7 +946,7 @@
     "characters": ["Obi-Wan Kenobi", "Padmé Amidala", "Anakin Skywalker/Darth Vader", "Emperor Palpatine", "Yoda"],
     "director": "George Lucas",
     "genre": ["Action", "Adventure", "Fantasy"],
-    "setting": "Various planets in a galaxy far, far away",
+    "setting": ["Coruscant", "Mustafar", "Utapau", "Kashyyyk"],
     "soundtracks": ["Battle of the Heroes", "Anakin's Dark Deeds"]
   },
   {
@@ -966,7 +956,7 @@
     "characters": ["Harry Burns", "Sally Albright", "Marie Fisher", "Jess"],
     "director": "Rob Reiner",
     "genre": ["Comedy", "Drama", "Romance"],
-    "setting": "New York City",
+    "setting": ["New York City", "Chicago", "Katz's Delicatessen", "Central Park"],
     "soundtracks": ["It Had to Be You (Harry Connick Jr.)", "Let's Call the Whole Thing Off (Louis Armstrong & Ella Fitzgerald)"]
   },
   {
@@ -976,7 +966,7 @@
     "characters": ["Vivian Ward", "Edward Lewis", "Barney Thompson", "James Morse"],
     "director": "Garry Marshall",
     "genre": ["Comedy", "Romance"],
-    "setting": "Los Angeles",
+    "setting": ["Los Angeles", "Beverly Hills", "Regent Beverly Wilshire Hotel", "Rodeo Drive"],
     "soundtracks": ["Oh, Pretty Woman (Roy Orbison)", "It Must Have Been Love (Roxette)"]
   },
   {
@@ -986,7 +976,7 @@
     "characters": ["Sam Baldwin", "Annie Reed", "Jonah Baldwin", "Jay"],
     "director": "Nora Ephron",
     "genre": ["Comedy", "Drama", "Romance"],
-    "setting": "Seattle, Chicago, New York City",
+    "setting": ["Seattle", "Chicago", "New York City", "Empire State Building"],
     "soundtracks": ["A Kiss to Build a Dream On", "As Time Goes By"]
   },
   {
@@ -996,7 +986,7 @@
     "characters": ["Forrest Gump", "Jenny Curran", "Lieutenant Dan Taylor", "Mrs. Gump"],
     "director": "Robert Zemeckis",
     "genre": ["Drama", "Romance"],
-    "setting": "Various locations across the United States",
+    "setting": ["Greenbow, Alabama", "Vietnam", "Washington D.C.", "Savannah, Georgia"],
     "soundtracks": ["Hound Dog", "Sweet Home Alabama", "Fortunate Son"]
   },
   {
@@ -1006,7 +996,7 @@
     "characters": ["Robbie Hart", "Julia Sullivan", "Holly Sullivan", "Sammy"],
     "director": "Frank Coraci",
     "genre": ["Comedy", "Romance"],
-    "setting": "New Jersey, 1985",
+    "setting": ["New Jersey", "Las Vegas", "Wedding venues"],
     "soundtracks": ["Video Killed the Radio Star", "You Spin Me Round (Like a Record)"]
   },
   {
@@ -1016,7 +1006,7 @@
     "characters": ["Henry Roth", "Lucy Whitmore", "Ula", "Doug Whitmore"],
     "director": "Peter Segal",
     "genre": ["Comedy", "Romance"],
-    "setting": "Hawaii",
+    "setting": ["Hawaii", "Hukilau Café", "Whitmore estate", "North Shore"],
     "soundtracks": ["Wouldn't It Be Nice (The Beach Boys)", "Hold Me Now (Wayne Wonder)"]
   },
   {
@@ -1026,7 +1016,7 @@
     "characters": ["Andy Stitzer", "Trish Piedmont", "David", "Romany"],
     "director": "Judd Apatow",
     "genre": ["Comedy", "Romance"],
-    "setting": "Los Angeles",
+    "setting": ["Los Angeles", "SmartTech store", "Speed dating venue", "Andy's apartment"],
     "soundtracks": ["Let's Get It Started (The Black Eyed Peas)", "Reelin' in the Years (Steely Dan)"]
   },
   {
@@ -1036,7 +1026,7 @@
     "characters": ["Ben Stone", "Alison Scott", "Pete", "Debbie"],
     "director": "Judd Apatow",
     "genre": ["Comedy", "Romance"],
-    "setting": "Los Angeles",
+    "setting": ["Los Angeles"],
     "soundtracks": ["Fortunate Son (Creedence Clearwater Revival)", "Rock You Like a Hurricane (Scorpions)"]
   },
   {
@@ -1046,7 +1036,7 @@
     "characters": ["Lenny Feder", "Eric Lamonsoff", "Kurt McKenzie", "Marcus Higgins", "Rob Hilliard"],
     "director": "Dennis Dugan",
     "genre": ["Comedy"],
-    "setting": "New England",
+    "setting": ["New England"],
     "soundtracks": ["Good Times (Chic)", "American Girl (Tom Petty and the Heartbreakers)"]
   },
   {
@@ -1056,7 +1046,7 @@
     "characters": ["Annie Walker", "Lillian Donovan", "Helen Harris III", "Megan Price"],
     "director": "Paul Feig",
     "genre": ["Comedy"],
-    "setting": "Milwaukee",
+    "setting": ["Milwaukee"],
     "soundtracks": ["Rip Tide (Sick Puppies)", "Hold On (Wilson Phillips)"]
   },
   {
@@ -1066,7 +1056,7 @@
     "characters": ["Rachel Chu", "Nick Young", "Eleanor Young", "Peik Lin Goh"],
     "director": "Jon M. Chu",
     "genre": ["Comedy", "Romance"],
-    "setting": "New York City, Singapore",
+    "setting": ["New York City", "Singapore"],
     "soundtracks": ["Yellow (Chinese Version) (Katherine Ho)", "Money (Awa)"]
   },
   {
@@ -1076,8 +1066,8 @@
     "characters": ["Rick Blaine", "Ilsa Lund", "Victor Laszlo", "Captain Louis Renault"],
     "director": "Michael Curtiz",
     "genre": ["Drama", "Romance", "War"],
-    "setting": "Casablanca, Morocco",
-    "soundtracks": ["As Time Goes By (Dooley Wilson)"]
+    "setting": ["Casablanca", "Morocco"],
+    "soundtracks": ["As Time Goes By"]
   },
   {
     "title": "Schindler's List",
@@ -1086,7 +1076,7 @@
     "characters": ["Oskar Schindler", "Itzhak Stern", "Amon Göth", "Emilie Schindler"],
     "director": "Steven Spielberg",
     "genre": ["Biography", "Drama", "History"],
-    "setting": "Kraków, Poland",
+    "setting": ["Kraków", "Poland"],
     "soundtracks": ["Schindler's List Theme"]
   },
   {
@@ -1096,8 +1086,8 @@
     "characters": ["WALL-E", "EVE", "Captain B. McCrea", "Shelby Forthright"],
     "director": "Andrew Stanton",
     "genre": ["Animation", "Adventure", "Family"],
-    "setting": "Earth (abandoned), Space",
-    "soundtracks": ["Down to Earth (Peter Gabriel)", "La Vie en Rose (Louis Armstrong)"]
+    "setting": ["Earth (abandoned)", "Axiom Spaceship"],
+    "soundtracks": ["Down to Earth", "La Vie en Rose"]
   },
   {
     "title": "Joker",
@@ -1106,8 +1096,8 @@
     "characters": ["Arthur Fleck / Joker", "Murray Franklin", "Sophie Dumond", "Penny Fleck"],
     "director": "Todd Phillips",
     "genre": ["Crime", "Drama", "Thriller"],
-    "setting": "Gotham City",
-    "soundtracks": ["That's Life (Frank Sinatra)", "White Room (Cream)"]
+    "setting": ["Gotham City"],
+    "soundtracks": ["That's Life", "White Room"]
   },
   {
     "title": "The Lord of the Rings: The Fellowship of the Ring",
@@ -1116,7 +1106,7 @@
     "characters": ["Frodo Baggins", "Gandalf", "Aragorn", "Samwise Gamgee"],
     "director": "Peter Jackson",
     "genre": ["Adventure", "Drama", "Fantasy"],
-    "setting": "Middle-earth",
+    "setting": ["The Shire", "Rivendell", "Moria", "Lothlórien"],
     "soundtracks": ["Concerning Hobbits", "The Fellowship"]
   },
   {
@@ -1126,7 +1116,7 @@
     "characters": ["Frodo Baggins", "Gandalf", "Aragorn", "Samwise Gamgee", "Gollum"],
     "director": "Peter Jackson",
     "genre": ["Adventure", "Drama", "Fantasy"],
-    "setting": "Middle-earth",
+    "setting": ["Emyn Muil", "Rohan", "Fangorn Forest", "Isengard", "Mordor"],
     "soundtracks": ["Gollum's Song", "Rohan"]
   },
   {
@@ -1136,7 +1126,7 @@
     "characters": ["Frodo Baggins", "Gandalf", "Aragorn", "Samwise Gamgee", "Gollum"],
     "director": "Peter Jackson",
     "genre": ["Adventure", "Drama", "Fantasy"],
-    "setting": "Middle-earth",
+    "setting": ["Minas Tirith", "Mordor", "Mount Doom", "The Shire"],
     "soundtracks": ["Into the West", "The Steward of Gondor"]
   },
   {
@@ -1146,7 +1136,7 @@
     "characters": ["Martin Brody", "Matt Hooper", "Quint"],
     "director": "Steven Spielberg",
     "genre": ["Thriller", "Adventure", "Horror"],
-    "setting": "Amity Island",
+    "setting": ["Amity Island", "Atlantic Ocean"],
     "soundtracks": ["Main Title (Jaws Theme) (John Williams)"]
   },
   {
@@ -1156,7 +1146,7 @@
     "characters": ["Ellen Ripley", "Dallas", "Kane"],
     "director": "Ridley Scott",
     "genre": ["Sci-Fi", "Horror"],
-    "setting": "Spaceship Nostromo",
+    "setting": ["Spaceship Nostromo", "LV-426"],
     "soundtracks": ["Main Theme (Jerry Goldsmith)"]
   },
   {
@@ -1166,7 +1156,7 @@
     "characters": ["Norman Bates", "Marion Crane", "Lila Crane"],
     "director": "Alfred Hitchcock",
     "genre": ["Horror", "Thriller"],
-    "setting": "Bates Motel",
+    "setting": ["Phoenix", "Bates Motel", "Fairvale"],
     "soundtracks": ["The Murder (Bernard Herrmann)"]
   },
   {
@@ -1176,7 +1166,7 @@
     "characters": ["Chris Washington", "Rose Armitage", "Rod Williams"],
     "director": "Jordan Peele",
     "genre": ["Horror", "Thriller"],
-    "setting": "Upstate New York (Armitage estate)",
+    "setting": ["Upstate New York", "Armitage Estate"],
     "soundtracks": ["Redbone (Childish Gambino)", "Sikiliza Kwa Wahenga (Michael Abels)"]
   },
   {
@@ -1186,7 +1176,7 @@
     "characters": ["Ann Darrow", "Carl Denham", "Jack Driscoll", "King Kong"],
     "director": "Peter Jackson",
     "genre": ["Action", "Adventure", "Drama"],
-    "setting": "Skull Island, New York City",
+    "setting": ["Skull Island", "New York City"],
     "soundtracks": ["King Kong Theme (James Newton Howard)"]
   },
   {
@@ -1196,7 +1186,7 @@
     "characters": ["Patrick Bateman", "Paul Allen", "Jean", "Detective Kimball"],
     "director": "Mary Harron",
     "genre": ["Drama", "Horror", "Satire"],
-    "setting": "New York City, 1980s",
+    "setting": ["New York City", "Manhattan"],
     "soundtracks": ["Hip to Be Square (Huey Lewis & The News)", "Walking on Sunshine (Katrina and the Waves)"]
   },
   {
@@ -1206,8 +1196,8 @@
     "characters": ["Happy Gilmore", "Shooter McGavin", "Virginia Venit", "Chubbs Peterson"],
     "director": "Dennis Dugan",
     "genre": ["Comedy", "Sport"],
-    "setting": "Various golf courses",
-    "soundtracks": ["Tuesday's Gone (Lynyrd Skynyrd)", "Carry On Wayward Son (Kansas)"]
+    "setting": ["Pro Golf Tour", "Waterbury Golf Course"],
+    "soundtracks": ["Tuesday's Gone", "Carry On Wayward Son"]
   },
   {
     "title": "Just Go with It",
@@ -1216,8 +1206,8 @@
     "characters": ["Danny Maccabee", "Katherine Murphy", "Palmer", "Eddie"],
     "director": "Dennis Dugan",
     "genre": ["Comedy", "Romance"],
-    "setting": "Los Angeles, Hawaii",
-    "soundtracks": ["Every Breath You Take (The Police)", "Is This Love (Bob Marley & The Wailers)"]
+    "setting": ["Los Angeles", "Hawaii"],
+    "soundtracks": ["Every Breath You Take", "Is This Love"]
   },
   {
     "title": "Inception",

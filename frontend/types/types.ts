@@ -7,7 +7,7 @@ export type Movie = {
   director: string;
   actors: string[];
   characters: string[];
-  setting: string;
+  setting: string[];
   soundtracks: string[]; 
 }
 

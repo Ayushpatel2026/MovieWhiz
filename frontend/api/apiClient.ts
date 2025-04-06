@@ -1,6 +1,5 @@
-import { FormInput, Movie, MovieStreamingInfo, StoredResponse } from "@/types/types";
+import { ForumResponse, Movie, MovieStreamingInfo, StoredResponse } from "@/types/types";
 import axios from "axios";
-import { DocumentPickerResponse } from "react-native-document-picker";
 
 const API_BASE_URL = process.env.BACKEND_BASE_URL || "http://192.168.2.34:7000/api";
 
@@ -37,7 +36,7 @@ export const identifyMovie = async (formData : FormData): Promise<any> => {
 /*
 	Post a new response to the server sending the userId and the response data
 */
-export const postResponse = async (userId: string, forumResponse: StoredResponse["forumResponse"]): Promise<void> => {
+export const postResponse = async (userId: string, forumResponse: ForumResponse): Promise<void> => {
 	try {
 	  await api.post("/response-history/create", { userId, forumResponse });
 	} catch (error: any) {

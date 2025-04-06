@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { DocumentPickerResponse } from 'react-native-document-picker';
+import { Ionicons } from '@expo/vector-icons';
 import { identifyMovie } from '../../api/apiClient'; 
 import { router } from 'expo-router';
 import { FormInput, ForumResponse, RequestMoreInformation } from '@/types/types';
@@ -96,6 +97,10 @@ const IdentifyMovieScreen = () => {
 
   return (
     <ScrollView style={styles.container}>
+      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+        <Ionicons name="arrow-back" size={24} color="#333" />
+        <Text style={styles.backButtonText}>Back</Text>
+      </TouchableOpacity>
       <Text style={styles.title}>Identify Movie</Text>
 
       <View style={styles.section}>
@@ -201,6 +206,16 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#f4f4f4',
+  },
+  backButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  backButtonText: {
+    marginLeft: 10,
+    fontSize: 16,
+    color: '#333',
   },
   title: {
     fontSize: 28,
