@@ -21,18 +21,18 @@ export class LLMExpert extends Expert {
   {
     "movies": [
       {
-        "title": "Movie Title 1",
-        "confidencescore": 9.0
+        "movieName": "Movie Title 1",
+        "confidence": 9.0
       },
       {
-        "title": "Movie Title 2",
-        "confidencescore": 7.5
+        "movieName": "Movie Title 2",
+        "confidence": 7.5
       }
     ]
   }
   
-  - "title": The name of the movie.
-  - "confidencescore": A number between 0 and 10 (inclusive) representing how confident you are that the movie matches the description. 10 means you are absolutely certain, 0 means you are sure it's not a match.
+  - "movieName": The name of the movie.
+  - "confidence": A number between 0 and 100 (inclusive) representing how confident you are that the movie matches the description. 100 means you are absolutely certain, 0 means you are sure it's not a match.
   
   If no movies are found that match the description, return:
   
@@ -94,11 +94,10 @@ export class LLMExpert extends Expert {
       .replace(/```json\s*/gi, '')  // remove starting ```json
       .replace(/```/g, '')          // remove ending ```
       .trim();                      // trim extra whitespace
-      console.log('Cleaned LLM response:', cleanedText);
 
       // Attempt to parse the JSON text
       const jsonResponse = JSON.parse(cleanedText);
-
+      console.log('Parsed JSON response:', jsonResponse);
       if (
         !jsonResponse ||
         !jsonResponse.movies ||

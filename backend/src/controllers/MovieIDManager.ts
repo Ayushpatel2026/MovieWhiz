@@ -12,6 +12,7 @@ export class MovieIDManager {
     try {
 			// Maybe some input process/validation here
       const results = await this.controller.identifyMovie(inputs);
+      console.log("Results from identification:", results);
       return results;
     } catch (error) {
       console.error("Identification failed:", error);
