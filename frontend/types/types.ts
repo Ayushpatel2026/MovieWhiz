@@ -49,7 +49,9 @@ export type StoredResponse = {
   forumResponse: ForumResponse;
 };
 
+// THE FRONTEND TYPES HAVE A STATUS OF "PARTIAL" OR "SUCCESS"
 export type ForumResponse = {
+  status: string;
   responseId: string;
   overallConfidence: number;
   movieName: string;
@@ -58,6 +60,7 @@ export type ForumResponse = {
 };
 
 export type RequestMoreInformation = {
+  status: string;
   inputsUsed: string[];
   details: string;
 };

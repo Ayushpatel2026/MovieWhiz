@@ -987,7 +987,7 @@
     "director": "Nora Ephron",
     "genre": ["Comedy", "Drama", "Romance"],
     "setting": "Seattle, Chicago, New York City",
-    "soundtracks": ["A Kiss to Build a Dream On (Louis Armstrong)", "As Time Goes By (Jimmy Durante)"]
+    "soundtracks": ["A Kiss to Build a Dream On", "As Time Goes By"]
   },
   {
     "title": "Forrest Gump",
@@ -997,7 +997,7 @@
     "director": "Robert Zemeckis",
     "genre": ["Drama", "Romance"],
     "setting": "Various locations across the United States",
-    "soundtracks": ["Hound Dog (Elvis Presley)", "Sweet Home Alabama (Lynyrd Skynyrd)", "Fortunate Son (Creedence Clearwater Revival)"]
+    "soundtracks": ["Hound Dog", "Sweet Home Alabama", "Fortunate Son"]
   },
   {
     "title": "The Wedding Singer",
@@ -1007,7 +1007,7 @@
     "director": "Frank Coraci",
     "genre": ["Comedy", "Romance"],
     "setting": "New Jersey, 1985",
-    "soundtracks": ["Video Killed the Radio Star (The Buggles)", "You Spin Me Round (Like a Record) (Dead or Alive)"]
+    "soundtracks": ["Video Killed the Radio Star", "You Spin Me Round (Like a Record)"]
   },
   {
     "title": "50 First Dates",

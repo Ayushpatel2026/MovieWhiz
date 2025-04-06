@@ -56,56 +56,45 @@ const MovieInfoScreen = () => {
     );
   }
 
-  if (error) {
-    return (
-      <View style={styles.errorContainer}>
-        <Text style={styles.errorText}>{error}</Text>
-      </View>
-    );
-  }
-
-  if (!movie) {
-    return (
-      <View style={styles.container}>
-        <Text>Movie not found.</Text>
-      </View>
-    );
-  }
-
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>{movie.title}</Text>
-      <Text style={styles.year}>({movie.year})</Text>
+      <Text style={styles.title}>{movieTitle.split('-')}</Text>
+      {movie ? <>
+        <Text style={styles.year}>({movie.year})</Text>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Genre</Text>
+          <Text>{movie?.genre ? movie.genre.join(', ') : "N/A"}</Text>
+        </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Genre</Text>
-        <Text>{movie?.genre ? movie.genre.join(', ') : "N/A"}</Text>
-      </View>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Director</Text>
+          <Text>{movie?.director ? movie.director : "N/A"}</Text>
+        </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Director</Text>
-        <Text>{movie?.director ? movie.director : "N/A"}</Text>
-      </View>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Actors</Text>
+          <Text>{movie?.actors ? movie.actors.join(', ') : "N/A"}</Text>
+        </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Actors</Text>
-        <Text>{movie?.actors ? movie.actors.join(', ') : "N/A"}</Text>
-      </View>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Characters</Text>
+          <Text>{movie?.characters ? movie.characters.join(', ') : "N/A"}</Text>
+        </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Characters</Text>
-        <Text>{movie?.characters ? movie.characters.join(', ') : "N/A"}</Text>
-      </View>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Setting</Text>
+          <Text>{movie?.setting ? movie.setting : "N/A"}</Text>
+        </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Setting</Text>
-        <Text>{movie?.setting ? movie.setting : "N/A"}</Text>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Soundtracks</Text>
+          <Text>{movie?.soundtracks ? movie.soundtracks.join(', ') : "N/A"}</Text>
+        </View>
+      </> : (
+        <View style={styles.section}>
+        <Text>Movie Information Not Found</Text>
       </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Soundtracks</Text>
-        <Text>{movie?.soundtracks ? movie.soundtracks.join(', ') : "N/A"}</Text>
-      </View>
+      )}
 
       {streamingInfo && streamingInfo.links.length > 0 ? (
         <View style={styles.section}>

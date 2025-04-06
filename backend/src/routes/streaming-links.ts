@@ -62,17 +62,12 @@ router.post('/add', async (req: Request, res: Response) => {
     ]
   }
   Returns a movie streaming info object if found.
-  Returns a 404 status code if the movie is not found.
 */
 router.get('/:movieName', async (req: Request, res: Response) => {
   try {
     const movieName = req.params.movieName;
     const streamingLinks = await streamingLinksService.getStreamingLinks(movieName);
-    if (streamingLinks) {
-      res.json(streamingLinks);
-    } else {
-      res.status(404).json({ message: `Streaming links not found for movie: ${movieName}` });
-    }
+    res.json(streamingLinks);
   } catch (error) {
     console.error('Error getting streaming links:', error);
     res.status(500).json({ error: 'Failed to retrieve streaming links.' });

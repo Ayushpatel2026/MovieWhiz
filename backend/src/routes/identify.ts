@@ -34,7 +34,7 @@ router.post(
     try {
       const { text, form } = req.body;
       const file = req.file;
-
+    
       // Prepare inputs array
       const inputs: Input[] = [];
       if (text) inputs.push({ type: "text", data: text });
@@ -56,17 +56,13 @@ router.post(
         const forumResponse = result as ForumResponse;
         res.json({
           status: "success",
-          identifiedMovie: forumResponse.movieName,
-          confidence: forumResponse.overallConfidence,
-          expertUsed: forumResponse.inputsUsed,
-        });
+          ...forumResponse});
       } else {
         // This is a RequestMoreInformation response
         const requestMoreInfo = result as RequestMoreInformation;
         res.status(206).json({
           status: "partial",
-          message: "More information required",
-          suggestions: requestMoreInfo.details,
+          ...requestMoreInfo,
         });
       }
     } catch (error) {

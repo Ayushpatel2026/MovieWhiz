@@ -37,7 +37,7 @@ export class DatabaseExpert extends Expert {
     if (typeof data !== "object" || data === null) {
       throw new Error("Invalid data format for form input");
     }
-    console.log("Data received for query:", data);
+    //console.log("Data received for query:", data);
     return {
       genre: data.genre ? this.sanitizeArray(data.genre) : undefined,
       director: data.director ? data.director : undefined,
