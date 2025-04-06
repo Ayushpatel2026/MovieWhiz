@@ -34,7 +34,7 @@ export class Forum {
           nonEmptyResponses.reduce((sum, res) => sum + res.movieConfidences[0].confidence, 0) /
           nonEmptyResponses.length,
         movieName: nonEmptyResponses[0].movieConfidences[0].movieName, // Assuming the first movie is the most relevant
-        timestamp: Date.now(),
+        timeStamp: Date.now(),
         inputsUsed: nonEmptyResponses.flatMap((res) => res.expertName),
       };
     }

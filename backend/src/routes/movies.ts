@@ -44,6 +44,7 @@ const movieInformationService = new MovieInformationService();
 router.get("/:title", async (req: Request, res: Response) => {
 	const title = req.params.title;
 	try {
+		console.log("Getting movie from database:", title)
 		const movie = await movieInformationService.getMovie(title);
 		if (movie){
 			return res.json(movie);

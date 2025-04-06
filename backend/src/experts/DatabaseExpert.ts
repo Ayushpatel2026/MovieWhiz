@@ -23,7 +23,7 @@ export class DatabaseExpert extends Expert {
     return {
       expertName: this.name,
       movieConfidences: this.calculateConfidence(matches, query),
-      timestamp: Date.now(),
+      timeStamp: Date.now(),
       details: `Query: ${JSON.stringify(query)}, Found ${matches.length} matches.`
     };
   }

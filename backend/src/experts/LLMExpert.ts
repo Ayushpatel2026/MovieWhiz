@@ -106,7 +106,7 @@ export class LLMExpert extends Expert {
         return {
           expertName: this.name,
           movieConfidences: [],
-          timestamp: Date.now(), // Optional: Add a timestamp
+          timeStamp: Date.now(), // Optional: Add a timeStamp
         };
       }
   
@@ -121,7 +121,7 @@ export class LLMExpert extends Expert {
       return {
         expertName: this.name,
         movieConfidences: [bestMovie],
-        timestamp: Date.now(), // Optional: Add a timestamp
+        timeStamp: Date.now(), // Optional: Add a timeStamp
         //details: "Optional details string", // Optional: Add details if needed.
       };
   

@@ -70,7 +70,6 @@ export default function Index() {
           <ActivityIndicator size={"small"} style={{ margin: 28 }} />
         ) : (
           <>
-            {" "}
             <TouchableOpacity style={styles.button} onPress={signIn}>
               <Text>Log In</Text>
             </TouchableOpacity>

@@ -4,7 +4,7 @@ import { SongData } from "../experts/SoundtrackExpert";
 
 export type Movie = {
   title: string;
-  releaseYear: number;
+  year: number;
   genre: string[];
   director: string;
   actors: string[];
@@ -54,7 +54,7 @@ export type ForumResponse = {
   responseId: string;
   overallConfidence: number;
   movieName: string;
-  timestamp: number;
+  timeStamp: number;
   inputsUsed: string[];
 };
 
@@ -66,7 +66,7 @@ export type RequestMoreInformation = {
 export type ExpertResponse = {
   expertName: string;
   movieConfidences: MovieConfidences[];
-  timestamp?: number;
+  timeStamp?: number;
   details?: String | SongData;
 };
 

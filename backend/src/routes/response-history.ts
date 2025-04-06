@@ -68,6 +68,7 @@ router.post('/create', async (req: Request, res: Response) => {
 router.get('/:userId', async (req: Request, res: Response) => {
   try {
     const userId = req.params.userId;
+	console.log("Getting user history for userId from database:", userId)
     const history = await responseHistoryService.getUserHistory(userId);
     res.json(history);
   } catch (error) {
