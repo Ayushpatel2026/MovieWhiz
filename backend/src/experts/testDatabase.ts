@@ -5,7 +5,7 @@ import { FormInput } from '../types/types';
 const testInput: FormInput = {
   type: 'form',
   data: {
-    setting: 'Greece'
+     setting: ['Enchanted castle']
   },
 };
 
@@ -19,8 +19,8 @@ async function runTest() {
     const result = await expert.analyze(testInput);
     console.log('Result:', result);
 
-    if (result.movies.length > 0) {
-      console.log('Movies found:', result.movies);
+    if (result.movieConfidences.length > 0) {
+      console.log('Movies found:', result.movieConfidences);
     }
   } catch (error) {
     console.error('Error during analysis:', error);

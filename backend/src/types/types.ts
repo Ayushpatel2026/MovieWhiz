@@ -27,7 +27,7 @@ export type FormInput = {
     year?: number;
     actors?: string[];
     characters?: string[];
-    setting?: string;
+    setting?: string[];
   };
 };
 

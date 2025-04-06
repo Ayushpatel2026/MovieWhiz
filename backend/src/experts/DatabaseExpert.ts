@@ -44,10 +44,10 @@ export class DatabaseExpert extends Expert {
       year: data.year !== undefined ? data.year : undefined,
       actors: data.actors ? this.sanitizeArray(data.actors) : undefined,
       characters: data.characters ? this.sanitizeArray(data.characters) : undefined,
-      setting: data.setting ? data.setting : undefined
+      setting: data.setting !== undefined ? data.setting : undefined
     };
   }
-  
+
   /*
     This is a helper function for the buildQuery function.
     It sanitizes the input array by trimming whitespace and converting to lowercase.
@@ -60,17 +60,12 @@ export class DatabaseExpert extends Expert {
   /*
     TODO - THIS QUERY STUFF DOES NOT WORK YET
   */
+
   async queryDatabase(query: any): Promise<DocumentData[]> {
     let moviesRef = db.collection('movies');
     let baseQuery: FirebaseFirestore.Query = moviesRef;
     let results: DocumentData[] = [];
-    
-    /* A firestore query can only contain one 'array-contains-any' clause, so we need to handle that separately
-      By first running an intermediate query 
-    */
-    if (query.genre) {
-      baseQuery = baseQuery.where('genre', 'array-contains-any', query.genre);
-    }
+  
     if (query.director) {
       baseQuery = baseQuery.where('director', '==', query.director);
     }
@@ -82,36 +77,91 @@ export class DatabaseExpert extends Expert {
     }
   
     let intermediateResults: DocumentData[] = (await baseQuery.get()).docs.map(doc => doc.data());
-    
-    // Filter by actors and characters after the initial query
-    // makes sure that all the actors in the query are present in the movie's actors array
+  
     if (query.actors) {
-      for (const actor of query.actors) {
-        intermediateResults = intermediateResults.filter(movie =>
-          movie.actors && movie.actors.map((a: string) => a.toLowerCase()).includes(actor.toLowerCase())
-        );
-      }
-      results = intermediateResults;
-    } else {
-      results = intermediateResults;
-    }
-    
-    // makes sure that all the characters in the query are present in the movie's characters array
-    if (query.characters) {
-      results = results.filter(movie =>
-        query.characters!.every((char : string) =>
-          movie.characters && movie.characters.map((c: string) => c.toLowerCase()).includes(char.toLowerCase())
+      intermediateResults = intermediateResults.filter(movie =>
+        movie.actors && movie.actors.some((actor: string) =>
+          query.actors!.map((a: string) => a.toLowerCase()).includes(actor.toLowerCase())
         )
       );
     }
   
+    if (query.characters) {
+      intermediateResults = intermediateResults.filter(movie =>
+        movie.characters && movie.characters.some((char: string) =>
+          query.characters!.map((c: string) => c.toLowerCase()).includes(char.toLowerCase())
+        )
+      );
+    }
+
+    if (query.genre) {
+      intermediateResults = intermediateResults.filter(movie =>
+        movie.genre && movie.genre.some((char: string) =>
+          query.genre!.map((c: string) => c.toLowerCase()).includes(char.toLowerCase())
+        )
+      );
+    }
+  
+    results = intermediateResults;
+  
     return results;
   }
+  
 
   /* 
     TDO - FIGURE OUT HOW TO CALCULATE CONFIDENCE
   */
   public calculateConfidence(matches: DocumentData[], query: any): MovieConfidences[] {
-    return [];
+    return matches.map(movie => {
+      let score = 0;
+      const toLowerArray = (arr: string[]) => arr.map(str => str.toLowerCase());
+
+      if (query.characters && movie.characters && movie.characters.length > 0) {
+        const inputChars = toLowerArray(query.characters);
+        const movieChars = toLowerArray(movie.characters);
+        const matches = inputChars.filter(char => movieChars.includes(char));
+        score += matches.length / movieChars.length -0.1;
+      }
+
+      if (query.genre && movie.genre && movie.genre.length > 0) {
+        const inputGenres = toLowerArray(query.genre);
+        const movieGenres = toLowerArray(movie.genre);
+        const matches = inputGenres.filter(genre => movieGenres.includes(genre));
+        score += matches.length / movieGenres.length - 0.1;
+      }
+
+      if (query.actors && movie.actors && movie.actors.length > 0) {
+        const inputActors = toLowerArray(query.actors);
+        const movieActors = toLowerArray(movie.actors);
+        const matches = inputActors.filter(actor => movieActors.includes(actor));
+        score += matches.length / movieActors.length - 0.1;
+      }
+
+      if (query.director && movie.director) {
+        if (query.director.toLowerCase() === movie.director.toLowerCase()) {
+          score += 0.1;
+        }
+      }
+
+      if (query.year && movie.year) {
+        if (query.year === movie.year) {
+          score += 0.05;
+        }
+      }
+
+      if (query.setting && movie.setting && movie.setting.length > 0) {
+        const inputSetting = toLowerArray(query.setting);
+        const movieSetting = toLowerArray(movie.setting);
+        const matches = inputSetting.filter(setting => movieSetting.includes(setting));
+        score += matches.length / movieSetting.length - 0.1;
+      }
+
+      score = Math.min(score, 1.0);
+
+      return {
+        movieName: movie.title || "Unnamed Movie", 
+        confidence: parseFloat(score.toFixed(2))   
+      };
+    });
   }
 }
