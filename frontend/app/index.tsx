@@ -2,10 +2,12 @@ import { useState } from "react";
 import {
   ActivityIndicator,
   KeyboardAvoidingView,
+  Platform,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
-  TouchableOpacity,
+  TouchableNativeFeedback,
   View,
 } from "react-native";
 import {
@@ -21,6 +23,7 @@ export default function Index() {
   const [loading, setLoading] = useState(false);
 
   const auth = getAuth();
+
   const signUp = async () => {
     setLoading(true);
     try {
@@ -49,7 +52,13 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <KeyboardAvoidingView behavior="padding">
+      <StatusBar backgroundColor="#f3f4f6" barStyle="dark-content" />
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        style={styles.innerContainer}
+      >
+        <Text style={styles.title}>🎬 MovieWhiz</Text>
+
         <TextInput
           style={styles.input}
           value={email}
@@ -57,6 +66,7 @@ export default function Index() {
           autoCapitalize="none"
           keyboardType="email-address"
           placeholder="Email"
+          placeholderTextColor="#999"
         />
         <TextInput
           style={styles.input}
@@ -64,18 +74,25 @@ export default function Index() {
           onChangeText={setPassword}
           autoCapitalize="none"
           placeholder="Password"
+          placeholderTextColor="#999"
           secureTextEntry
         />
+
         {loading ? (
-          <ActivityIndicator size={"small"} style={{ margin: 28 }} />
+          <ActivityIndicator size="small" style={{ marginTop: 30 }} />
         ) : (
           <>
-            <TouchableOpacity style={styles.button} onPress={signIn}>
-              <Text>Log In</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={signUp}>
-              <Text>Create Account</Text>
-            </TouchableOpacity>
+            <TouchableNativeFeedback onPress={signIn}>
+              <View style={styles.primaryButton}>
+                <Text style={styles.buttonText}>Log In</Text>
+              </View>
+            </TouchableNativeFeedback>
+
+            <TouchableNativeFeedback onPress={signUp}>
+              <View style={styles.secondaryButton}>
+                <Text style={styles.secondaryText}>Create Account</Text>
+              </View>
+            </TouchableNativeFeedback>
           </>
         )}
       </KeyboardAvoidingView>
@@ -85,22 +102,54 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 20,
     flex: 1,
+    backgroundColor: "#f3f4f6",
     justifyContent: "center",
+    paddingHorizontal: 24,
+  },
+  innerContainer: {
+    width: "100%",
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "700",
+    marginBottom: 50,
+    color: "#111827",
+    textAlign: "center",
   },
   input: {
-    marginVertical: 4,
     height: 50,
-    borderWidth: 1,
-    borderRadius: 4,
-    padding: 10,
     backgroundColor: "#ffffff",
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    marginBottom: 16,
+    fontSize: 16,
+    elevation: 2,
   },
-  button: {
-    padding: 10,
-    marginTop: 5,
-    backgroundColor: "#dddddd",
+  primaryButton: {
+    backgroundColor: "#2563eb",
+    paddingVertical: 14,
+    borderRadius: 12,
     alignItems: "center",
+    marginTop: 10,
+    elevation: 3,
+  },
+  secondaryButton: {
+    backgroundColor: "#e5e7eb",
+    paddingVertical: 14,
+    borderRadius: 12,
+    alignItems: "center",
+    marginTop: 10,
+    elevation: 2,
+  },
+  buttonText: {
+    color: "#fff",
+    fontWeight: "600",
+    fontSize: 16,
+  },
+  secondaryText: {
+    color: "#1f2937",
+    fontWeight: "600",
+    fontSize: 16,
   },
 });
