@@ -6,6 +6,7 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import { DocumentPickerResponse } from "react-native-document-picker";
 import { Ionicons } from "@expo/vector-icons";
@@ -114,7 +115,16 @@ const IdentifyMovieScreen = () => {
           params,
         });
       } else if (result.status === "partial") {
-        //TODO - show the request more information modal here 
+        Alert.alert(
+          "Please put more info, consider using: " +
+            (result.inputsUsed.includes("Database Expert")
+              ? ""
+              : "Form Input, ") +
+            (result.inputsUsed.includes("LLM Expert") ? "" : "Text Input, ") +
+            (result.inputsUsed.includes("Soundtrack Expert")
+              ? ""
+              : "Audio Input")
+        );
         setIdentificationResult({
           status: result.status,
           inputsUsed: result.inputsUsed,
@@ -142,7 +152,7 @@ const IdentifyMovieScreen = () => {
         <Text style={styles.label}>Describe the movie:</Text>
         <TextInput
           style={styles.textInput}
-          placeholder="e.g., A movie about a robot uprising..."
+          placeholder="e.g., A movie about a wizard boy..."
           value={textInput}
           onChangeText={setTextInput}
           multiline
