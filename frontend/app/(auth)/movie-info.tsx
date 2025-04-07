@@ -87,8 +87,8 @@ const MovieInfoScreen = () => {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Setting</Text>
-          <Text>{movie?.setting ? movie.setting : "N/A"}</Text>
+          <Text style={styles.sectionTitle}>Settings</Text>
+          <Text>{movie?.settings ? movie.settings.join(', ') : "N/A"}</Text>
         </View>
 
         <View style={styles.section}>

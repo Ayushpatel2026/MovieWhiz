@@ -21,7 +21,10 @@ const Page = () => {
   };
 
   const navigateToIdentifyMovie = () => {
-    router.push("/identify-movie");
+    router.push({
+      pathname: "/identify-movie",
+      params: { userId: user?.uid },
+    });
   };
 
   const handleSignOut = () => {

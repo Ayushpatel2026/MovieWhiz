@@ -79,9 +79,9 @@ export class DatabaseExpert extends Expert {
     let moviesRef = db.collection("movies");
     let baseQuery: FirebaseFirestore.Query = moviesRef;
 
-    if (query.director) {
-      baseQuery = baseQuery.where("director", "==", query.director);
-    }
+    // if (query.director) {
+    //   baseQuery = baseQuery.where("director", "==", query.director);
+    // }
     if (query.year) {
       baseQuery = baseQuery.where("year", "==", query.year);
     }
@@ -91,16 +91,22 @@ export class DatabaseExpert extends Expert {
       return doc.data();
     });
 
+    if (query.director) {
+      results = results.filter((movie) =>
+        typeof movie.director === "string" && (movie.director as string).toLowerCase() === query.director.toLowerCase()
+      );
+    }
+
     // Every setting in the query must be present in the movie's settings for it to be included in the results
     if (query.settings) {
       results = results.filter(
         (movie) =>
           movie.settings &&
-          (typeof movie.settings == "string"
+          (typeof movie.settings === "string"
             ? [query.settings]
             : query.settings
           ).every((setting: string) =>
-            (movie.settings as string[]).includes(setting)
+            (movie.settings as string[]).map(s => s.toLowerCase()).includes(setting.toLowerCase())
           )
       );
     }
@@ -111,7 +117,7 @@ export class DatabaseExpert extends Expert {
         (movie) =>
           movie.actors &&
           query.actors!.every((actor: string) =>
-            (movie.actors as string[]).includes(actor)
+            (movie.actors as string[]).map(a => a.toLowerCase()).includes(actor.toLowerCase())
           )
       );
     }
@@ -122,7 +128,7 @@ export class DatabaseExpert extends Expert {
         (movie) =>
           movie.characters &&
           query.characters!.every((char: string) =>
-            (movie.characters as string[]).includes(char)
+            (movie.characters as string[]).map(c => c.toLowerCase()).includes(char.toLowerCase())
           )
       );
     }
@@ -133,7 +139,7 @@ export class DatabaseExpert extends Expert {
         (movie) =>
           movie.genre &&
           query.genre!.every((genre: string) =>
-            (movie.genre as string[]).includes(genre)
+            (movie.genre as string[]).map(g => g.toLowerCase()).includes(genre.toLowerCase())
           )
       );
     }

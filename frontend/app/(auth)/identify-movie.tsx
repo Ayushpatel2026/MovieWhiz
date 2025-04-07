@@ -9,8 +9,8 @@ import {
 } from "react-native";
 import { DocumentPickerResponse } from "react-native-document-picker";
 import { Ionicons } from "@expo/vector-icons";
-import { identifyMovie } from "../../api/apiClient";
-import { router } from "expo-router";
+import { identifyMovie, postResponse } from "../../api/apiClient";
+import { router, useLocalSearchParams } from "expo-router";
 import {
   FormInput,
   ForumResponse,
@@ -19,6 +19,7 @@ import {
 import { pickAudioFile } from "@/utils/filePicker";
 
 const IdentifyMovieScreen = () => {
+  const { userId } = useLocalSearchParams<{ userId: string }>();
   const [textInput, setTextInput] = useState("");
   const [formState, setFormState] = useState<FormInput>({
     type: "form",
@@ -104,6 +105,8 @@ const IdentifyMovieScreen = () => {
       setLoading(false);
       if (result.status === "success") {
         // Store the response
+        await postResponse(userId, result);
+
         const pathName = "/movie-info";
         const params = { movieTitle: result.movieName };
         router.push({
@@ -111,6 +114,7 @@ const IdentifyMovieScreen = () => {
           params,
         });
       } else if (result.status === "partial") {
+        //TODO - show the request more information modal here 
         setIdentificationResult({
           status: result.status,
           inputsUsed: result.inputsUsed,
