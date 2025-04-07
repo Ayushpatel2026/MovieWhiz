@@ -22,10 +22,9 @@ export class DatabaseExpert extends Expert {
     const query = this.buildQuery(
       typeof input.data == "string" ? JSON.parse(input.data).data : input.data
     );
-    console.log("helllllllo", query);
     const matches = await this.queryDatabase(query);
 
-    console.log("Matches found:", matches);
+    // console.log("Matches found:", matches);
 
     return {
       expertName: this.name,
@@ -49,7 +48,7 @@ export class DatabaseExpert extends Expert {
     return {
       genre:
         data.genre &&
-        data.genre.length >= 0 &&
+        data.genre.length > 0 &&
         !(data.genre.length == 1 && data.genre[0] == "")
           ? data.genre
           : undefined,
@@ -57,28 +56,25 @@ export class DatabaseExpert extends Expert {
       year: data.year ? data.year : undefined,
       actors:
         data.actors &&
-        data.actors.length >= 0 &&
+        data.actors.length > 0 &&
         !(data.actors.length == 1 && data.actors[0] == "")
           ? data.actors
           : undefined,
       characters:
         data.characters &&
-        data.characters.length >= 0 &&
+        data.characters.length > 0 &&
         !(data.characters.length == 1 && data.characters[0] == "")
           ? data.characters
           : undefined,
       settings:
         data.settings &&
-        data.settings.length >= 0 &&
+        data.settings.length > 0 &&
         !(data.settings.length == 1 && data.settings[0] == "")
           ? data.settings
           : undefined,
     };
   }
 
-  /*
-    TODO - THIS QUERY STUFF DOES NOT WORK YET
-  */
   async queryDatabase(query: any): Promise<DocumentData[]> {
     let moviesRef = db.collection("movies");
     let baseQuery: FirebaseFirestore.Query = moviesRef;
@@ -91,17 +87,20 @@ export class DatabaseExpert extends Expert {
     }
 
     const snapshot = await baseQuery.get();
-    let results: DocumentData[] = snapshot.docs.map((doc) => doc.data());
+    let results: DocumentData[] = snapshot.docs.map((doc) => {
+      return doc.data();
+    });
 
     // Every setting in the query must be present in the movie's settings for it to be included in the results
     if (query.settings) {
       results = results.filter(
         (movie) =>
           movie.settings &&
-          query.settings!.every((setting: string) =>
-            (movie.settings as string[])
-              .map((s) => s.toLowerCase())
-              .includes(setting)
+          (typeof movie.settings == "string"
+            ? [query.settings]
+            : query.settings
+          ).every((setting: string) =>
+            (movie.settings as string[]).includes(setting)
           )
       );
     }
@@ -112,9 +111,7 @@ export class DatabaseExpert extends Expert {
         (movie) =>
           movie.actors &&
           query.actors!.every((actor: string) =>
-            (movie.actors as string[])
-              .map((a) => a.toLowerCase())
-              .includes(actor)
+            (movie.actors as string[]).includes(actor)
           )
       );
     }
@@ -125,9 +122,7 @@ export class DatabaseExpert extends Expert {
         (movie) =>
           movie.characters &&
           query.characters!.every((char: string) =>
-            (movie.characters as string[])
-              .map((c) => c.toLowerCase())
-              .includes(char)
+            (movie.characters as string[]).includes(char)
           )
       );
     }
@@ -138,9 +133,7 @@ export class DatabaseExpert extends Expert {
         (movie) =>
           movie.genre &&
           query.genre!.every((genre: string) =>
-            (movie.genre as string[])
-              .map((g) => g.toLowerCase())
-              .includes(genre)
+            (movie.genre as string[]).includes(genre)
           )
       );
     }
