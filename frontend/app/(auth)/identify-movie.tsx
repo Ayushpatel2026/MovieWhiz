@@ -8,10 +8,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { DocumentPickerResponse } from 'react-native-document-picker';
-import { identifyMovie } from '../../api/apiClient'; 
+import { identifyMovie, postResponse } from '../../api/apiClient'; 
 import { router } from 'expo-router';
 import { FormInput, ForumResponse, RequestMoreInformation } from '@/types/types';
 import { pickAudioFile } from '@/utils/filePicker';
+import { getAuth } from "@react-native-firebase/auth";
 
 const IdentifyMovieScreen = () => {
   const [textInput, setTextInput] = useState('');
@@ -71,6 +72,22 @@ const IdentifyMovieScreen = () => {
       setLoading(false);
       if (result.status === 'success') {
         // Store the response 
+        const userId = getAuth().currentUser?.uid
+
+        const responseToStore: ForumResponse = {
+          responseId: result.responseId,
+          overallConfidence: result.overallConfidence,
+          movieName: result.movieName,
+          timeStamp: result.timeStamp ?? Date.now(),
+          inputsUsed: result.inputsUsed,
+          status: result.status,
+        };
+        
+        if (userId){
+          await postResponse(userId, responseToStore);
+          console.log("Response:", result)
+        };
+        
 				const pathName = '/movie-info';
 				const params = { movieTitle: result.movieName };
 				router.push({

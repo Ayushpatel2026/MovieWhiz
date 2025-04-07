@@ -14,7 +14,7 @@ const ResponseHistoryScreen = () => {
   useEffect(() => {
     const fetchResponseHistory = async () => {
       setLoading(true);
-      setError(null);
+      setError(null); 
       try {
         if (userId) {
           const responseHistoryData = await getResponseHistory(userId);

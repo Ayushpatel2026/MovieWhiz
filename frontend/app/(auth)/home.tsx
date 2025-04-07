@@ -12,6 +12,8 @@ import { router } from "expo-router";
 const Page = () => {
   const auth = getAuth();
   const user = auth.currentUser;
+  const userId = user?.uid; // Get the user ID from the current user
+
   // TODO - THIS IS JUST FOR TESTING PURPOSES, IT WILL BE REMOVED LATER
   const exampleMovieTitle = "the-matrix"; // Replace with a way to get an actual movie title
   const exampleUserId = "user123"; // Replace with the actual user ID
@@ -26,7 +28,7 @@ const Page = () => {
   const navigateToResponseHistory = () => {
     router.push({
       pathname: "/response-history",
-      params: { userId: exampleUserId },
+      params: { userId: userId },
     });
   };
 
