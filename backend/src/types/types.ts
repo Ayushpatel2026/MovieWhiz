@@ -10,8 +10,8 @@ export type Movie = {
   actors: string[];
   characters: string[];
   setting: string;
-  soundtracks: string[]; 
-}
+  soundtracks: string[];
+};
 
 //------------------------------------------------------------------------
 // INPUT TYPES
@@ -21,14 +21,16 @@ export type Input = FormInput | TextInput | AudioInput;
 
 export type FormInput = {
   type: "form";
-  data: {
-    genre?: string[];
-    director?: string;
-    year?: number;
-    actors?: string[];
-    characters?: string[];
-    setting?: string[];
-  };
+  data:
+    | {
+        genre?: string[];
+        director?: string;
+        year?: number;
+        actors?: string[];
+        characters?: string[];
+        setting?: string[];
+      }
+    | string;
 };
 
 export type TextInput = {
