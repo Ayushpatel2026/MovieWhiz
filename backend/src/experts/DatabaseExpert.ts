@@ -1,7 +1,7 @@
 import { MovieIDBlackboard } from '../blackboard/MovieIDBlackboard';
 import { Expert } from './Expert';
 import { db } from '../config/firebaseConfig';
-import { FormInput, ExpertResponse, MovieConfidences } from '../types/types';
+import { FormInput, ExpertResponse, MovieConfidences, Movie } from '../types/types';
 import { DocumentData } from 'firebase-admin/firestore';
 
 export class DatabaseExpert extends Expert {
@@ -22,7 +22,7 @@ export class DatabaseExpert extends Expert {
 
     return {
       expertName: this.name,
-      movieConfidences: this.calculateConfidence(matches, query),
+      movieConfidences: await this.calculateConfidence(matches, query),
       timeStamp: Date.now(),
       details: `Query: ${JSON.stringify(query)}, Found ${matches.length} matches.`
     };
@@ -117,57 +117,119 @@ export class DatabaseExpert extends Expert {
   /* 
     TDO - FIGURE OUT HOW TO CALCULATE CONFIDENCE
   */
-  public calculateConfidence(matches: DocumentData[], query: any): MovieConfidences[] {
-    return matches.map(movie => {
-      let score = 0;
-      const toLowerArray = (arr: string[]) => arr.map(str => str.toLowerCase());
+  public async calculateConfidence(matches: DocumentData[], query: any): Promise<MovieConfidences[]> {
+    let moviesRef = db.collection('movies');
+    let baseQuery: FirebaseFirestore.Query = moviesRef;
+    const allMovies = await baseQuery.get();
 
-      if (query.characters && movie.characters && movie.characters.length > 0) {
-        const inputChars = toLowerArray(query.characters);
-        const movieChars = toLowerArray(movie.characters);
-        const matches = inputChars.filter(char => movieChars.includes(char));
-        score += matches.length / movieChars.length -0.1;
-      }
 
-      if (query.genre && movie.genre && movie.genre.length > 0) {
-        const inputGenres = toLowerArray(query.genre);
-        const movieGenres = toLowerArray(movie.genre);
-        const matches = inputGenres.filter(genre => movieGenres.includes(genre));
-        score += matches.length / movieGenres.length - 0.1;
-      }
+    if (matches.length === 1) {
+      return matches.map((movie) => ({
+        movieName: movie.title || 'Unnamed Movie',
+        confidence: 100, // Perfect confidence if only one match
+      }));
+    }
 
-      if (query.actors && movie.actors && movie.actors.length > 0) {
-        const inputActors = toLowerArray(query.actors);
-        const movieActors = toLowerArray(movie.actors);
-        const matches = inputActors.filter(actor => movieActors.includes(actor));
-        score += matches.length / movieActors.length - 0.1;
-      }
+    const movieConfidences: { movieName: string; confidence: number }[] = [];
 
-      if (query.director && movie.director) {
-        if (query.director.toLowerCase() === movie.director.toLowerCase()) {
-          score += 0.1;
+    // 1. Calculate the frequency of each query term in the entire database
+    const actorFrequencies: Record<string, number> = {};
+    const genreFrequencies: Record<string, number> = {};
+    const settingFrequencies: Record<string, number> = {};
+
+    allMovies.forEach((movieDoc) => {
+      const movie = movieDoc.data() as Movie;
+      query.actors?.forEach((actor : string) => {
+        if (movie.actors?.map(a => a.toLowerCase()).includes(actor.toLowerCase())) {
+          actorFrequencies[actor.toLowerCase()] = (actorFrequencies[actor.toLowerCase()] || 0) + 1;
         }
-      }
-
-      if (query.year && movie.year) {
-        if (query.year === movie.year) {
-          score += 0.05;
+      });
+      query.genre?.forEach((genre : string) => {
+        if (movie.genre?.map(g => g.toLowerCase()).includes(genre.toLowerCase())) {
+          genreFrequencies[genre.toLowerCase()] = (genreFrequencies[genre.toLowerCase()] || 0) + 1;
         }
-      }
-
-      if (query.setting && movie.setting && movie.setting.length > 0) {
-        const inputSetting = toLowerArray(query.setting);
-        const movieSetting = toLowerArray(movie.setting);
-        const matches = inputSetting.filter(setting => movieSetting.includes(setting));
-        score += matches.length / movieSetting.length - 0.1;
-      }
-
-      score = Math.min(score, 1.0);
-
-      return {
-        movieName: movie.title || "Unnamed Movie", 
-        confidence: parseFloat(score.toFixed(2))   
-      };
+      });
+      query.settings?.forEach((setting : string) => {
+        if (movie.settings?.map(s => s.toLowerCase()).includes(setting.toLowerCase())) {
+          settingFrequencies[setting.toLowerCase()] = (settingFrequencies[setting.toLowerCase()] || 0) + 1;
+        }
+      });
     });
+
+    matches.forEach((movie) => {
+      let score = 0;
+      const maxPossibleScore = 100; // Our target maximum confidence
+
+      // 2. Award initial points for each matching attribute
+      if (query.director && movie.director?.toLowerCase() === query.director.toLowerCase()) {
+        // More points for exact match on director since directors are often more unique
+        score += 25;
+      }
+      if (query.year && movie.year === query.year) {
+        // Year is a strong indicator, so give it a decent score
+        score += 15;
+      }
+      query.actors?.forEach((actor : string) => {
+        if (movie.actors?.map((a : string) => a.toLowerCase()).includes(actor.toLowerCase())) {
+          // Actors are less unique than directors, so give them a lower score
+          score += 10;
+        }
+      });
+      query.characters?.forEach((char : string) => {
+        if (movie.characters?.map((c:string) => c.toLowerCase()).includes(char.toLowerCase())) {
+          // Characters are actually quite unique, so give them a higher score
+          score += 15;
+        }
+      });
+      query.genre?.forEach((genre : string) => {
+        if (movie.genre?.map((g:string) => g.toLowerCase()).includes(genre.toLowerCase())) {
+          // Genres matching is very common, so give them a lower score
+          score += 5;
+        }
+      });
+      query.settings?.forEach((setting : string) => {
+        // Settings matching is also common, so give them a lower score
+        if (movie.settings?.map((s:string) => s.toLowerCase()).includes(setting.toLowerCase())) {
+          score += 10;
+        }
+      });
+
+      // 3. Apply penalties based on the frequency of matched attributes in the database
+      let penalty = 0;
+      query.actors?.forEach((actor : String) => {
+        if ((actorFrequencies[actor.toLowerCase()] || 0) > 1 && movie.actors?.map((a:string) => a.toLowerCase()).includes(actor.toLowerCase())) {
+          penalty += 5; // Reduce confidence by 5 for each non-unique actor match
+        }
+      });
+      query.genre?.forEach((genre : string) => {
+        if ((genreFrequencies[genre.toLowerCase()] || 0) > 1 && movie.genre?.map((g:string) => g.toLowerCase()).includes(genre.toLowerCase())) {
+          penalty += 2; // Reduce confidence by 2 for each non-unique genre match
+        }
+      });
+      query.settings?.forEach((setting : string) => {
+        if ((settingFrequencies[setting.toLowerCase()] || 0) > 1 && movie.settings?.map((s:string) => s.toLowerCase()).includes(setting.toLowerCase())) {
+          penalty += 5; // Reduce confidence by 5 for each non-unique setting match
+        }
+      });
+
+      score -= penalty;
+
+      // 4. Apply a penalty if more than 5 movies were initially returned
+      if (matches.length > 5) {
+        const numberOfExcessMatches = matches.length - 5;
+        const largeMatchPenalty = Math.min(numberOfExcessMatches * 2, 50); // Reduce by up to 50
+        score -= largeMatchPenalty;
+      }
+
+      // 5. Normalize the score to the 0-100 range and ensure it doesn't go below 0
+      const confidence = Math.max(0, Math.min(100, score));
+
+      movieConfidences.push({
+        movieName: movie.title || 'Unnamed Movie',
+        confidence: confidence,
+      });
+    });
+
+    return movieConfidences;
   }
 }
