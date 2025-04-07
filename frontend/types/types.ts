@@ -8,8 +8,8 @@ export type Movie = {
   actors: string[];
   characters: string[];
   settings: string[];
-  soundtracks: string[]; 
-}
+  soundtracks: string[];
+};
 
 //------------------------------------------------------------------------
 // INPUT TYPES
@@ -22,7 +22,7 @@ export type FormInput = {
   data: {
     genre?: string[];
     director?: string;
-    year?: number;
+    year?: number | null;
     actors?: string[];
     characters?: string[];
     settings?: string[];
@@ -73,8 +73,8 @@ export type ExpertResponse = {
 };
 
 export type SongData = {
-	name: string;
-	artist: string;
+  name: string;
+  artist: string;
 };
 
 export type MovieConfidences = {
