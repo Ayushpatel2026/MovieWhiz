@@ -44,7 +44,7 @@ export class DatabaseExpert extends Expert {
       year: data.year !== undefined ? data.year : undefined,
       actors: data.actors ? this.sanitizeArray(data.actors) : undefined,
       characters: data.characters ? this.sanitizeArray(data.characters) : undefined,
-      setting: data.setting !== undefined ? data.setting : undefined
+      settings: data.settings ? this.sanitizeArray(data.settings) : undefined
     };
   }
 
@@ -60,52 +60,58 @@ export class DatabaseExpert extends Expert {
   /*
     TODO - THIS QUERY STUFF DOES NOT WORK YET
   */
-
   async queryDatabase(query: any): Promise<DocumentData[]> {
     let moviesRef = db.collection('movies');
     let baseQuery: FirebaseFirestore.Query = moviesRef;
-    let results: DocumentData[] = [];
-  
+
     if (query.director) {
       baseQuery = baseQuery.where('director', '==', query.director);
     }
     if (query.year) {
       baseQuery = baseQuery.where('year', '==', query.year);
     }
-    if (query.setting) {
-      baseQuery = baseQuery.where('setting', '==', query.setting);
-    }
-  
-    let intermediateResults: DocumentData[] = (await baseQuery.get()).docs.map(doc => doc.data());
-  
-    if (query.actors) {
-      intermediateResults = intermediateResults.filter(movie =>
-        movie.actors && movie.actors.some((actor: string) =>
-          query.actors!.map((a: string) => a.toLowerCase()).includes(actor.toLowerCase())
-        )
-      );
-    }
-  
-    if (query.characters) {
-      intermediateResults = intermediateResults.filter(movie =>
-        movie.characters && movie.characters.some((char: string) =>
-          query.characters!.map((c: string) => c.toLowerCase()).includes(char.toLowerCase())
-        )
-      );
-    }
 
-    if (query.genre) {
-      intermediateResults = intermediateResults.filter(movie =>
-        movie.genre && movie.genre.some((char: string) =>
-          query.genre!.map((c: string) => c.toLowerCase()).includes(char.toLowerCase())
+    const snapshot = await baseQuery.get();
+    let results: DocumentData[] = snapshot.docs.map((doc) => doc.data());
+    
+    // Every setting in the query must be present in the movie's settings for it to be included in the results
+    if (query.settings) {
+      results = results.filter((movie) =>
+        movie.settings && query.settings!.every((setting: string) =>
+          (movie.settings as string[]).map(s => s.toLowerCase()).includes(setting)
         )
       );
     }
+    
+    // Every actor in the query must be present in the movie's actors for it to be included in the results
+    if (query.actors) {
+      results = results.filter((movie) =>
+        movie.actors && query.actors!.every((actor: string) =>
+          (movie.actors as string[]).map(a => a.toLowerCase()).includes(actor)
+        )
+      );
+    }
+    
+    // Every character in the query must be present in the movie's characters for it to be included in the results
+    if (query.characters) {
+      results = results.filter((movie) =>
+        movie.characters && query.characters!.every((char: string) =>
+          (movie.characters as string[]).map(c => c.toLowerCase()).includes(char)
+        )
+      );
+    };
+      
+      // Every genre in the query must be present in the movie's genre for it to be included in the results
+      if (query.genre) {
+        results = results.filter((movie) =>
+          movie.genre && query.genre!.every((genre: string) =>
+            (movie.genre as string[]).map(g => g.toLowerCase()).includes(genre)
+          )
+        );
+      }
   
-    results = intermediateResults;
-  
-    return results;
-  }
+      return results;
+    }
   
 
   /* 

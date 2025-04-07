@@ -9,7 +9,7 @@ export type Movie = {
   director: string;
   actors: string[];
   characters: string[];
-  setting: string;
+  settings: string[];
   soundtracks: string[]; 
 }
 
@@ -27,7 +27,7 @@ export type FormInput = {
     year?: number;
     actors?: string[];
     characters?: string[];
-    setting?: string[];
+    settings?: string[];
   };
 };
 

@@ -22,7 +22,7 @@ const upload = multer({ storage: multer.memoryStorage() });
       "year": 2001,
       "actors": ["Daniel Radcliffe", "Emma Watson"],
       "characters": ["Harry Potter", "Hermione Granger"],
-      "setting": ["Hogwarts"]
+      "settings": ["Hogwarts"]
     },
     "audio": "base64-audio-string"
   }
