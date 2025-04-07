@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, ScrollView, ActivityIndicator } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
+import { StyleSheet, View, Text, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { router, useLocalSearchParams } from 'expo-router';
 import { StoredResponse } from '../../types/types'; 
 import { getResponseHistory } from '../../api/apiClient';  
+import { Ionicons } from '@expo/vector-icons';
 
 
 const ResponseHistoryScreen = () => {
@@ -49,27 +50,29 @@ const ResponseHistoryScreen = () => {
     );
   }
 
-  if (!history || history.length === 0) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.noHistoryText}>No response history available for this user.</Text>
-      </View>
-    );
-  }
-
   return (
     <ScrollView style={styles.container}>
+      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+        <Ionicons name="arrow-back" size={24} color="#333" />
+        <Text style={styles.backButtonText}>Back</Text>
+      </TouchableOpacity>
       <Text style={styles.title}>Response History</Text>
-      {history.map((response) => (
-        <View key={response.forumResponse.responseId} style={styles.historyItem}>
-          <Text style={styles.movieName}>{response.forumResponse.movieName}</Text>
-          <Text style={styles.confidence}>Confidence: {response.forumResponse.overallConfidence}%</Text>
-          <Text style={styles.timeStamp}>
-            Time Stamp: {response.forumResponse.timeStamp}
-          </Text>
-          <Text style={styles.inputsUsed}>Inputs Used: {response.forumResponse.inputsUsed.join(', ')}</Text>
+      {(history && history.length > 0) ? (
+        history.map((response) => (
+          <View key={response.forumResponse.responseId} style={styles.historyItem}>
+            <Text style={styles.movieName}>{response.forumResponse.movieName}</Text>
+            <Text style={styles.confidence}>Confidence: {response.forumResponse.overallConfidence}%</Text>
+            <Text style={styles.timeStamp}>
+              Time Stamp: {response.forumResponse.timeStamp}
+            </Text>
+            <Text style={styles.inputsUsed}>Inputs Used: {response.forumResponse.inputsUsed.join(', ')}</Text>
+          </View>
+        ))
+      ): (
+        <View style={styles.container}>
+          <Text style={styles.noHistoryText}>No response history available for this user.</Text>
         </View>
-      ))}
+      )}
     </ScrollView>
   );
 };
@@ -79,6 +82,16 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#f4f4f4',
+  },
+  backButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  backButtonText: {
+    marginLeft: 10,
+    fontSize: 16,
+    color: '#333',
   },
   loadingContainer: {
     flex: 1,

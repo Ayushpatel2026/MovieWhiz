@@ -31,6 +31,9 @@ export class BlackboardController {
     const responses = await this.blackboard.notifyExperts(inputs);
 
     console.log("Responses from experts:", responses);
+    responses.forEach((response) => {
+      console.log(response);
+    });
 
     // Get final decision from forum
     return this.forum.evaluateResponses(responses);

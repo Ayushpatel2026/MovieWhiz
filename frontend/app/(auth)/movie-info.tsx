@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, ScrollView, ActivityIndicator } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
+import { StyleSheet, View, Text, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { router, useLocalSearchParams } from 'expo-router';
 import { Movie, MovieStreamingInfo } from '../../types/types';
 import { getMovieInfo, getStreamingInfo } from '../../api/apiClient';
+import { Ionicons } from '@expo/vector-icons';
 
 const MovieInfoScreen = () => {
   const { movieTitle } = useLocalSearchParams<{ movieTitle: string }>();
@@ -58,6 +59,10 @@ const MovieInfoScreen = () => {
 
   return (
     <ScrollView style={styles.container}>
+      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+        <Ionicons name="arrow-back" size={24} color="#333" />
+        <Text style={styles.backButtonText}>Back</Text>
+      </TouchableOpacity>
       <Text style={styles.title}>{movieTitle.split('-')}</Text>
       {movie ? <>
         <Text style={styles.year}>({movie.year})</Text>
@@ -82,8 +87,8 @@ const MovieInfoScreen = () => {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Setting</Text>
-          <Text>{movie?.setting ? movie.setting : "N/A"}</Text>
+          <Text style={styles.sectionTitle}>Settings</Text>
+          <Text>{movie?.settings ? movie.settings.join(', ') : "N/A"}</Text>
         </View>
 
         <View style={styles.section}>
@@ -118,6 +123,16 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#f4f4f4',
+  },
+  backButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  backButtonText: {
+    marginLeft: 10,
+    fontSize: 16,
+    color: '#333',
   },
   loadingContainer: {
     flex: 1,

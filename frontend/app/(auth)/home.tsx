@@ -12,28 +12,19 @@ import { router } from "expo-router";
 const Page = () => {
   const auth = getAuth();
   const user = auth.currentUser;
-  const userId = user?.uid; // Get the user ID from the current user
-
-  // TODO - THIS IS JUST FOR TESTING PURPOSES, IT WILL BE REMOVED LATER
-  const exampleMovieTitle = "the-matrix"; // Replace with a way to get an actual movie title
-  const exampleUserId = "user123"; // Replace with the actual user ID
-
-  const navigateToMovieInfo = () => {
-    router.push({
-      pathname: "/movie-info",
-      params: { movieTitle: exampleMovieTitle },
-    });
-  };
 
   const navigateToResponseHistory = () => {
     router.push({
       pathname: "/response-history",
-      params: { userId: userId },
+      params: { userId: user?.uid },
     });
   };
 
   const navigateToIdentifyMovie = () => {
-    router.push("/identify-movie");
+    router.push({
+      pathname: "/identify-movie",
+      params: { userId: user?.uid },
+    });
   };
 
   const handleSignOut = () => {
@@ -47,7 +38,6 @@ const Page = () => {
       <Text style={styles.subtitle}>Welcome, {user?.email}</Text>
 
       <View style={styles.buttonGroup}>
-        <CustomButton text="🎥 View Movie Info" onPress={navigateToMovieInfo} />
         <CustomButton text="📜 View Response History" onPress={navigateToResponseHistory} />
         <CustomButton text="🔍 Identify a Movie" onPress={navigateToIdentifyMovie} />
         <CustomButton text="🚪 Sign Out" onPress={handleSignOut} isDanger />
