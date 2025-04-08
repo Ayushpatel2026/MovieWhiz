@@ -4,6 +4,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { Movie, MovieStreamingInfo } from '../../types/types';
 import { getMovieInfo, getStreamingInfo } from '../../api/apiClient';
 import { Ionicons } from '@expo/vector-icons';
+import { getAuth, signOut } from "@react-native-firebase/auth";
 
 const MovieInfoScreen = () => {
   const { movieTitle } = useLocalSearchParams<{ movieTitle: string }>();
@@ -48,6 +49,16 @@ const MovieInfoScreen = () => {
     fetchMovieDetails();
   }, [movieTitle]);
 
+  const navigateToIdentifyMovie = () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const userId = user?.uid;
+    router.push({
+      pathname: '/identify-movie',
+      params: { userId },
+    });
+  };
+
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
@@ -58,63 +69,69 @@ const MovieInfoScreen = () => {
   }
 
   return (
-    <ScrollView style={styles.container}>
-      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-        <Ionicons name="arrow-back" size={24} color="#333" />
-        <Text style={styles.backButtonText}>Back</Text>
+    <View style={styles.container}>
+      <ScrollView style={{ flex: 1 }}>
+        <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+          <Ionicons name="arrow-back" size={24} color="#333" />
+          <Text style={styles.backButtonText}>Back</Text>
+        </TouchableOpacity>
+        <Text style={styles.title}>{movieTitle.split('-')}</Text>
+        {movie ? <>
+          <Text style={styles.year}>({movie.year})</Text>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Genre</Text>
+            <Text>{movie?.genre ? movie.genre.join(', ') : "N/A"}</Text>
+          </View>
+
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Director</Text>
+            <Text>{movie?.director ? movie.director : "N/A"}</Text>
+          </View>
+
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Actors</Text>
+            <Text>{movie?.actors ? movie.actors.join(', ') : "N/A"}</Text>
+          </View>
+
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Characters</Text>
+            <Text>{movie?.characters ? movie.characters.join(', ') : "N/A"}</Text>
+          </View>
+
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Settings</Text>
+            <Text>{movie?.settings ? movie.settings.join(', ') : "N/A"}</Text>
+          </View>
+
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Soundtracks</Text>
+            <Text>{movie?.soundtracks ? movie.soundtracks.join(', ') : "N/A"}</Text>
+          </View>
+        </> : (
+          <View style={styles.section}>
+          <Text>Movie Information Not Found</Text>
+        </View>
+        )}
+
+        {streamingInfo && streamingInfo.links.length > 0 ? (
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Streaming On</Text>
+            {streamingInfo.links.map((link, index) => (
+              <Text key={index}>{link.platform}: {link.link}</Text>
+            ))}
+          </View>
+        ) : (
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Streaming On</Text>
+            <Text>No streaming information available for this movie.</Text>
+          </View>
+        )}
+      </ScrollView>
+
+      <TouchableOpacity style={styles.identifyButton} onPress={navigateToIdentifyMovie}>
+        <Text style={styles.identifyButtonText}>🔍 Identify a New Movie</Text>
       </TouchableOpacity>
-      <Text style={styles.title}>{movieTitle.split('-')}</Text>
-      {movie ? <>
-        <Text style={styles.year}>({movie.year})</Text>
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Genre</Text>
-          <Text>{movie?.genre ? movie.genre.join(', ') : "N/A"}</Text>
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Director</Text>
-          <Text>{movie?.director ? movie.director : "N/A"}</Text>
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Actors</Text>
-          <Text>{movie?.actors ? movie.actors.join(', ') : "N/A"}</Text>
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Characters</Text>
-          <Text>{movie?.characters ? movie.characters.join(', ') : "N/A"}</Text>
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Settings</Text>
-          <Text>{movie?.settings ? movie.settings.join(', ') : "N/A"}</Text>
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Soundtracks</Text>
-          <Text>{movie?.soundtracks ? movie.soundtracks.join(', ') : "N/A"}</Text>
-        </View>
-      </> : (
-        <View style={styles.section}>
-        <Text>Movie Information Not Found</Text>
-      </View>
-      )}
-
-      {streamingInfo && streamingInfo.links.length > 0 ? (
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Streaming On</Text>
-          {streamingInfo.links.map((link, index) => (
-            <Text key={index}>{link.platform}: {link.link}</Text>
-          ))}
-        </View>
-      ) : (
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Streaming On</Text>
-          <Text>No streaming information available for this movie.</Text>
-        </View>
-      )}
-    </ScrollView>
+    </View>
   );
 };
 
@@ -134,6 +151,23 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
   },
+  identifyButton: {
+    backgroundColor: '#2563eb',
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    marginBottom: 30,
+    marginHorizontal: 20,
+    elevation: 3,
+  },
+  identifyButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+  },  
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
