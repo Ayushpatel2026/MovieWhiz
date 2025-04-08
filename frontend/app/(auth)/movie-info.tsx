@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  ActivityIndicator,
+  TouchableOpacity,
+  Linking
+} from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { Movie, MovieStreamingInfo } from '../../types/types';
 import { getMovieInfo, getStreamingInfo } from '../../api/apiClient';
 import { Ionicons } from '@expo/vector-icons';
-import { getAuth, signOut } from "@react-native-firebase/auth";
+import { getAuth } from "@react-native-firebase/auth";
 
 const MovieInfoScreen = () => {
   const { movieTitle } = useLocalSearchParams<{ movieTitle: string }>();
@@ -21,21 +29,20 @@ const MovieInfoScreen = () => {
         if (movieTitle) {
           console.log('Fetching movie details for:', movieTitle);
           const movieData = await getMovieInfo(movieTitle);
-					if (!movieData) {
-						setError('Movie not found.');
-						return;
-					}
-					console.log('Movie data:', movieData);
+          if (!movieData) {
+            setError('Movie not found.');
+            return;
+          }
+          console.log('Movie data:', movieData);
           setMovie(movieData);
-					console.log("Movie genre:", movie?.genre)
 
-					console.log('Fetching streaming info for:', movieTitle);
+          console.log('Fetching streaming info for:', movieTitle);
           const streamingData = await getStreamingInfo(movieTitle);
-					if (!streamingData) {
-						setError('Streaming info not found.');
-						return;
-					}
-					console.log('Streaming data:', streamingData);
+          if (!streamingData) {
+            setError('Streaming info not found.');
+            return;
+          }
+          console.log('Streaming data:', streamingData);
           setStreamingInfo(streamingData);
         }
       } catch (err: any) {
@@ -75,49 +82,56 @@ const MovieInfoScreen = () => {
           <Ionicons name="arrow-back" size={24} color="#333" />
           <Text style={styles.backButtonText}>Back</Text>
         </TouchableOpacity>
+
         <Text style={styles.title}>{movieTitle.split('-')}</Text>
-        {movie ? <>
-          <Text style={styles.year}>({movie.year})</Text>
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Genre</Text>
-            <Text>{movie?.genre ? movie.genre.join(', ') : "N/A"}</Text>
-          </View>
+        {movie ? (
+          <>
+            <Text style={styles.year}>({movie.year})</Text>
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Genre</Text>
+              <Text>{movie?.genre ? movie.genre.join(', ') : "N/A"}</Text>
+            </View>
 
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Director</Text>
-            <Text>{movie?.director ? movie.director : "N/A"}</Text>
-          </View>
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Director</Text>
+              <Text>{movie?.director || "N/A"}</Text>
+            </View>
 
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Actors</Text>
-            <Text>{movie?.actors ? movie.actors.join(', ') : "N/A"}</Text>
-          </View>
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Actors</Text>
+              <Text>{movie?.actors ? movie.actors.join(', ') : "N/A"}</Text>
+            </View>
 
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Characters</Text>
-            <Text>{movie?.characters ? movie.characters.join(', ') : "N/A"}</Text>
-          </View>
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Characters</Text>
+              <Text>{movie?.characters ? movie.characters.join(', ') : "N/A"}</Text>
+            </View>
 
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Settings</Text>
-            <Text>{movie?.settings ? movie.settings.join(', ') : "N/A"}</Text>
-          </View>
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Settings</Text>
+              <Text>{movie?.settings ? movie.settings.join(', ') : "N/A"}</Text>
+            </View>
 
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Soundtracks</Text>
+              <Text>{movie?.soundtracks ? movie.soundtracks.join(', ') : "N/A"}</Text>
+            </View>
+          </>
+        ) : (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Soundtracks</Text>
-            <Text>{movie?.soundtracks ? movie.soundtracks.join(', ') : "N/A"}</Text>
+            <Text>Movie Information Not Found</Text>
           </View>
-        </> : (
-          <View style={styles.section}>
-          <Text>Movie Information Not Found</Text>
-        </View>
         )}
 
         {streamingInfo && streamingInfo.links.length > 0 ? (
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Streaming On</Text>
             {streamingInfo.links.map((link, index) => (
-              <Text key={index}>{link.platform}: {link.link}</Text>
+              <TouchableOpacity key={index} onPress={() => Linking.openURL(link.link)}>
+                <Text style={styles.streamLink}>
+                  {link.platform}: {link.link}
+                </Text>
+              </TouchableOpacity>
             ))}
           </View>
         ) : (
@@ -167,7 +181,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: '600',
-  },  
+  },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -213,6 +227,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 8,
     color: '#007bff',
+  },
+  streamLink: {
+    color: '#1d4ed8',
+    textDecorationLine: 'underline',
+    marginBottom: 5,
   },
 });
 
