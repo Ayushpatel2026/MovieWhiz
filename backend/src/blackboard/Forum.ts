@@ -67,6 +67,17 @@ export class Forum {
           (res) => res.expertName === "Soundtrack Expert"
       );
 
+      // Function to format the timestamp
+      const formatTimestamp = (timestamp: number): string => {
+        const date = new Date(timestamp);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed
+        const day = String(date.getDate()).padStart(2, '0');
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        return `${year}:${month}:${day}:${hours}:${minutes}`;
+    };
+
       // Helper function to get the top movie confidence, handling potential undefined
       const getTopConfidence = (response?: ExpertResponse): { movieName: string; confidence: number } | undefined => {
           if (response && response.movieConfidences.length > 0) {
@@ -86,7 +97,7 @@ export class Forum {
                       responseId: uuidv4(),
                       overallConfidence: llmTop.confidence,
                       movieName: llmTop.movieName,
-                      timeStamp: Date.now(),
+                      timeStamp: formatTimestamp(Date.now()),
                       inputsUsed: nonEmptyResponses.map((res) => res.expertName),
                   };
               // Check if LLM has multiple movie suggestions
@@ -98,7 +109,7 @@ export class Forum {
                           responseId: uuidv4(),
                           overallConfidence: llmTop.confidence,
                           movieName: llmTop.movieName,
-                          timeStamp: Date.now(),
+                          timeStamp: formatTimestamp(Date.now()),
                           inputsUsed: nonEmptyResponses.map((res) => res.expertName),
                       };
                   // if not, we move to the database expert
@@ -110,7 +121,7 @@ export class Forum {
                               responseId: uuidv4(),
                               overallConfidence: dbTop.confidence,
                               movieName: dbTop.movieName,
-                              timeStamp: Date.now(),
+                              timeStamp: formatTimestamp(Date.now()),
                               inputsUsed: nonEmptyResponses.map((res) => res.expertName),
                           };
                       // if not, we move to the soundtrack expert
@@ -122,19 +133,19 @@ export class Forum {
                                   responseId: uuidv4(),
                                   overallConfidence: soundtrackTop.confidence,
                                   movieName: soundtrackTop.movieName,
-                                  timeStamp: Date.now(),
+                                  timeStamp: formatTimestamp(Date.now()),
                                   inputsUsed: nonEmptyResponses.map((res) => res.expertName),
                               };
                             // if not, check that soundtrack expert has returned a movie
                           } else if (soundtrackResponses.length > 0) {
                               return {
                                   inputsUsed: nonEmptyResponses.map((res) => res.expertName),
-                                  details: "LLM had multiple close suggestions and no further information from Database or Soundtrack Experts. More information might help.",
+                                  details: "LLM had multiple close suggestions. Soundtrack and Database Experts could not provide accurate match. More information is needed.",
                               };
                           } else {
                               return {
                                   inputsUsed: nonEmptyResponses.map((res) => res.expertName),
-                                  details: "LLM had multiple close suggestions and no further information from Database Expert. More information might help.",
+                                  details: "LLM had multiple close suggestions. Database Expert could not provide accurate match. More information is needed.",
                               };
                           }
                       }
@@ -155,7 +166,7 @@ export class Forum {
                   responseId: uuidv4(),
                   overallConfidence: dbTop.confidence,
                   movieName: dbTop.movieName,
-                  timeStamp: Date.now(),
+                  timeStamp: formatTimestamp(Date.now()),
                   inputsUsed: nonEmptyResponses.map((res) => res.expertName),
               };
           }
@@ -166,7 +177,7 @@ export class Forum {
         if (soundtrackResponses.length > 4) {
             return {
                 inputsUsed: nonEmptyResponses.map((res) => res.expertName),
-                details: "Soundtrack Expert returned more than 4 suggestions. More information is needed to narrow down the results.",
+                details: "Soundtrack Expert could not provide accurate match. More information is needed.",
             };
         } else {
           const soundtrackTop = getTopConfidence(soundtrackResponses[0]);
@@ -182,13 +193,13 @@ export class Forum {
                   responseId: uuidv4(),
                   overallConfidence: overallConfidence,
                   movieName: soundtrackTop.movieName,
-                  timeStamp: Date.now(),
+                  timeStamp: formatTimestamp(Date.now()),
                   inputsUsed: nonEmptyResponses.map((res) => res.expertName),
               };
           } else {
             return {
                 inputsUsed: nonEmptyResponses.map((res) => res.expertName),
-                details: "Soundtrack Expert provided responses but could not identify a movie with sufficient confidence. More information might help.",
+                details: "Soundtrack Expert did not provide accurate responses. More information is needed.",
             };
           }
         }
@@ -196,7 +207,7 @@ export class Forum {
 
       return {
           inputsUsed: nonEmptyResponses.map((res) => res.expertName),
-          details: "Neither LLM nor Database Experts provided a strong match, and the Soundtrack Expert did not return any suggestions. More information is needed.",
+          details: "No expert coud provide an accurate match. More information is needed.",
       };
   }
 }
