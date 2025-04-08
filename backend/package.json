@@ -4,7 +4,10 @@
   "description": "",
   "main": "./src/index.ts",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "build": "npm install && npx tsc",
+    "postbuild": "copy .\\src\\config\\serviceAccountKey.json .\\dist\\config\\",
+    "start": "node ./dist/index.js"
   },
   "author": "",
   "license": "ISC",
