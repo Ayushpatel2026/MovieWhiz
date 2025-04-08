@@ -41,7 +41,7 @@ export default function Index() {
     setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Sign in successful");
+      // alert("Sign in successful");
     } catch (e: any) {
       const err = e as FirebaseError;
       alert("Sign in failed: " + err.message);

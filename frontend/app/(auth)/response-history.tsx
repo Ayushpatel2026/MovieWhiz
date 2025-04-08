@@ -33,6 +33,13 @@ const ResponseHistoryScreen = () => {
     fetchResponseHistory();
   }, [userId]);
 
+  const navigateToIdentifyMovie = () => {
+    router.push({
+      pathname: '/identify-movie',
+      params: { userId },
+    });
+  }
+
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
@@ -51,30 +58,38 @@ const ResponseHistoryScreen = () => {
   }
 
   return (
-    <ScrollView style={styles.container}>
-      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-        <Ionicons name="arrow-back" size={24} color="#333" />
-        <Text style={styles.backButtonText}>Back</Text>
-      </TouchableOpacity>
-      <Text style={styles.title}>Response History</Text>
-      {(history && history.length > 0) ? (
-        history.map((response) => (
-          <View key={response.forumResponse.responseId} style={styles.historyItem}>
-            <Text style={styles.movieName}>{response.forumResponse.movieName}</Text>
-            <Text style={styles.confidence}>Confidence: {response.forumResponse.overallConfidence}%</Text>
-            <Text style={styles.timeStamp}>
-              Time Stamp: {response.forumResponse.timeStamp}
-            </Text>
-            <Text style={styles.inputsUsed}>Inputs Used: {response.forumResponse.inputsUsed.join(', ')}</Text>
+    <View style={styles.container}>
+      <ScrollView style={{ flex: 1 }}>
+        <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+          <Ionicons name="arrow-back" size={24} color="#333" />
+          <Text style={styles.backButtonText}>Back</Text>
+        </TouchableOpacity>
+        <Text style={styles.title}>Response History</Text>
+        {history && history.length > 0 ? (
+          history.map((response) => (
+            <View key={response.forumResponse.responseId} style={styles.historyItem}>
+              <Text style={styles.movieName}>{response.forumResponse.movieName}</Text>
+              <Text style={styles.confidence}>Confidence: {response.forumResponse.overallConfidence}%</Text>
+              <Text style={styles.timeStamp}>
+                Time Stamp: {response.forumResponse.timeStamp}
+              </Text>
+              <Text style={styles.inputsUsed}>Inputs Used: {response.forumResponse.inputsUsed.join(', ')}</Text>
+            </View>
+          ))
+        ) : (
+          <View>
+            <Text style={styles.noHistoryText}>No response history available for this user.</Text>
           </View>
-        ))
-      ): (
-        <View style={styles.container}>
-          <Text style={styles.noHistoryText}>No response history available for this user.</Text>
-        </View>
-      )}
-    </ScrollView>
+        )}
+      </ScrollView>
+  
+      {/* New Button */}
+      <TouchableOpacity style={styles.identifyButton} onPress={navigateToIdentifyMovie}>
+        <Text style={styles.identifyButtonText}>🔍 Identify a New Movie</Text>
+      </TouchableOpacity>
+    </View>
   );
+  
 };
 
 const styles = StyleSheet.create({
@@ -93,6 +108,24 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
   },
+  identifyButton: {
+    backgroundColor: '#2563eb',
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    marginBottom: 30,
+    marginHorizontal: 20,
+    elevation: 3,
+  },
+  identifyButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
