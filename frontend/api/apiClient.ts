@@ -7,7 +7,7 @@ import {
 import axios from "axios";
 
 const API_BASE_URL =
-  process.env.BACKEND_BASE_URL || "http://172.17.128.65:7000/api";
+  process.env.BACKEND_BASE_URL || "http://192.168.2.34:7000/api";
 
 // Configure axios instance
 const api = axios.create({

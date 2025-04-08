@@ -109,20 +109,19 @@ export class LLMExpert extends Expert {
           timeStamp: Date.now(), // Optional: Add a timeStamp
         };
       }
-  
-      // Find the movie with the highest confidence score
-      let bestMovie = jsonResponse.movies[0];
-      for (let i = 1; i < jsonResponse.movies.length; i++) {
-        if (jsonResponse.movies[i].confidencescore > bestMovie.confidencescore) {
-          bestMovie = jsonResponse.movies[i];
-        }
-      }
-  
+      
+      // Just in case the LLM messes up and does not return sorted movies
+      const sortedMovies = [...jsonResponse.movies].sort(
+        (a, b) => b.confidencescore - a.confidencescore
+      );
+      
       return {
-        expertName: this.name,
-        movieConfidences: [bestMovie],
-        timeStamp: Date.now(), // Optional: Add a timeStamp
-        //details: "Optional details string", // Optional: Add details if needed.
+          expertName: this.name,
+          movieConfidences: sortedMovies.map(movie => ({
+              movieName: movie.movieName,
+              confidence: movie.confidence,
+          })),
+          timeStamp: Date.now(),
       };
   
     } catch (error) {

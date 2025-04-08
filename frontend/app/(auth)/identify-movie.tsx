@@ -37,10 +37,6 @@ const IdentifyMovieScreen = () => {
   );
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [identificationResult, setIdentificationResult] = useState<
-    ForumResponse | RequestMoreInformation | null
-  >(null);
-
   const [settings, setSettings] = useState<string>("");
   const [genres, setGenres] = useState<string>("");
   const [actors, setActors] = useState<string>("");
@@ -58,7 +54,6 @@ const IdentifyMovieScreen = () => {
   const handleSubmit = async () => {
     setLoading(true);
     setErrorMessage(null);
-    setIdentificationResult(null);
 
     console.log(!!formState);
 
@@ -115,11 +110,7 @@ const IdentifyMovieScreen = () => {
         });
       } else if (result.status === "partial") {
         //TODO - show the request more information modal here 
-        setIdentificationResult({
-          status: result.status,
-          inputsUsed: result.inputsUsed,
-          details: result.suggestions,
-        });
+        
       } else {
         setErrorMessage(result.message || "Failed to identify movie.");
       }

@@ -1536,7 +1536,7 @@
     "characters": ["Kevin McCallister", "Harry", "Marv", "Kate McCallister"],
     "director": "Chris Columbus",
     "genre": ["Comedy", "Family"],
-    "settings": "Chicago, Illinois",
+    "settings": ["Chicago, Illinois"],
     "soundtracks": ["Somewhere in My Memory", "Carol of the Bells"]
   },
   {
@@ -1546,7 +1546,7 @@
     "characters": ["Kevin McCallister", "Harry", "Marv", "Mr. Hector"],
     "director": "Chris Columbus",
     "genre": ["Adventure", "Comedy", "Crime"],
-    "settings": "New York City",
+    "settings": ["New York City"],
     "soundtracks": ["Merry Christmas, Merry Christmas", "All Alone on Christmas"]
   },
   {
@@ -1556,7 +1556,7 @@
     "characters": ["Alex Pruitt", "Peter Beaupre", "Alice Ribbons", "Molly Pruitt"],
     "director": "Raja Gosnell",
     "genre": ["Action", "Comedy", "Family"],
-    "settings": "Chicago, Illinois",
+    "settings": ["Chicago, Illinois"],
     "soundtracks": ["Home Alone 3 Theme"]
   },
   {
@@ -1566,7 +1566,7 @@
     "characters": ["Kevin McCallister", "Marv", "Vera", "Peter McCallister"],
     "director": "Rod Daniel",
     "genre": ["Comedy", "Family"],
-    "settings": "Chicago, Illinois",
+    "settings": ["Chicago, Illinois"],
     "soundtracks": ["Home Alone Theme (TV Movie Version)"]
   },
   {
@@ -1576,7 +1576,7 @@
     "characters": ["Finn Baxter", "Sinclair", "Jessica", "Hughes"],
     "director": "Peter Hewitt",
     "genre": ["Comedy", "Family"],
-    "settings": "Maine, USA",
+    "settings": ["Woodsboro, Maine"],
     "soundtracks": ["Holiday Heist Theme"]
   },
   {
@@ -1586,7 +1586,7 @@
     "characters": ["Buddy", "Jovie", "Walter", "Papa Elf"],
     "director": "Jon Favreau",
     "genre": ["Comedy", "Family", "Fantasy"],
-    "settings": "New York City, North Pole",
+    "settings": ["New York City", "North Pole"],
     "soundtracks": ["Baby, It's Cold Outside", "Santa Claus is Coming to Town"]
   },
   {
@@ -1596,7 +1596,7 @@
     "characters": ["Scott Calvin", "Charlie", "Laura", "Bernard"],
     "director": "John Pasquin",
     "genre": ["Comedy", "Drama", "Family"],
-    "settings": "USA, North Pole",
+    "settings": ["Chicago", "North Pole"],
     "soundtracks": ["The Bells of Christmas"]
   },
   {
@@ -1606,7 +1606,7 @@
     "characters": ["Hero Boy", "Conductor", "Santa Claus", "Know-It-All"],
     "director": "Robert Zemeckis",
     "genre": ["Animation", "Adventure", "Family"],
-    "settings": "Train to the North Pole",
+    "settings": ["North Pole", "Chicago"],
     "soundtracks": ["Believe", "Hot Chocolate"]
   },
   {
@@ -1616,7 +1616,7 @@
     "characters": ["Grinch", "Cindy Lou Who", "Mayor MayWho", "Martha May Whovier"],
     "director": "Ron Howard",
     "genre": ["Comedy", "Family", "Fantasy"],
-    "settings": "Whoville",
+    "settings": ["Whoville"],
     "soundtracks": ["Where Are You Christmas?", "You're a Mean One, Mr. Grinch"]
   },
   {
@@ -1626,7 +1626,7 @@
     "characters": ["David", "Daniel", "Karen", "Juliet"],
     "director": "Richard Curtis",
     "genre": ["Comedy", "Drama", "Romance"],
-    "settings": "London, England",
+    "settings": ["London"],
     "soundtracks": ["Christmas Is All Around", "All You Need Is Love"]
   },
   {
@@ -1636,7 +1636,7 @@
     "characters": ["Amanda", "Iris", "Graham", "Miles"],
     "director": "Nancy Meyers",
     "genre": ["Comedy", "Romance"],
-    "settings": "Los Angeles & Surrey, England",
+    "settings": ["Los Angeles", "England"],
     "soundtracks": ["Maestro", "Christmas Surprise"]
   },
   {
@@ -1646,7 +1646,7 @@
     "characters": ["Ebenezer Scrooge", "Bob Cratchit", "Fred", "Fezziwig"],
     "director": "Robert Zemeckis",
     "genre": ["Animation", "Drama", "Family"],
-    "settings": "London, 19th century",
+    "settings": ["London"],
     "soundtracks": ["God Bless Us Everyone"]
   },
   {
@@ -1656,7 +1656,7 @@
     "characters": ["Jack Skellington", "Sally", "Oogie Boogie"],
     "director": "Henry Selick",
     "genre": ["Animation", "Family", "Fantasy"],
-    "settings": "Halloween Town, Christmas Town",
+    "settings": ["Halloween Town", "Christmas Town"],
     "soundtracks": ["This is Halloween", "What's This?"]
   },
   {
@@ -1666,7 +1666,7 @@
     "characters": ["Arthur", "Steve", "Santa", "Grandsanta"],
     "director": "Sarah Smith",
     "genre": ["Animation", "Adventure", "Comedy"],
-    "settings": "North Pole, England",
+    "settings": ["North Pole", "London"],
     "soundtracks": ["Make Someone Happy"]
   },
   {
@@ -1676,7 +1676,7 @@
     "characters": ["Santa Claus", "Kate Pierce", "Teddy Pierce", "Claire"],
     "director": "Clay Kaytis",
     "genre": ["Adventure", "Comedy", "Family"],
-    "settings": "Chicago and North Pole",
+    "settings": ["Chicago", "North Pole"],
     "soundtracks": ["The Spirit of Christmas"]
   },
   {
@@ -1686,7 +1686,7 @@
     "characters": ["Howard Langston", "Myron", "Ted", "Liz"],
     "director": "Brian Levant",
     "genre": ["Comedy", "Family"],
-    "settings": "Minneapolis, Minnesota",
+    "settings": ["Minneapolis, Minnesota"],
     "soundtracks": ["Jingle Bells Rock"]
   },
   {

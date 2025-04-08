@@ -24,11 +24,13 @@ export class DatabaseExpert extends Expert {
     );
     const matches = await this.queryDatabase(query);
 
-    // console.log("Matches found:", matches);
+    const movieConfidences = await this.calculateConfidence(matches, query);
 
     return {
       expertName: this.name,
-      movieConfidences: await this.calculateConfidence(matches, query),
+      movieConfidences: movieConfidences.sort(
+        (a, b) => b.confidence - a.confidence
+      ),
       timeStamp: Date.now(),
       details: `Query: ${JSON.stringify(query)}, Found ${
         matches.length
