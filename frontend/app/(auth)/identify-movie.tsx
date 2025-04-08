@@ -52,6 +52,10 @@ const IdentifyMovieScreen = () => {
     }
   };
 
+  const handleGoHome = () => {
+    router.push('/home'); 
+  };
+
   const handleSubmit = async () => {
     setLoading(true);
     setErrorMessage(null);
@@ -132,10 +136,16 @@ const IdentifyMovieScreen = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-        <Ionicons name="arrow-back" size={24} color="#333" />
-        <Text style={styles.backButtonText}>Back</Text>
-      </TouchableOpacity>
+      <View style={styles.header}>
+        <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+          <Ionicons name="arrow-back" size={24} color="#333" />
+          <Text style={styles.backButtonText}>Back</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.homeButton} onPress={handleGoHome}>
+          <Ionicons name="home-outline" size={24} color="#333" />
+          <Text style={styles.homeButtonText}>Home</Text>
+        </TouchableOpacity>
+    </View>
       <Text style={styles.title}>Identify Movie</Text>
 
       <View style={styles.section}>
@@ -317,6 +327,21 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 16,
     color: "#333",
+  },
+  header: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 20,
+  },
+  homeButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  homeButtonText: {
+    marginLeft: 10,
+    fontSize: 16,
+    color: '#333',
   },
   title: {
     fontSize: 28,

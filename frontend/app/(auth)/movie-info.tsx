@@ -83,10 +83,10 @@ const MovieInfoScreen = () => {
                     <Ionicons name="home-outline" size={24} color="#333" />
                     <Text style={styles.homeButtonText}>Home</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.identifyButton} onPress={navigateToIdentifyMovie}>
+            </View>
+            <TouchableOpacity style={styles.identifyButton} onPress={navigateToIdentifyMovie}>
                   <Text style={styles.identifyButtonText}>🔍 Identify a New Movie</Text>
                 </TouchableOpacity>
-            </View>
             <Text style={styles.title}>{movieTitle.split('-').join(' ')}</Text>
             {movie ? <>
                 <Text style={styles.year}>({movie.year})</Text>
@@ -225,14 +225,14 @@ const styles = StyleSheet.create({
     },
     identifyButton: {
       backgroundColor: '#2563eb',
-      paddingVertical: 16,
-      paddingHorizontal: 20,
-      borderRadius: 12,
+      paddingVertical: 8,
+      paddingHorizontal: 10,
+      borderRadius: 6,
       alignItems: 'center',
       justifyContent: 'center',
       marginTop: 10,
-      marginBottom: 30,
-      marginHorizontal: 20,
+      marginBottom: 10,
+      marginHorizontal: 10,
       elevation: 3,
     },
     identifyButtonText: {
