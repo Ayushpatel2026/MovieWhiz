@@ -6,46 +6,50 @@ import { getMovieInfo, getStreamingInfo } from '../../api/apiClient';
 import { Ionicons } from '@expo/vector-icons';
 
 const MovieInfoScreen = () => {
-  const { movieTitle } = useLocalSearchParams<{ movieTitle: string }>();
-  const [movie, setMovie] = useState<Movie | null>(null);
-  const [streamingInfo, setStreamingInfo] = useState<MovieStreamingInfo | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+    const { movieTitle } = useLocalSearchParams<{ movieTitle: string }>();
+    const [movie, setMovie] = useState<Movie | null>(null);
+    const [streamingInfo, setStreamingInfo] = useState<MovieStreamingInfo | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchMovieDetails = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        if (movieTitle) {
-          console.log('Fetching movie details for:', movieTitle);
-          const movieData = await getMovieInfo(movieTitle);
-          if (!movieData) {
-            setError('Movie not found.');
-            return;
-          }
-          console.log('Movie data:', movieData);
-          setMovie(movieData);
-          console.log("Movie genre:", movie?.genre);
+    useEffect(() => {
+        const fetchMovieDetails = async () => {
+            setLoading(true);
+            setError(null);
+            try {
+                if (movieTitle) {
+                    console.log('Fetching movie details for:', movieTitle);
+                    const movieData = await getMovieInfo(movieTitle);
+                    if (!movieData) {
+                        setError('Movie not found.');
+                        return;
+                    }
+                    console.log('Movie data:', movieData);
+                    setMovie(movieData);
+                    console.log("Movie genre:", movie?.genre);
 
-          console.log('Fetching streaming info for:', movieTitle);
-          const streamingData = await getStreamingInfo(movieTitle);
-          setStreamingInfo(streamingData);
-          console.log('Streaming data from API:', streamingData);
-        }
-      } catch (err: any) {
-        setError('Failed to load movie details.');
-        console.error('Error fetching movie details:', err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+                    console.log('Fetching streaming info for:', movieTitle);
+                    const streamingData = await getStreamingInfo(movieTitle);
+                    setStreamingInfo(streamingData);
+                    console.log('Streaming data from API:', streamingData);
+                }
+            } catch (err: any) {
+                setError('Failed to load movie details.');
+                console.error('Error fetching movie details:', err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    fetchMovieDetails();
-  }, [movieTitle]);
+        fetchMovieDetails();
+    }, [movieTitle]);
 
     const handleLinkPress = (url: string) => {
         Linking.openURL(url).catch((err) => console.error('An error occurred opening the link:', err));
+    };
+
+    const handleGoHome = () => {
+        router.push('/home'); 
     };
 
     if (loading) {
@@ -59,10 +63,16 @@ const MovieInfoScreen = () => {
 
     return (
         <ScrollView style={styles.container}>
-            <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-                <Ionicons name="arrow-back" size={24} color="#333" />
-                <Text style={styles.backButtonText}>Back</Text>
-            </TouchableOpacity>
+            <View style={styles.header}>
+                <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+                    <Ionicons name="arrow-back" size={24} color="#333" />
+                    <Text style={styles.backButtonText}>Back</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.homeButton} onPress={handleGoHome}>
+                    <Ionicons name="home-outline" size={24} color="#333" />
+                    <Text style={styles.homeButtonText}>Home</Text>
+                </TouchableOpacity>
+            </View>
             <Text style={styles.title}>{movieTitle.split('-').join(' ')}</Text>
             {movie ? <>
                 <Text style={styles.year}>({movie.year})</Text>
@@ -127,12 +137,26 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: '#f4f4f4',
     },
-    backButton: {
+    header: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
         alignItems: 'center',
         marginBottom: 20,
     },
+    backButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
     backButtonText: {
+        marginLeft: 10,
+        fontSize: 16,
+        color: '#333',
+    },
+    homeButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    homeButtonText: {
         marginLeft: 10,
         fontSize: 16,
         color: '#333',
@@ -163,11 +187,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 5,
         color: '#333',
+        textAlign: 'center',
     },
     year: {
         fontSize: 18,
         color: '#666',
         marginBottom: 15,
+        textAlign: 'center',
     },
     section: {
         marginBottom: 15,
@@ -216,11 +242,11 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     clickableLinkText: {
-      fontSize: 16,
-      color: '#52c41a', // A green color to indicate clickability
-      textDecorationLine: 'underline',
-      flex: 1,
-      textAlign: 'right',
+        fontSize: 16,
+        color: '#52c41a', // A green color to indicate clickability
+        textDecorationLine: 'underline',
+        flex: 1,
+        textAlign: 'right',
     },
 });
 
