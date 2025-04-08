@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "nodemon",
     "build": "npm install && npx tsc",
-    "postbuild": "copy .\\src\\config\\serviceAccountKey.json .\\dist\\config\\",
     "start": "node ./dist/index.js"
   },
   "author": "",
