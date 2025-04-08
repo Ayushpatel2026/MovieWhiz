@@ -56,7 +56,7 @@ export type ForumResponse = {
   responseId: string;
   overallConfidence: number;
   movieName: string;
-  timeStamp: number;
+  timeStamp: string;
   inputsUsed: string[];
 };
 

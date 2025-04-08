@@ -6,7 +6,7 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
-  Alert,
+  Alert
 } from "react-native";
 import { DocumentPickerResponse } from "react-native-document-picker";
 import { Ionicons } from "@expo/vector-icons";
@@ -38,10 +38,6 @@ const IdentifyMovieScreen = () => {
   );
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [identificationResult, setIdentificationResult] = useState<
-    ForumResponse | RequestMoreInformation | null
-  >(null);
-
   const [settings, setSettings] = useState<string>("");
   const [genres, setGenres] = useState<string>("");
   const [actors, setActors] = useState<string>("");
@@ -59,7 +55,6 @@ const IdentifyMovieScreen = () => {
   const handleSubmit = async () => {
     setLoading(true);
     setErrorMessage(null);
-    setIdentificationResult(null);
 
     console.log(!!formState);
 
@@ -116,7 +111,7 @@ const IdentifyMovieScreen = () => {
         });
       } else if (result.status === "partial") {
         Alert.alert(
-          "Please put more info, consider using: " +
+          "Please provide more info. Consider using: " +
             (result.inputsUsed.includes("Database Expert")
               ? ""
               : "Form Input, ") +
@@ -125,11 +120,6 @@ const IdentifyMovieScreen = () => {
               ? ""
               : "Audio Input")
         );
-        setIdentificationResult({
-          status: result.status,
-          inputsUsed: result.inputsUsed,
-          details: result.suggestions,
-        });
       } else {
         setErrorMessage(result.message || "Failed to identify movie.");
       }
@@ -161,7 +151,7 @@ const IdentifyMovieScreen = () => {
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.label}>Provide more details:</Text>
+        <Text style={styles.label}>Provide more details if you can remember them:</Text>
         <View style={styles.formRow}>
           <Text style={styles.formLabel}>Director</Text>
           <TextInput
