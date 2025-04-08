@@ -4,6 +4,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { Movie, MovieStreamingInfo } from '../../types/types';
 import { getMovieInfo, getStreamingInfo } from '../../api/apiClient';
 import { Ionicons } from '@expo/vector-icons';
+import { getAuth } from "@react-native-firebase/auth";
 
 const MovieInfoScreen = () => {
     const { movieTitle } = useLocalSearchParams<{ movieTitle: string }>();
@@ -51,6 +52,16 @@ const MovieInfoScreen = () => {
     const handleGoHome = () => {
         router.push('/home'); 
     };
+  
+    const navigateToIdentifyMovie = () => {
+      const auth = getAuth();
+      const user = auth.currentUser;
+      const userId = user?.uid;
+      router.push({
+        pathname: '/identify-movie',
+        params: { userId },
+      });
+    };
 
     if (loading) {
         return (
@@ -60,7 +71,7 @@ const MovieInfoScreen = () => {
             </View>
         );
     }
-
+  
     return (
         <ScrollView style={styles.container}>
             <View style={styles.header}>
@@ -71,6 +82,9 @@ const MovieInfoScreen = () => {
                 <TouchableOpacity style={styles.homeButton} onPress={handleGoHome}>
                     <Ionicons name="home-outline" size={24} color="#333" />
                     <Text style={styles.homeButtonText}>Home</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.identifyButton} onPress={navigateToIdentifyMovie}>
+                  <Text style={styles.identifyButtonText}>🔍 Identify a New Movie</Text>
                 </TouchableOpacity>
             </View>
             <Text style={styles.title}>{movieTitle.split('-').join(' ')}</Text>
@@ -208,6 +222,23 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 8,
         color: '#007bff',
+    },
+    identifyButton: {
+      backgroundColor: '#2563eb',
+      paddingVertical: 16,
+      paddingHorizontal: 20,
+      borderRadius: 12,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: 10,
+      marginBottom: 30,
+      marginHorizontal: 20,
+      elevation: 3,
+    },
+    identifyButtonText: {
+      color: '#fff',
+      fontSize: 16,
+      fontWeight: '600',
     },
     // Styles for the Streaming Section
     streamingSection: {

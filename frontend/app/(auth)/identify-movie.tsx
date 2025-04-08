@@ -110,7 +110,6 @@ const IdentifyMovieScreen = () => {
           params,
         });
       } else if (result.status === "partial") {
-        //TODO - show the request more information modal here 
         Alert.alert(
           "Please provide more info. Consider using: " +
             (result.inputsUsed.includes("Database Expert")
@@ -121,7 +120,6 @@ const IdentifyMovieScreen = () => {
               ? ""
               : "Audio Input")
         );
-        
       } else {
         setErrorMessage(result.message || "Failed to identify movie.");
       }

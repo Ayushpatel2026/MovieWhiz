@@ -34,7 +34,7 @@ router.post(
     try {
       const { text, form } = req.body;
       const file = req.file;
-    
+
       // Prepare inputs array
       const inputs: Input[] = [];
       if (text) inputs.push({ type: "text", data: text });
@@ -51,12 +51,13 @@ router.post(
       const result = await movieIDManager.handleIdentificationRequest(inputs);
 
       // Handle different response types
-      if ("movieName" in result) {
+      if ("overallConfidence" in result) {
         // This is a ForumResponse
         const forumResponse = result as ForumResponse;
         res.json({
           status: "success",
-          ...forumResponse});
+          ...forumResponse,
+        });
       } else {
         // This is a RequestMoreInformation response
         const requestMoreInfo = result as RequestMoreInformation;
