@@ -75,7 +75,7 @@ The innovative feature of the app is that once a movie is correctly identified, 
 
 The overall system diagram of the MovieWhiz application is shown below:
 
-![System Diagram](./uml/SystemDiagram.drawio.png)
+![System Diagram](./uml/system_diagram.png)
 
 ## 2.2 Product Functions
 
