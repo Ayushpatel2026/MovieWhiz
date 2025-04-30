@@ -2,7 +2,7 @@
 
 ### Note
 
-- Diagrams and screenshots should be placed inside `/docs/uml/`.
+- Diagrams and images should be placed inside `/docs/uml/`.
 
 ## Group Details
 
@@ -20,7 +20,8 @@
 ## 1.1 Purpose
 
 This document provides a high level overview of the MovieWhiz system architecture, including high level design considerations of the system and its various subsystems.
-This document is intended for internal MovieWhiz stakeholders, including project managers, software developers, domain experts and MovieWhiz investors. MovieWhiz Deliverable 1 should be read prior, and technical knowledge in the software field is useful for a deeper understanding of this document.
+
+This document is intended for internal MovieWhiz stakeholders, including project managers, software developers, domain experts and MovieWhiz investors. MovieWhiz Requirements document should be read prior, and technical knowledge in the software field is useful for a deeper understanding of this document.
 
 ## 1.2 Scope
 

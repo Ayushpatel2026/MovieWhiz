@@ -2,7 +2,7 @@
 
 ### Note
 
-- Diagrams and screenshots should be placed inside `/docs/uml/`.
+- Diagrams and images should be placed inside `/docs/uml/`.
 
 ## Group Details
 
