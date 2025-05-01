@@ -9,23 +9,24 @@ const multer = require("multer");
 const upload = multer({ storage: multer.memoryStorage() });
 
 /*
-  Endpoint to handle identification requests.
+  Endpoint to handle movie identification requests.
   Endpoint URL: http://{baseURL}}/api/identify/movie
   Method: POST
-
-  Example Request Body:
-  {
-    "text": "A movie about a young wizard who goes to a magical school.",
-    "form": {
+  
+  Content-Type: multipart/form-data
+  
+  Example Request Body (multipart/form-data):
+  - text: "A movie about a young wizard who goes to a magical school."
+  - form: JSON string containing:
+    {
       "genre": ["fantasy", "adventure"],
       "director": "Chris Columbus",
       "year": 2001,
       "actors": ["Daniel Radcliffe", "Emma Watson"],
       "characters": ["Harry Potter", "Hermione Granger"],
       "settings": ["Hogwarts"]
-    },
-    "audio": "base64-audio-string"
-  }
+    }
+  - file: Audio file upload (binary data)
 */
 router.post(
   "/movie",

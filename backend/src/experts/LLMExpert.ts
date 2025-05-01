@@ -1,7 +1,7 @@
 import { MovieIDBlackboard } from '../blackboard/MovieIDBlackboard';
 import { ExpertResponse, Input, MovieConfidences } from '../types/types';
 import { Expert } from './Expert';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { getLLMProvider } from './llm/LLMProviderRegistry';
 
 export class LLMExpert extends Expert {
 
@@ -22,11 +22,11 @@ export class LLMExpert extends Expert {
     "movies": [
       {
         "movieName": "Movie Title 1",
-        "confidence": 9.0
+        "confidence": 90
       },
       {
         "movieName": "Movie Title 2",
-        "confidence": 7.5
+        "confidence": 50
       }
     ]
   }
@@ -46,37 +46,17 @@ export class LLMExpert extends Expert {
   }
   
   private async queryLLM(prompt: string): Promise<string> {
-    const llm_provider = process.env.LLM_PROVIDER || 'gemini';
+    const llm_provider = process.env.LLM_PROVIDER;
 
-    let result: any = "";
-
-    if (llm_provider === 'gemini') {
-      console.log("Api key:", process.env.GEMINI_API_KEY);
-      console.log("LLM provider:", llm_provider);
-      const API_KEY = process.env.GEMINI_API_KEY || '';
-      const genAI = new GoogleGenerativeAI(API_KEY);
-
-      const model = genAI.getGenerativeModel({
-        model: "gemini-2.0-flash",
-      });
-
-      // const generationConfig = {
-      //   temperature: 1,
-      //   topP: 0.95,
-      //   topK: 40,
-      //   maxOutputTokens: 8192,
-      //   responseModalities: [],
-      //   responseMimeType: "text/plain",
-      // };
-
-      result = await model.generateContent([prompt]);
-    } else {
-      result = "There has been an error. Try again";
+    if (!llm_provider) {
+      throw new Error("LLM provider is not set in the environment variables.");
     }
 
-    //console.log("LLM response:", result);
+    const llm = getLLMProvider(llm_provider);
 
-    return result.response.text();
+    const response = await llm.generate(prompt);
+
+    return response;
   }
 
   /*
@@ -110,7 +90,7 @@ export class LLMExpert extends Expert {
         };
       }
       
-      // Just in case the LLM messes up and does not return sorted movies
+      // Just in case the LLM messes up and does not return movies sorted by confidence
       const sortedMovies = [...jsonResponse.movies].sort(
         (a, b) => b.confidencescore - a.confidencescore
       );
@@ -136,8 +116,7 @@ export class LLMExpert extends Expert {
   }
 
   /*
-   * TODO - implement a more sophisticated confidence calculation
-   * based on the LLM response
+   * THIS IS NOT NEEDED FOR LLM EXPERT SINCE THE LLM PROVIDES CONFIDENCE SCORES
   */
   public calculateConfidence(llmText: string, matches: string[]): MovieConfidences[] {
     return [];
