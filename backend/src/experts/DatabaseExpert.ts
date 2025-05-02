@@ -1,15 +1,18 @@
 import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
 import { Expert } from "./Expert";
-import { db } from "../config/firebaseConfig";
 import {
   FormInput,
   ExpertResponse,
   MovieConfidences,
   Movie,
 } from "../types/types";
-import { DocumentData } from "firebase-admin/firestore";
+import { FirestoreMovieDatabase } from "./movie-database/FirestoreMovieDatabase";
 
 export class DatabaseExpert extends Expert {
+
+  // this can be changed to any movie database implementation
+  private movieDatabase = new FirestoreMovieDatabase();
+
   constructor(blackboard: MovieIDBlackboard) {
     super("Database Expert", blackboard);
   }
@@ -22,7 +25,7 @@ export class DatabaseExpert extends Expert {
     const query = this.buildQuery(
       typeof input.data == "string" ? JSON.parse(input.data).data : input.data
     );
-    const matches = await this.queryDatabase(query);
+    const matches = await this.movieDatabase.findMatchingMovies(query);
 
     const movieConfidences = await this.calculateConfidence(matches, query);
 
@@ -77,88 +80,25 @@ export class DatabaseExpert extends Expert {
     };
   }
 
-  async queryDatabase(query: any): Promise<DocumentData[]> {
-    let moviesRef = db.collection("movies");
-    let baseQuery: FirebaseFirestore.Query = moviesRef;
-
-    // if (query.director) {
-    //   baseQuery = baseQuery.where("director", "==", query.director);
-    // }
-    if (query.year) {
-      baseQuery = baseQuery.where("year", "==", query.year);
-    }
-
-    const snapshot = await baseQuery.get();
-    let results: DocumentData[] = snapshot.docs.map((doc) => {
-      return doc.data();
-    });
-
-    if (query.director) {
-      results = results.filter((movie) =>
-        typeof movie.director === "string" && (movie.director as string).toLowerCase() === query.director.toLowerCase()
-      );
-    }
-
-    // Every setting in the query must be present in the movie's settings for it to be included in the results
-    if (query.settings) {
-      results = results.filter(
-        (movie) =>
-          movie.settings &&
-          (typeof movie.settings === "string"
-            ? [query.settings]
-            : query.settings
-          ).every((setting: string) =>
-            (movie.settings as string[]).map(s => s.toLowerCase()).includes(setting.toLowerCase())
-          )
-      );
-    }
-
-    // Every actor in the query must be present in the movie's actors for it to be included in the results
-    if (query.actors) {
-      results = results.filter(
-        (movie) =>
-          movie.actors &&
-          query.actors!.every((actor: string) =>
-            (movie.actors as string[]).map(a => a.toLowerCase()).includes(actor.toLowerCase())
-          )
-      );
-    }
-
-    // Every character in the query must be present in the movie's characters for it to be included in the results
-    if (query.characters) {
-      results = results.filter(
-        (movie) =>
-          movie.characters &&
-          query.characters!.every((char: string) =>
-            (movie.characters as string[]).map(c => c.toLowerCase()).includes(char.toLowerCase())
-          )
-      );
-    }
-
-    // Every genre in the query must be present in the movie's genre for it to be included in the results
-    if (query.genre) {
-      results = results.filter(
-        (movie) =>
-          movie.genre &&
-          query.genre!.every((genre: string) =>
-            (movie.genre as string[]).map(g => g.toLowerCase()).includes(genre.toLowerCase())
-          )
-      );
-    }
-
-    return results;
-  }
-
   /* 
-    TDO - FIGURE OUT HOW TO CALCULATE CONFIDENCE
+    * This function calculates the confidence of each movie match based on the query and the database.
+    * It uses a scoring system to determine how well each movie matches the query, with 100 being a perfect match.
+    * The scoring system is based on the following criteria:
+    *   1. Only 1 match: 100% confidence
+    *   2. Director match: 25% confidence
+    *   3. Year match: 15% confidence
+    *   4. Actor match: 10% confidence
+    *   5. Character match: 15% confidence
+    *   6. Genre match: 5% confidence
+    *   7. Settings match: 10% confidence
+    *   8. Non-unique matches penalties: 5% for each non-unique actor match, 2% for each non-unique genre match, and 5% for each non-unique setting match.
+    * The function also applies penalties for results with more than 5 matches, reducing the confidence by up to 50%.
   */
   public async calculateConfidence(
-    matches: DocumentData[],
+    matches: Movie[],
     query: any
   ): Promise<MovieConfidences[]> {
-    let moviesRef = db.collection("movies");
-    let baseQuery: FirebaseFirestore.Query = moviesRef;
-    const allMovies = await baseQuery.get();
+    const allMovies = await this.movieDatabase.getAllMovies();
 
     if (matches.length === 1) {
       return matches.map((movie) => ({
@@ -174,8 +114,7 @@ export class DatabaseExpert extends Expert {
     const genreFrequencies: Record<string, number> = {};
     const settingFrequencies: Record<string, number> = {};
 
-    allMovies.forEach((movieDoc) => {
-      const movie = movieDoc.data() as Movie;
+    allMovies.forEach((movie) => {
       query.actors?.forEach((actor: string) => {
         if (
           movie.actors

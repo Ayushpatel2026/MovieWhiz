@@ -1,7 +1,7 @@
 import { MovieIDBlackboard } from "../blackboard/MovieIDBlackboard";
 import { Expert } from "./Expert";
-import { db } from "../config/firebaseConfig";
-import { AudioInput, ExpertResponse, MovieConfidences } from "../types/types";
+import { AudioInput, ExpertResponse, MovieConfidences, Movie } from "../types/types";
+import { FirestoreMovieDatabase } from "./movie-database/FirestoreMovieDatabase";
 
 const token = process.env.AUDD_API_TOKEN;
 
@@ -13,12 +13,11 @@ export type SongData = {
   artist: string;
 };
 
-type MovieData = {
-  title: string;
-  year: number;
-};
-
 export class SoundtrackExpert extends Expert {
+
+  // this can be changed to any movie database implementation
+  private movieDatabase = new FirestoreMovieDatabase();
+
   constructor(blackboard: MovieIDBlackboard) {
     super("Soundtrack Expert", blackboard);
   }
@@ -26,14 +25,19 @@ export class SoundtrackExpert extends Expert {
   async analyze(audioInput: AudioInput): Promise<ExpertResponse> {
     try {
       const song = await this.queryAudioAPI(audioInput.data);
-      const movieData: MovieData[] = await this.queryDatabase(song?.name || "");
-      // console.log(movieData);
-      const movieDataWithScores = this.calculateConfidence(movieData);
-      // console.log(movieDataWithScores);
+      console.log("Song Data:", song);
+      let movieDataWithScores : MovieConfidences[] = [];
+      
+      if (song){
+        const movieMatches: Movie[] = await this.movieDatabase.findMatchingMovies({
+          soundtrack: song?.name,
+        });
+        movieDataWithScores = this.calculateConfidence(movieMatches);
+      }
 
       return {
         expertName: this.name,
-        details: song || "song not found",
+        details: song || "Song not found",
         movieConfidences: movieDataWithScores,
         timeStamp: Date.now(),
       };
@@ -41,24 +45,6 @@ export class SoundtrackExpert extends Expert {
       console.error("Audio processing failed:", error);
       return Promise.reject(error);
     }
-  }
-
-  private async queryDatabase(songName: string) {
-    const moviesRef = db.collection("movies");
-    const snapshot = await moviesRef
-      .where("soundtracks", "array-contains", songName)
-      .get();
-    if (snapshot.empty) {
-      return [];
-    }
-
-    const test = snapshot.docs.map((doc) => {
-      return {
-        title: doc.data().title,
-        year: doc.data().year,
-      };
-    });
-    return test;
   }
 
   private async queryAudioAPI(
@@ -92,7 +78,7 @@ export class SoundtrackExpert extends Expert {
     More recent movies will have a high confidence score
     i.e. the most recent will have confidence of 100, the next 50, and then 33, etc.
   */
-  public calculateConfidence(movies: MovieData[]): MovieConfidences[] {
+  public calculateConfidence(movies: Movie[]): MovieConfidences[] {
     const moviesByAscendingYear = movies.sort((a, b) => a.year - b.year);
     const movieCount = movies.length;
 

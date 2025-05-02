@@ -1,14 +1,12 @@
-import { db } from '../config/firebaseConfig';
 import { Movie } from '../types/types';
+import { FirestoreMovieDatabase } from '../experts/movie-database/FirestoreMovieDatabase';
 
 export class MovieInformationService {
-  private streamingLinksCollection = db.collection('movies');
+
+  // can easily swap this out for any other movie database implementation
+  private movieDatabase = new FirestoreMovieDatabase();
 
   async getMovie(title: string): Promise<Movie | undefined> {
-    const doc = await this.streamingLinksCollection.doc(title.toLowerCase().replace(/\s+/g, '-')).get();
-    if (doc.exists) {
-      return doc.data() as Movie;
-    }
-    return undefined;
+    return this.movieDatabase.getByTitle(title);
   }
 }
