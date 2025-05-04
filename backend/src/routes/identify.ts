@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import { MovieIDManager } from "../controllers/MovieIDManager";
 import { Input, ForumResponse, RequestMoreInformation } from "../types/types";
+import { isAuthenticated } from "../middleware/auth";
 
 const router = express.Router();
 const movieIDManager = new MovieIDManager();
@@ -30,6 +31,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 */
 router.post(
   "/movie",
+  isAuthenticated,
   upload.single("file"),
   async (req: Request, res: Response) => {
     try {

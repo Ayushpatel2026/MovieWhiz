@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import { StreamingLinksService } from '../services/StreamingLinkService';
+import { isAuthenticated } from '../middleware/auth';
 
 const router = express.Router();
 const streamingLinksService = new StreamingLinksService();
@@ -29,7 +30,7 @@ const streamingLinksService = new StreamingLinksService();
   Returns a 500 status code if there is an error while adding/updating streaming links.
 
 */
-router.post('/add', async (req: Request, res: Response) => {
+router.post('/add', isAuthenticated, async (req: Request, res: Response) => {
   try {
     const { movieName, links } = req.body;
     if (!movieName || !Array.isArray(links)) {
@@ -63,7 +64,7 @@ router.post('/add', async (req: Request, res: Response) => {
   }
   Returns a movie streaming info object if found.
 */
-router.get('/:movieName', async (req: Request, res: Response) => {
+router.get('/:movieName', isAuthenticated, async (req: Request, res: Response) => {
   try {
     const movieName = req.params.movieName;
     const streamingLinks = await streamingLinksService.getStreamingLinks(movieName);

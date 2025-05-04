@@ -1,9 +1,15 @@
 import express, { Request, Response } from 'express';
 import { ResponseHistoryService } from '../services/ResponseHistoryService';
 import { ForumResponse } from '../types/types';
+import { isAuthenticated } from '../middleware/auth';
 
 const router = express.Router();
 const responseHistoryService = new ResponseHistoryService();
+
+/**
+ * It is important to send the idToken in the header for authentication, even though there is a userId
+ * because the userId can be spoofed whereas the idToken is signed by Firebase and can be verified by the backend
+ */
 
 /*
 	Route to store a response history entry.
@@ -25,7 +31,7 @@ const responseHistoryService = new ResponseHistoryService();
 	Returns a 201 status code on success and a 400 status code if the request body is missing required fields.
 	Returns a 500 status code if there is an error storing the response.
 */
-router.post('/create', async (req: Request, res: Response) => {
+router.post('/create', isAuthenticated, async (req: Request, res: Response) => {
   try {
     const { userId, forumResponse } = req.body;
     if (!userId || !forumResponse) {
@@ -65,7 +71,7 @@ router.post('/create', async (req: Request, res: Response) => {
 		]
 	}
 */
-router.get('/:userId', async (req: Request, res: Response) => {
+router.get('/:userId', isAuthenticated, async (req: Request, res: Response) => {
   try {
     const userId = req.params.userId;
 	console.log("Getting user history for userId from database:", userId)

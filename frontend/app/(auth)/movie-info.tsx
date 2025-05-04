@@ -19,8 +19,10 @@ const MovieInfoScreen = () => {
             setError(null);
             try {
                 if (movieTitle) {
+                    const auth = getAuth();
+                    const idToken = await auth.currentUser?.getIdToken();
                     console.log('Fetching movie details for:', movieTitle);
-                    const movieData = await getMovieInfo(movieTitle);
+                    const movieData = await getMovieInfo(movieTitle, idToken ?? null);
                     if (!movieData) {
                         setError('Movie not found.');
                         return;
@@ -30,7 +32,7 @@ const MovieInfoScreen = () => {
                     console.log("Movie genre:", movie?.genre);
 
                     console.log('Fetching streaming info for:', movieTitle);
-                    const streamingData = await getStreamingInfo(movieTitle);
+                    const streamingData = await getStreamingInfo(movieTitle, idToken ?? null);
                     setStreamingInfo(streamingData);
                     console.log('Streaming data from API:', streamingData);
                 }

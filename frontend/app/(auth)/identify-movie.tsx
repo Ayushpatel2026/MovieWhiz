@@ -12,11 +12,8 @@ import { DocumentPickerResponse } from "react-native-document-picker";
 import { Ionicons } from "@expo/vector-icons";
 import { identifyMovie, postResponse } from "../../api/apiClient";
 import { router, useLocalSearchParams } from "expo-router";
-import {
-  FormInput,
-  ForumResponse,
-  RequestMoreInformation,
-} from "@/types/types";
+import auth from '@react-native-firebase/auth';
+import { FormInput } from "@/types/types";
 import { pickAudioFile } from "@/utils/filePicker";
 
 const IdentifyMovieScreen = () => {
@@ -63,6 +60,9 @@ const IdentifyMovieScreen = () => {
     console.log(!!formState);
 
     try {
+
+      const idToken = await auth().currentUser?.getIdToken();
+
       const formData = new FormData();
       let hasData = false; // Track if any data is appended
 
@@ -100,12 +100,12 @@ const IdentifyMovieScreen = () => {
         return;
       }
       console.log("Form data before sending:", formData);
-      const result = await identifyMovie(formData);
+      const result = await identifyMovie(formData, idToken ?? null);
       console.log("Identification result:", result);
       setLoading(false);
       if (result.status === "success") {
         // Store the response
-        await postResponse(userId, result);
+        await postResponse(userId, result, idToken ?? null);
 
         const pathName = "/movie-info";
         const params = { movieTitle: result.movieName };

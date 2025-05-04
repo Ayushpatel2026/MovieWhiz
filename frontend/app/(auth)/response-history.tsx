@@ -4,6 +4,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { StoredResponse } from '../../types/types'; 
 import { getResponseHistory } from '../../api/apiClient';  
 import { Ionicons } from '@expo/vector-icons';
+import auth from '@react-native-firebase/auth'; 
 
 
 const ResponseHistoryScreen = () => {
@@ -18,7 +19,9 @@ const ResponseHistoryScreen = () => {
       setError(null); 
       try {
         if (userId) {
-          const responseHistoryData = await getResponseHistory(userId);
+          const idToken = await auth().currentUser?.getIdToken();
+          console.log("Id token:", idToken);
+          const responseHistoryData = await getResponseHistory(userId, idToken ?? null);
           console.log('Response history data:', responseHistoryData);
           setHistory(responseHistoryData);
         }

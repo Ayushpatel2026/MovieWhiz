@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import { MovieInformationService } from '../services/MovieInformationService';
+import { isAuthenticated } from "../middleware/auth";
 
 const router = express.Router();
 const movieInformationService = new MovieInformationService();
@@ -40,7 +41,7 @@ const movieInformationService = new MovieInformationService();
   Returns a movie object if found.
   Returns a 500 status code if there is an error retrieving the movie information.
 */
-router.get("/:title", async (req: Request, res: Response) => {
+router.get("/:title", isAuthenticated, async (req: Request, res: Response) => {
 	const title = req.params.title;
 	try {
 		console.log("Getting movie from database:", title)

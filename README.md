@@ -135,8 +135,6 @@ A comprehensive class diagram of the whole system as well as detailed state and 
   - The database currently contains information for almost 200 movies.
   - **Future Improvement:** We acknowledge that expanding the database by integrating with a more comprehensive movie API (e.g., IMDb API) would significantly enhance the app's functionality. This remains a key area for future development.
 
-[Concurrency needs to be added here]: #
-
 ### Calculating Confidence Scores and Forum Algorithm
 
 - **Challenge:** Designing a robust algorithm (the Forum Algorithm) to effectively combine the movie suggestions and confidence scores from the different expert systems (LLM, Database, Soundtrack) to determine the most accurate movie match. The algorithm must also handle ambiguous cases where the user did not input sufficient information to accurately identify a movie.

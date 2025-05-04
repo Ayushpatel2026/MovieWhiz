@@ -6,7 +6,7 @@ import {
 } from "@/types/types";
 import axios from "axios";
 
-const API_BASE_URL = process.env.BACKEND_BASE_URL || "https://moviewhiz.onrender.com/api";
+const API_BASE_URL = process.env.EXPO_PUBLIC_BACKEND_BASE_URL || "https://moviewhiz.onrender.com/api";
 
 // Configure axios instance
 const api = axios.create({
@@ -20,7 +20,7 @@ const api = axios.create({
 /*
   Post request to identify a movie based on the given text, form, and audio inputs
 */
-export const identifyMovie = async (formData: FormData): Promise<any> => {
+export const identifyMovie = async (formData: FormData, idToken : string | null): Promise<any> => {
   try {
     console.log("Form data text:", formData.get("text"));
     console.log("Form data form:", formData.get("form"));
@@ -31,6 +31,7 @@ export const identifyMovie = async (formData: FormData): Promise<any> => {
       {
         headers: {
           "Content-Type": "multipart/form-data",
+          "Authorization": `Bearer ${idToken}`,
         },
       }
     );
@@ -50,13 +51,20 @@ export const identifyMovie = async (formData: FormData): Promise<any> => {
 
 /*
 	Post a new response to the server sending the userId and the response data
+  It is important to send the idToken in the header for authentication, even though there is a userId
+  because the userId can be spoofed whereas the idToken is signed by Firebase and can be verified by the backend
 */
 export const postResponse = async (
   userId: string,
-  forumResponse: ForumResponse
+  forumResponse: ForumResponse,
+  idToken: string | null
 ): Promise<void> => {
   try {
-    await api.post("/response-history/create", { userId, forumResponse });
+    await api.post("/response-history/create", { userId, forumResponse }, {
+      headers: {
+        "Authorization": `Bearer ${idToken}`, 
+      },
+    });
   } catch (error: any) {
     console.error(
       "Error posting response:",
@@ -70,11 +78,16 @@ export const postResponse = async (
 	Get the response history from the data for a given userId
 */
 export const getResponseHistory = async (
-  userId: string
+  userId: string,
+  idToken: string | null
 ): Promise<StoredResponse[]> => {
   try {
     console.log("Fetching response history for userId:", userId);
-    const response = await api.get(`/response-history/${userId}`);
+    const response = await api.get(`/response-history/${userId}`, {
+      headers: {
+        "Authorization": `Bearer ${idToken}`, 
+      },
+    });
     const history = response.data as StoredResponse[];
     return history;
   } catch (error: any) {
@@ -90,11 +103,16 @@ export const getResponseHistory = async (
 	Get the streaming info for a given movie name
 */
 export const getStreamingInfo = async (
-  movieName: string
+  movieName: string,
+  idToken: string | null
 ): Promise<MovieStreamingInfo> => {
   try {
     const response = await api.get(
-      `/streaming-links/${movieName.toLowerCase().replace(/\s+/g, "-")}`
+      `/streaming-links/${movieName.toLowerCase().replace(/\s+/g, "-")}`, {
+        headers: {
+          "Authorization": `Bearer ${idToken}`,
+        },
+      }
     );
     const streamingInfo = response.data as MovieStreamingInfo;
     return streamingInfo;
@@ -110,11 +128,15 @@ export const getStreamingInfo = async (
 /*
 	Get the movie info for a given movie name
 */
-export const getMovieInfo = async (title: string): Promise<Movie> => {
+export const getMovieInfo = async (title: string, idToken : string | null): Promise<Movie> => {
   try {
     console.log("Getting movie from url:", API_BASE_URL);
     const response = await api.get(
-      `/movies/${title.toLowerCase().replace(/\s+/g, "-")}`
+      `/movies/${title.toLowerCase().replace(/\s+/g, "-")}`, {
+        headers: {
+          "Authorization": `Bearer ${idToken}`,
+        },
+      }
     );
     const movieInfo = response.data as Movie;
     return movieInfo;
