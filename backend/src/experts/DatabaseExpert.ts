@@ -23,7 +23,7 @@ export class DatabaseExpert extends Expert {
     }
 
     const query = this.buildQuery(
-      typeof input.data == "string" ? JSON.parse(input.data).data : input.data
+      typeof input.data == "string" ? JSON.parse(input.data) : input.data
     );
     const matches = await this.movieDatabase.findMatchingMovies(query);
 
