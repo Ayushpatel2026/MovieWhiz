@@ -216,6 +216,11 @@ A comprehensive class diagram of the whole system as well as detailed state and 
 - **Google Cloud Firestore**
   - We selected Firestore as our NoSQL database for its scalability, real-time capabilities, and flexible data model.
 
+#### Testing
+
+- **Jest** - testing framework for unit and integration testing
+- **Supertest** - This was used to test the backend API endpoints as it provides a convenient way to send HTTP requests to our API.
+
 #### Authentication
 
 - **Firebase Auth**
