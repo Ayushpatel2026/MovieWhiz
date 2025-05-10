@@ -178,7 +178,10 @@ A comprehensive class diagram of the whole system as well as detailed state and 
 2. **API Integration**
    - integrate with gemini-2.0-flash using carefully crafted prompt to identify movie based on textual description
    - Integrate with Audd.io API to identify the name of the soundtrack and then query the database to identify the movie name
-3. **Firestore database**
+3. **Backend API**
+   - [Complete API Documentation](./backend/docs/API.md) - Detailed reference for all endpoints
+   - RESTful design with authentication middleware for secure access
+4. **Firestore database**
    - We utilized Google Cloud Firestore as our primary database to store movie information, user accounts, and search history.
 
 ### Key Design Principles
@@ -296,19 +299,21 @@ This section outlines the steps to build the APK from source code and run the ba
     npm install
     ```
 
-3.  **Set Environment Variables:** You need to configure the following environment variables. It's highly recommended to use a `.env` file for this, but you can also set them directly in your shell.
+3.  **Set Environment Variables:** You need to configure the following environment variables.
 
     - Create a `.env` file in the backend directory and add the following:
 
       ```
       GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+      LLM_PROVIDER=gemini
       AUDD_API_TOKEN=YOUR_AUDD_API_TOKEN
       FIREBASE_SERVICE_ACCOUNT_KEY='{ "type": "...", ... , "private_key": "..." }' # Paste the entire JSON string on one line
       ```
 
     - **Explanation of Variables:**
 
-      - `GEMINI_API_KEY`: Your API key for the Gemini LLM. Obtain this from the Google Cloud Console.
+      - `LLM_PROVIDER`: The LLM Expert uses this variable to switch between different LLM Providers. I have used the Gemini LLM and the Gemini API key below, but you may choose to use any other LLM Provider by extending the `LLMProvider` interface.
+      - `GEMINI_API_KEY`: If you choose to use GEMINI - Obtain this from the Google Cloud Console. Otherwise you can use any LLM provider by extending the `LLMProvider` interface and obtaining the appropriate API key.
       - `AUDD_API_TOKEN`: Your API token for the Audd.io music recognition service.
       - `FIREBASE_SERVICE_ACCOUNT_KEY`: The JSON service account key from your Firebase project. This key is necessary for the backend to interact with Firebase services (like Firestore). **Important:** Ensure you paste the entire JSON content of the key file into the `.env` file **on a single line**.
 
@@ -347,9 +352,9 @@ This section outlines the steps to build the APK from source code and run the ba
     - Create a `.env` file in the `frontend/` directory and add the following:
 
       ```
-      BACKEND_BASE_URL=http://localhost:7000/api # If running locally
+      EXPO_PUBLIC_BACKEND_BASE_URL=http://localhost:7000/api # If running locally
       # or
-      BACKEND_BASE_URL=https://moviewhiz.onrender.com/api # If using deployed backend
+      EXPO_PUBLIC_BACKEND_BASE_URL=https://moviewhiz.onrender.com/api # If using deployed backend
       ```
 
 4.  **Prebuild the App:** This step prepares your project for building:
