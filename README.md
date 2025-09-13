@@ -2,7 +2,7 @@
 
 ## Quick Demo
 
-[![Watch the Demo](./docs/images/demo_thumbnail.png)](https://drive.google.com/file/d/1mncp5JkVOMytBVwV69O4Vi9m48VLE-7J/view?usp=sharing)
+[![Watch the Demo](./docs/images/demo_thumbnail.png)](https://www.youtube.com/watch?v=KZY19NNbA4M)
 
 ## Problem Statement
 
